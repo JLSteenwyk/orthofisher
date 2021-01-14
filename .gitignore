@@ -144,3 +144,6 @@ output/
 
 # environment file
 ./orthofisher/venv
+
+# local hmmer
+hmmer-3.3.1
