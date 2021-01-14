@@ -143,7 +143,7 @@ output/
 .vscode/
 
 # testing output files
-./orthofisher/orthofisher_output/
+orthofisher/orthofisher_output/
 
 # local hmmer
-./hmmer-3.3.1/
+hmmer-3.3.1/
