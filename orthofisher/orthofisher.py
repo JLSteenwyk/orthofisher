@@ -9,9 +9,9 @@ import sys
 from Bio import SearchIO, SeqIO
 import numpy as np
 
-from args_processing import process_args
-from parser import create_parser
-from helper import (
+from .args_processing import process_args
+from .parser import create_parser
+from .helper import (
     create_directories, read_input_files, 
     conduct_hmm_search, set_names,
     handle_single_copy_writing, handle_multi_copy_writing,
