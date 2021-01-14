@@ -19,13 +19,13 @@ CLASSIFIERS = [
 REQUIRES = [""]
 
 setup(
-    name="mipyp",
-    description="orthofischer",
+    name="orthofisher",
+    description="orthofisher",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Jacob L. Steenwyk",
     author_email="jlsteenwyk@gmail.com",
-    url="https://github.com/jlsteenwyk/mipyp",
+    url="https://github.com/JLSteenwyk/orthofisher.git",
     packages=["mipyp"],
     classifiers=CLASSIFIERS,
     entry_points={"console_scripts": ["mipyp = mipyp.mipyp:main"]},
