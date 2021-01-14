@@ -1,0 +1,5 @@
+file_name	single-copy	multi-copy	absent	per_single-copy	per_multi-copy	per_absent
+GCF_010094145.1_Didex1_protein.faa	1	0	0	1.0	0.0	0.0
+GCA_011032825.1_Masph1_protein.faa	1	0	0	1.0	0.0	0.0
+small_set.faa	0	0	1	0.0	0.0	1.0
+multi_copy.faa	0	1	0	0.0	1.0	0.0

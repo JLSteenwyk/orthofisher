@@ -1,0 +1,1 @@
+../data/small_set.faa	no_copy
