@@ -69,7 +69,7 @@ def create_parser():
     optional.add_argument(
         "-e",
         "--evalue",
-        type=float,
+        type=str,
         required=False,
         help=SUPPRESS,
         metavar="evalue threshold",

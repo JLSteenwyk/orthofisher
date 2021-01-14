@@ -37,7 +37,8 @@ def create_directories(argv=None):
 def conduct_hmm_search(
     hmmsearch_out: str,
     hmm: str,
-    fasta: str
+    fasta: str,
+    evalue
 ):
     """
     execute hmm search using subprocess
@@ -46,7 +47,7 @@ def conduct_hmm_search(
     subprocess.call(
         [
             'hmmsearch', '--noali', 
-            '--notextw', '-E', '1e-6',
+            '--notextw', '-E', str(evalue),
             '--tblout', hmmsearch_out, 
             hmm, fasta
         ], stdout=subprocess.DEVNULL

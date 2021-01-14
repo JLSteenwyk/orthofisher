@@ -56,7 +56,7 @@ def execute(
             hmmsearch_out = set_names(hmm[0], fasta_name)
             
             # execute hmmsearch
-            conduct_hmm_search(hmmsearch_out, hmm[0], fasta[0])
+            conduct_hmm_search(hmmsearch_out, hmm[0], fasta[0], evalue)
 
             # identify single copy orthologs and write them to separate scog files
             with open(hmmsearch_out, 'r') as hmmsearch_out:
