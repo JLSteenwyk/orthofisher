@@ -142,9 +142,8 @@ output/
 
 .vscode/
 
-# environment file
-./orthofisher/venv
-./orthofisher/orthofisher_output
+# testing output files
+./orthofisher/orthofisher_output/
 
 # local hmmer
-./hmmer-3.3.1
+./hmmer-3.3.1/
