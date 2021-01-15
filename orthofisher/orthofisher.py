@@ -9,9 +9,9 @@ import sys
 from Bio import SearchIO, SeqIO
 import numpy as np
 
-from .args_processing import process_args
-from .parser import create_parser
-from .helper import (
+from args_processing import process_args
+from parser import create_parser
+from helper import (
     create_directories, read_input_files, 
     conduct_hmm_search, set_names,
     handle_single_copy_writing, handle_multi_copy_writing,
@@ -62,7 +62,16 @@ def execute(
             with open(hmmsearch_out, 'r') as hmmsearch_out:
                 have_written = 0
                 for qresult in SearchIO.parse(hmmsearch_out, 'hmmer3-tab'):
-                    hits = qresult.hits
+                    matches = qresult.hits
+                    top_score = matches[0].bitscore
+                    hits = []
+
+                    # remove genes with bitscores less than 85% of the bitscore
+                    # value as the top hit in the hmmsearch
+                    for hit in matches:
+                        if hit.bitscore >= (0.85*top_score):
+                            hits.append(hit)
+                    
                     num_hits = len(hits)
 
                     # if single copy

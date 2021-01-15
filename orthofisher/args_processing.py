@@ -19,7 +19,7 @@ def process_args(args) -> dict:
         logger.warning("HMM file does not exist")
         sys.exit()
     # assign optional arguments
-    evalue = args.evalue or 0.000001
+    evalue = args.evalue or 0.001
 
     return dict(
         fasta_file_list=fasta_file_list,
