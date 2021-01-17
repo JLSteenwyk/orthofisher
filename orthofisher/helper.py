@@ -57,6 +57,7 @@ def conduct_hmm_search(
 def check_hmmsearch_output(
     hmmsearch_out: str
 ):
+    
     if not os.path.isfile(hmmsearch_out):
         print("HMM search failed. Check e-value is an appropriate number.")
         sys.exit()
