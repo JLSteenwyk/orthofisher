@@ -5,7 +5,7 @@ Install
 
 To ensure users are able to install orthofisher using a workflow they are familiar with, orthofisher
 is available for download from GitHub, PyPi, and the Anaconda cloud. However, before installing orthofisher,
-please first install `HMMER3 <http://hmmer.org/download.html>`_
+please first install `HMMER3 <http://hmmer.org/download.html>`_.
 
 1) Prerequisite
 ############
