@@ -20,6 +20,9 @@ jobs:
         # install deps for tests
         pip install pytest
         pip install pytest-cov
+    - name: Install HMMER
+      run: |
+        brew install hmmer
     - name: Run tests
       run: |
         make test.unit
@@ -41,6 +44,9 @@ jobs:
         # install test dependencies
         pip install pytest
         pip install pytest-cov
+    - name: Install HMMER
+      run: |
+        brew install hmmer
     - name: Generate coverage report
       run: |
         make test.coverage
