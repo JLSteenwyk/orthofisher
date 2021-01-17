@@ -10,13 +10,14 @@ from Bio import SearchIO, SeqIO
 import numpy as np
 from tqdm import tqdm
 
-from args_processing import process_args
-from parser import create_parser
-from helper import (
+from .args_processing import process_args
+from .parser import create_parser
+from .helper import (
     create_directories, read_input_files, 
     conduct_hmm_search, set_names,
     handle_single_copy_writing, handle_multi_copy_writing,
-    handle_absent_writing, handle_percent_present_summary
+    handle_absent_writing, handle_percent_present_summary,
+    check_hmmsearch_output
     )
 
 def execute(
@@ -60,6 +61,8 @@ def execute(
             conduct_hmm_search(hmmsearch_out, hmm[0], fasta[0], evalue)
 
             # identify single copy orthologs and write them to separate scog files
+            check_hmmsearch_output(hmmsearch_out)
+
             with open(hmmsearch_out, 'r') as hmmsearch_out:
                 have_written = 0
                 for qresult in SearchIO.parse(hmmsearch_out, 'hmmer3-tab'):

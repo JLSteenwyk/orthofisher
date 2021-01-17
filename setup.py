@@ -16,7 +16,7 @@ CLASSIFIERS = [
     'Topic :: Scientific/Engineering',
 ]
 
-REQUIRES = ["biopython==1.78", "numpy==1.19.5"]
+REQUIRES = ["biopython==1.78", "numpy==1.19.5", "tqdm==4.56.0"]
 
 setup(
     name="orthofisher",

@@ -7,7 +7,8 @@ test.unit:
 	python -m pytest -m "not integration"
 
 test.integration:
-	# test end-to-end function of mipypro
+	# test end-to-end function
+	rm -rf orthofisher_output/
 	python -m pytest --basetemp=output -m "integration"
 
 test:

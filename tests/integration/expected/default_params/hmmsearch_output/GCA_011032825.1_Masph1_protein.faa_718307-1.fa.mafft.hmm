@@ -1,0 +1,14 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+KAF2869753.1         -          718307-1.fa          -           1.1e-252  837.9   0.8  1.3e-252  837.7   0.8   1.0   1   0   0   1   1   1   1 S-adenosyl-L-homocysteine hydrolase-like protein [Massariosphaeria phaeospora]
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      tests/samples/718307-1.fa.mafft.hmm
+# Target file:     tests/samples/GCA_011032825.1_Masph1_protein.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/GCA_011032825.1_Masph1_protein.faa_718307-1.fa.mafft.hmm --noali --notextw -E 0.001 tests/samples/718307-1.fa.mafft.hmm tests/samples/GCA_011032825.1_Masph1_protein.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
+# Date:            Sun Jan 17 05:26:42 2021
+# [ok]

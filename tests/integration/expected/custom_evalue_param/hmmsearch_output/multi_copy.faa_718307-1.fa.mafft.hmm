@@ -1,0 +1,15 @@
+#                                                                      --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name               accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#       ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+Massariosphaeria_phaeospora -          718307-1.fa          -           1.6e-256  837.9   0.8  1.8e-256  837.7   0.8   1.0   1   0   0   1   1   1   1 KAF2869753.1|1.1e-252|837.9
+Didymella_exigua            -          718307-1.fa          -           1.1e-242  792.3   0.5  1.2e-242  792.2   0.5   1.0   1   0   0   1   1   1   1 XP_033451061.1|6.7e-239|792.3
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      ../data/718307-1.fa.mafft.hmm
+# Target file:     ../data/multi_copy.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/multi_copy.faa_718307-1.fa.mafft.hmm --noali --notextw -E 1e-25 ../data/718307-1.fa.mafft.hmm ../data/multi_copy.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/orthofisher
+# Date:            Sun Jan 17 06:19:40 2021
+# [ok]

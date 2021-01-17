@@ -3,6 +3,7 @@ import os.path
 import re
 import shutil
 import subprocess
+import sys
 
 def read_input_files(
     fasta_file_list: str,
@@ -52,6 +53,13 @@ def conduct_hmm_search(
             hmm, fasta
         ], stdout=subprocess.DEVNULL
     )
+
+def check_hmmsearch_output(
+    hmmsearch_out: str
+):
+    if not os.path.isfile(hmmsearch_out):
+        print("HMM search failed. Check e-value is an appropriate number.")
+        sys.exit()
 
 def set_names(
     hmm: str,

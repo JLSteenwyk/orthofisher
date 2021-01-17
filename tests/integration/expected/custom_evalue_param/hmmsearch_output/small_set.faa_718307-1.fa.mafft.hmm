@@ -1,0 +1,13 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      ../data/718307-1.fa.mafft.hmm
+# Target file:     ../data/small_set.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/small_set.faa_718307-1.fa.mafft.hmm --noali --notextw -E 1e-25 ../data/718307-1.fa.mafft.hmm ../data/small_set.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/orthofisher
+# Date:            Sun Jan 17 06:19:40 2021
+# [ok]

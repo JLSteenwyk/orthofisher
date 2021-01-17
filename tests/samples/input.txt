@@ -1,0 +1,4 @@
+tests/samples/GCF_010094145.1_Didex1_protein.faa	Didymella_exigua
+tests/samples/GCA_011032825.1_Masph1_protein.faa	Massariosphaeria_phaeospora
+tests/samples/small_set.faa	no_copy
+tests/samples/multi_copy.faa	multi_copy

@@ -1,0 +1,15 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+KAF2868776.1         -          1001705at2759        -              1e-68  231.3   7.3   6.1e-34  117.3   1.9   3.1   2   1   1   3   3   3   3 WD40-repeat-containing domain protein [Massariosphaeria phaeospora]
+KAF2871892.1         -          1001705at2759        -            1.6e-26   93.0  52.9   0.00059   19.0   1.2  11.2   1   1   5  10  10  10  10 WD40-repeat-containing domain protein [Massariosphaeria phaeospora]
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      tests/samples/1001705at2759.hmm
+# Target file:     tests/samples/GCA_011032825.1_Masph1_protein.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/GCA_011032825.1_Masph1_protein.faa_1001705at2759.hmm --noali --notextw -E 1e-25 tests/samples/1001705at2759.hmm tests/samples/GCA_011032825.1_Masph1_protein.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
+# Date:            Sun Jan 17 06:22:47 2021
+# [ok]
