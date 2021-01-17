@@ -11,5 +11,5 @@ Didymella_exigua            -          718307-1.fa          -           1.1e-242
 # Target file:     tests/samples/multi_copy.faa
 # Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/multi_copy.faa_718307-1.fa.mafft.hmm --noali --notextw -E 1e-25 tests/samples/718307-1.fa.mafft.hmm tests/samples/multi_copy.faa 
 # Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Sun Jan 17 08:07:59 2021
+# Date:            Sun Jan 17 08:15:07 2021
 # [ok]
