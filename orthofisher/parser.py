@@ -24,9 +24,13 @@ def create_parser():
 
         Citation: Steenwyk et al.
 
-        orthofisher
+        orthofisher conducts high-throughput automated sequence similarity searches across proteomes and
+        creates fasta files of all significant hits. 
+        
+        See full documentation including a tutorial usage at the online documentation:
+        https://jlsteenwyk.com/orthofisher
 
-        Usage: orthofisher <input> [optional arguments]
+        Usage: orthofisher -f <list_of_fasta_files.txt> -m <list_of_hmms.txt> [optional arguments]
         """
         ),
     )
@@ -41,9 +45,9 @@ def create_parser():
         "required arguments",
         description=textwrap.dedent(
             """\
-        -f <fasta file list>                        input file
+        -f, --fasta <fasta file list>                        input file
 
-        -m <hmms file list>                         second input file
+        -m, --hmm <hmms file list>                         second input file
         """
         ),
     )
@@ -61,7 +65,23 @@ def create_parser():
         "optional arguments",
         description=textwrap.dedent(
             """\
-        HELP MESSAGE
+        -e, --evalue <e-value threshold>                      e-value threshold used when conducting sequence similarity searches
+
+
+        -------------------------------------
+        | Detailed explanation of arguments | 
+        -------------------------------------
+        -f, --fasta
+            A two column file that points to the location of fasta files that will be searched using HMMs in the first column. 
+            Typically, these are protein fasta files from the entire genome/transcriptome of an organism. The second column of the
+            file specifies the identifier for the organism
+        
+        -m, --hmm
+            A single column file with the location of HMMs that you wish to identify or fish out of a given proteome.
+
+        -e, --evalue
+            Specify an e-value threshold to use when conducting sequence similarity searches (default: 0.001). Format can be 1e-3 or 0.001.
+
         """
         ),
     )
@@ -74,5 +94,10 @@ def create_parser():
         help=SUPPRESS,
         metavar="evalue threshold",
     )
+
+    optional.add_argument(
+        "-h", "--help", action="help", help=SUPPRESS,
+    )
+
 
     return parser

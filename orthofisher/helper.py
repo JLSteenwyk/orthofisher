@@ -166,7 +166,7 @@ def handle_percent_present_summary(
     ortholog_presence_absence_per = []
 
     for val in ortholog_presence_absence_stats:
-        ortholog_presence_absence_per.append(val/sum(ortholog_presence_absence_stats))
+        ortholog_presence_absence_per.append(round(val/sum(ortholog_presence_absence_stats), 2))
 
     ortholog_presence_absence_stats = [str(i) for i in ortholog_presence_absence_stats]
     ortholog_presence_absence_per = [str(i) for i in ortholog_presence_absence_per] 

@@ -8,10 +8,11 @@ import sys
 
 from Bio import SearchIO, SeqIO
 import numpy as np
+from tqdm import tqdm
 
-from .args_processing import process_args
-from .parser import create_parser
-from .helper import (
+from args_processing import process_args
+from parser import create_parser
+from helper import (
     create_directories, read_input_files, 
     conduct_hmm_search, set_names,
     handle_single_copy_writing, handle_multi_copy_writing,
@@ -36,7 +37,7 @@ def execute(
     exhausted = object()
 
     ## loop through fasta files
-    for fasta in fasta_file_list:
+    for fasta in tqdm(fasta_file_list):
         # ortholog presence absence stats will hold
         # idx0: # single-copy orthologs
         # idx1: # multi-copy orthologs
