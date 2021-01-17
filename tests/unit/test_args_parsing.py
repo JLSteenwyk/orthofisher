@@ -2,7 +2,7 @@ import pytest
 from argparse import Namespace
 
 from orthofisher.args_processing import process_args
-
+from orthofisher.parser import create_parser
 
 @pytest.fixture
 def args():
@@ -42,3 +42,12 @@ class TestArgsProcessing(object):
             "evalue",
         ]
         assert sorted(res.keys()) == sorted(expected_keys)
+
+class TestParser(object):
+    def test_create_parser(self, args):
+        parser = create_parser()
+        assert parser.add_help == False
+        assert parser.conflict_handler == 'error'
+        assert parser.prog == '__main__.py'
+
+        

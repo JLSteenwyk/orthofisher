@@ -25,7 +25,7 @@ jobs:
         brew install hmmer
     - name: Run tests
       run: |
-        make test.unit
+        make test.fast
   test-full:
     runs-on: macos-latest
     env:

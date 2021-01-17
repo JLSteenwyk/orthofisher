@@ -11,6 +11,12 @@ test.integration:
 	rm -rf orthofisher_output/
 	python -m pytest --basetemp=output -m "integration"
 
+test.fast:
+	python -m pytest -m "not (integration or slow)"
+	rm -rf output/
+	mkdir output/
+	python -m pytest --basetemp=output -m "integration and not slow"
+
 test:
 	## execute both integration and unit tests
 	# unit tests
