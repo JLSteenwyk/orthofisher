@@ -58,21 +58,49 @@ export PATH=$PATH:/home/steenwj/SOFTWARE/hmmer-3.1b2-linux-intel-x86_64/binaries
 
 **If you are having trouble installing orthofisher, please contact the lead developer, Jacob L. Steenwyk, via [email](https://jlsteenwyk.com/contact.html) or [twitter](https://twitter.com/jlsteenwyk) to get help.**
 
-To install from source, we strongly recommend using a virtual environment. To do so, use the following commands:
+To install via *anaconda*, execute the follwoing command:
+``` shell
+conda install -c jlsteenwyk orthofisher
+```
+Visit here for more information: https://anaconda.org/jlsteenwyk/clipkit
+
+<br/>
+
+To install via *pip*, execute the follwoing command:
+```shell
+pip install orthofisher
+```
+
+<br />
+
+To install from source, execute the follwoing command:
 ```shell
 # download
 git clone https://github.com/JLSteenwyk/orthofisher.git
+# change dir
 cd orthofisher/
+# install
+make install
+```
+
+<br/>
+
+If you run into software dependency issues, install orthofisher in a virtual environment. To do so, create your virtual environment with the following command: 
+```shell
 # create virtual environment
 python -m venv .venv
 # activate virtual environment
 source .venv/bin/activate
-# install
-make install
 ```
+
+Next, install the software using your preferred method above. Thereafter, you will be able to use orthofisher.
+
 To deactivate your virtual environment, use the following command:
 ```shell
 # deactivate virtual environment
 deactivate
 ```
 **Note, the virtual environment must be activated to use *orthofisher*.**
+
+
+
