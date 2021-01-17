@@ -1,49 +1,26 @@
-.. image:: ../_static/img/mipypro_logo_no_text.jpg
+.. image:: ../_static/img/orthofisher.png
    :width: 55%
    :align: center
-   :target: https://jlsteenwyk.com/mipypro
+   :target: https://jlsteenwyk.com/orthofisher
 
 ^^^^^
 
-Recent analyses indicate that ~28% of available computational tools fail to install due to
-implementation errors |Mangul|_. To address this issue, **Mi**\nimum **Py**\thon **P**\roject
-(MiPyP, pronounced 'my pipe') provides a scaffold for researchers to build long-lasting bioinformatic
-tools using a python code base. 
+Introduction
+------------
 
-Specifically, MiPyP comes complete with the foundation to build command line tools for the UNIX shell
-environment by providing a 'hello world' example, construct Sphinx-based documentation that can be linked
-to a researcher's GitHub page, and comes with instructions to upload the project to PyPi. 
+Automated and high-throughout identification of a predetermined set of orthologs can be a helpful task
+for phylogenomics/phylogenetics, gene family copy number determination, etc. 
 
+To facilitate these analyses, **orthofisher** conducts automated HMMsearches among a set of proteomes using
+a predetermined set of orthologs. Sequence similarity searches classify results as multi-copy, single-copy,
+or absent in a given genome. For the purposes of phylogenomics/phylogenetics, multi-fasta files are generated
+for all sequences as well as those that are single-copy; for gene family copy number determination, easily
+parsed output files contain absolute copy number of hits from the sequence similarity search.
 
-If you found MiPyPro useful, please cite *MiPyPro*. bioRxiv. doi: |doiLink|_.
+If you found **orthofisher** useful, please cite *orthofisher*. bioRxiv. doi: |doiLink|_.
 
 .. _Mangul: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000333
 .. |Mangul| replace:: (Mangul *et al.*, 2019) 
-
-
-Quick Start
------------
-**1) Installation**
-
-To install from source, we strongly recommend using a virtual environment. To do so, use the following commands:
-
-.. code-block:: shell
-	# download
-	git clone https://github.com/JLSteenwyk/mipypro.git
-	cd PhyKIT/
-	# create virtual environment
-	python -m venv .venv
-	# activate virtual environment
-	source .venv/bin/activate
-	# install
-	make install
-
-To deactivate your virtual environment, use the following command:
-
-.. code-block:: shell
-	# deactivate virtual environment
-	deactivate
-
 
 ^^^^
 
@@ -51,7 +28,9 @@ To deactivate your virtual environment, use the following command:
 	:maxdepth: 4
 
 	about/index
+	install/index
 	tutorial/index
+	faq/index
 
 ^^^^
 

@@ -1,18 +1,10 @@
-.. image:: ../_static/img/mipypro_logo_no_text.jpg
-   :width: 55%
-   :align: center
-   :target: https://jlsteenwyk.com/mipypro
-
-
 About
 =====
 
 ^^^^^
 
-**Minimum Python Project (**MiPyPro**) was developed as part of `Jacob L. Steenwyk
-<https://jlsteenwyk.github.io/>`_'s graduate thesis work. 
-
-ABOUT  
+**orthofisher** extracts and determines the copy number of a predetermined set of orthologs, which
+can be used for the identification of single copy orthologous genes or estimation of gene family copy number.
 
 |
 
@@ -21,11 +13,12 @@ The Developers
 
 ^^^^^
 
-MyPyPro is developed and maintained by `Jacob L. Steenwyk <https://jlsteenwyk.github.io/>`_.
+orthofisher is developed and maintained by `Jacob L. Steenwyk <https://jlsteenwyk.github.io/>`_.
 
 |
 
 |JLSteenwyk|
+
 |GoogleScholarSteenwyk| |GitHubSteenwyk| |TwitterSteenwyk| 
 
 `Jacob L. Steenwyk <https://jlsteenwyk.github.io/>`_ is a Howard Hughes Medical Institute
