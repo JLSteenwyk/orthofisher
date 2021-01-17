@@ -22,7 +22,7 @@ sys.path.append(os.path.abspath("./_ext"))
 
 # -- Project information -----------------------------------------------------
 
-project = "mipypro"
+project = "orthofisher"
 copyright = "2020 Jacob L. Steenwyk"
 author = "Jacob L. Steenwyk <jlsteenwyk@gmail.com>"
 
@@ -118,7 +118,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "mipyprodoc"
+htmlhelp_basename = "orthofisher"
 
 
 # -- Options for LaTeX output ------------------------------------------------

@@ -1,9 +1,9 @@
 install:
-	# install mipypro
+	# install
 	python setup.py install
 
 test.unit:
-	# test units of mipypro
+	# test units
 	python -m pytest -m "not integration"
 
 test.integration:
