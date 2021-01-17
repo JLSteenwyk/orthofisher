@@ -5,8 +5,6 @@
 
 ^^^^^
 
-ORTHOFISHER IS STILL IN DEVELOPMENT. DO NOT USE!!
-
 Introduction
 ------------
 
