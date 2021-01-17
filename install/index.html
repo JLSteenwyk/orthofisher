@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisite">1) Prerequisite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a-github">2a) GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-orthofisher">2) Install orthofisher</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
@@ -163,9 +163,6 @@
   <div class="section" id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
-<p>To ensure users are able to install orthofisher using a workflow they are familiar with, orthofisher
-is available for download from GitHub, PyPi, and the Anaconda cloud. However, before installing orthofisher,
-please first install <a class="reference external" href="http://hmmer.org/download.html">HMMER3</a>.</p>
 <div class="section" id="prerequisite">
 <h2>1) Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
 <p>Before installing orthofisher, please first install <a class="reference external" href="http://hmmer.org/download.html">HMMER3</a> and
@@ -177,20 +174,56 @@ add the HMMER to your <em>.bashrc</em> path. For example, my <em>.bashrc</em> ha
 <div class="line"><br /></div>
 </div>
 </div>
-<div class="section" id="a-github">
-<h2>2a) GitHub<a class="headerlink" href="#a-github" title="Permalink to this headline">¶</a></h2>
-<p>To install <em>orthofisher</em>, execute the following commands:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/JLSteenwyk/orthofisher.git
-$ <span class="nb">cd</span> orthofisher
-$ make install
-</pre></div>
-</div>
-<p>If you run into permission errors when executing make install, create a virtual environment for your installation:</p>
-<p>Note, the virtual environment must be activated to use clipkit.</p>
+<div class="section" id="install-orthofisher">
+<h2>2) Install orthofisher<a class="headerlink" href="#install-orthofisher" title="Permalink to this headline">¶</a></h2>
+<p>If you are having trouble installing orthofisher, please contact the lead developer, Jacob L.
+Steenwyk, via <a class="reference external" href="https://jlsteenwyk.com/contact.html">email</a> or <a class="reference external" href="https://twitter.com/jlsteenwyk">twitter</a>
+to get help.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><em>Coming soon</em>: Installion via PyPi and conda.</p>
+<p>To install via <em>anaconda</em>, execute the follwoing command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install -c jlsteenwyk orthofisher
+</pre></div>
+</div>
+<p>Visit here for more information: <a class="reference external" href="https://anaconda.org/jlsteenwyk/clipkit">https://anaconda.org/jlsteenwyk/clipkit</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>To install via <em>pip</em>, execute the follwoing command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install orthofisher
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>To install from source, execute the follwoing command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># download</span>
+git clone https://github.com/JLSteenwyk/orthofisher.git
+<span class="c1"># change dir</span>
+<span class="nb">cd</span> orthofisher/
+<span class="c1"># install</span>
+make install
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>If you run into software dependency issues, install orthofisher in a virtual environment.
+To do so, create your virtual environment with the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># create virtual environment</span>
+python -m venv .venv
+<span class="c1"># activate virtual environment</span>
+<span class="nb">source</span> .venv/bin/activate
+</pre></div>
+</div>
+<p>Next, install the software using your preferred method above. Thereafter, you will be able to use orthofisher.</p>
+<p>To deactivate your virtual environment, use the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># deactivate virtual environment</span>
+deactivate
+</pre></div>
+</div>
+<p><strong>Note, if you install via a virtual environment, the environment must be activated to use orthofisher.</strong></p>
 </div>
 </div>
 

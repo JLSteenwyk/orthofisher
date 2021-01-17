@@ -3,10 +3,6 @@ Install
 
 ^^^^^
 
-To ensure users are able to install orthofisher using a workflow they are familiar with, orthofisher
-is available for download from GitHub, PyPi, and the Anaconda cloud. However, before installing orthofisher,
-please first install `HMMER3 <http://hmmer.org/download.html>`_.
-
 1) Prerequisite
 ############
 
@@ -20,28 +16,66 @@ add the HMMER to your *.bashrc* path. For example, my *.bashrc* has the followin
 
 |
 
-2a) GitHub
+2) Install orthofisher
 ######
 
-To install *orthofisher*, execute the following commands:
-
-.. code-block:: shell
-
-   $ git clone https://github.com/JLSteenwyk/orthofisher.git
-   $ cd orthofisher
-   $ make install
-
-If you run into permission errors when executing make install, create a virtual environment for your installation:
-
-.. code-block:: shell
-   $ git clone https://github.com/JLSteenwyk/orthofisher.git
-   $ cd orthofisher/
-   $ python -m venv .venv
-   $ source .venv/bin/activate
-   $ make install
-
-Note, the virtual environment must be activated to use clipkit.
+If you are having trouble installing orthofisher, please contact the lead developer, Jacob L. 
+Steenwyk, via `email <https://jlsteenwyk.com/contact.html>`_ or `twitter <https://twitter.com/jlsteenwyk>`_
+to get help.
 
 |
 
-*Coming soon*: Installion via PyPi and conda.
+To install via *anaconda*, execute the follwoing command:
+
+.. code-block:: shell
+
+   conda install -c jlsteenwyk orthofisher
+
+Visit here for more information: https://anaconda.org/jlsteenwyk/clipkit
+
+|
+
+To install via *pip*, execute the follwoing command:
+
+.. code-block:: shell
+
+   pip install orthofisher
+
+
+|
+
+To install from source, execute the follwoing command:
+
+.. code-block:: shell
+
+   # download
+   git clone https://github.com/JLSteenwyk/orthofisher.git
+   # change dir
+   cd orthofisher/
+   # install
+   make install
+
+
+|
+
+If you run into software dependency issues, install orthofisher in a virtual environment.
+To do so, create your virtual environment with the following command: 
+
+.. code-block:: shell
+
+   # create virtual environment
+   python -m venv .venv
+   # activate virtual environment
+   source .venv/bin/activate
+
+
+Next, install the software using your preferred method above. Thereafter, you will be able to use orthofisher.
+
+To deactivate your virtual environment, use the following command:
+
+.. code-block:: shell
+
+   # deactivate virtual environment
+   deactivate
+
+**Note, if you install via a virtual environment, the environment must be activated to use orthofisher.**
