@@ -41,12 +41,12 @@ copy number determination and more!
 
 ## Quick Start
 
-To ensure users are able to install orthofisher using a workflow they are familiar with, orthofisher is available for download from GitHub, PyPi, and the Anaconda cloud. However, before installing orthofisher, please first install [HMMER3](http://hmmer.org/documentation.html).
+For detailed instructions on usage and a tutorial, please see the [online documentation](https://jlsteenwyk.com/orthofisher/).
 
 <br/>
 
 ### 1) Prerequisite
-Before installing orthofisher, please first install HMMER3 and add the HMMER to your .bashrc path. For example, my .bashrc has the following:
+Before installing orthofisher, please first install [HMMER3](http://hmmer.org/documentation.html) and add the HMMER to your .bashrc path. For example, my .bashrc has the following:
 
 ```shell
 export PATH=$PATH:/home/steenwj/SOFTWARE/hmmer-3.1b2-linux-intel-x86_64/binaries
@@ -57,6 +57,8 @@ export PATH=$PATH:/home/steenwj/SOFTWARE/hmmer-3.1b2-linux-intel-x86_64/binaries
 ### 2) Install orthofisher
 
 **If you are having trouble installing orthofisher, please contact the lead developer, Jacob L. Steenwyk, via [email](https://jlsteenwyk.com/contact.html) or [twitter](https://twitter.com/jlsteenwyk) to get help.**
+
+<br/>
 
 To install via *anaconda*, execute the follwoing command:
 ``` shell
