@@ -1,2 +1,13 @@
+attrs==20.3.0
 biopython==1.78
+iniconfig==1.1.1
+mock==4.0.3
 numpy==1.19.5
+orthofisher==0.0.0
+packaging==20.8
+pluggy==0.13.1
+py==1.10.0
+pyparsing==2.4.7
+pytest==6.2.1
+toml==0.10.2
+tqdm==4.56.0
