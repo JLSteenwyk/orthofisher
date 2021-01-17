@@ -3,7 +3,6 @@ biopython==1.78
 iniconfig==1.1.1
 mock==4.0.3
 numpy==1.19.5
-orthofisher==0.0.0
 packaging==20.8
 pluggy==0.13.1
 py==1.10.0

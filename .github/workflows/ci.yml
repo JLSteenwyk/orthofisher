@@ -36,7 +36,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        # make clipkit CLI available for tests 
+        # make CLI available for tests 
         make install
         # install test dependencies
         pip install pytest
