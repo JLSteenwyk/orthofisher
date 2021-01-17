@@ -1,4 +1,4 @@
-.. image:: ../_static/img/orthofisher.jpg
+.. image:: /_static/img/orthofisher.jpg
    :width: 55%
    :align: center
    :target: https://jlsteenwyk.com/orthofisher
