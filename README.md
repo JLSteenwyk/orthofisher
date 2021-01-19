@@ -32,8 +32,22 @@
     </p>
 </p>
 
-Orthofisher conducts automated and high-throughout identification of a predetermined set of orthologs, which can be used for phylgenomics, gene family 
-copy number determination and more!
+<br />
+
+Orthofisher conducts automated and high-throughout identification of a predetermined set of orthologs, which can be used for phylgenomics, gene family copy number determination and more!
+
+<br />
+
+---
+
+<br />
+
+## Guide
+[Quick Start](#quick-start)<br />
+[Performance Assessment](#performance-assessment)<br />
+[FAQ](#faq)
+
+<br />
 
 ---
 
@@ -104,5 +118,34 @@ deactivate
 ```
 **Note, the virtual environment must be activated to use *orthofisher*.**
 
+<br />
 
+---
+
+<br />
+
+## Performance Assessment
+Using 291,604 sequence similarity searches across 1,294 eukaryotic proteomes, the performance of orthofisher was compared to results obtained from BUSCO. Examination of precision, recall, and F-measure revealed the efficacy of orthofisher's approach. More specifically, orthofisher had a <strong>recall of 1.0, precision of 0.978195, and an F-measure of 0.988977</strong>. Precision is less than 1.0 because priors of expected sequence length and sequence similarity scores--which are not implemented in orthofisher--resulted in more missing genes in the BUSCO pipeline than the orthofisher pipeline.
+
+<br />
+
+---
+
+<br />
+
+## FAQ
+
+<br />
+
+<strong>I am having trouble installing orthofisher, what should I do?</strong>
+
+Please install orthofisher using a virtual environment as described in the installation instructions. If you are still running into issues after installing in a virtual environment, please contact Jacob L. Steenwyk via [email](https://jlsteenwyk.com/contact.html) or [twitter](https://twitter.com/jlsteenwyk).
+
+<br />
+
+---
+
+<br />
+
+### orthofisher is developed and maintained by [Jacob Steenwyk](https://jlsteenwyk.github.io/)
 
