@@ -36,8 +36,6 @@
 
 Orthofisher conducts automated and high-throughout identification of a predetermined set of orthologs, which can be used for phylgenomics, gene family copy number determination and more!
 
-<br />
-
 ---
 
 <br />
