@@ -1,17 +1,28 @@
 About
 =====
 
-^^^^^
-
 **orthofisher** extracts and determines the copy number of a predetermined set of orthologs, which
 can be used for the identification of single copy orthologous genes or estimation of gene family copy number.
 
 |
 
-The Developers
---------------
+^^^^^
+
+Performance Assessment
+----------------------
+Using 291,604 sequence similarity searches across 1,294 eukaryotic proteomes, the performance of orthofisher
+was compared to results obtained from BUSCO. Examination of precision, recall, and F-measure revealed the efficacy
+of orthofisher's approach. More specifically, orthofisher had a <strong>recall of 1.0, precision of 0.978195, and
+an F-measure of 0.988977</strong>. Precision is less than 1.0 because priors of expected sequence length and 
+sequence similarity scores--which are not implemented in orthofisher--resulted in more missing genes in the BUSCO
+pipeline than the orthofisher pipeline.
+
+|
 
 ^^^^^
+
+The Developers
+--------------
 
 orthofisher is developed and maintained by `Jacob L. Steenwyk <https://jlsteenwyk.github.io/>`_.
 
