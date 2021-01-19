@@ -90,6 +90,7 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#performance-assessment">Performance Assessment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-developers">The Developers</a></li>
 </ul>
 </li>
@@ -161,15 +162,27 @@
             
   <div class="section" id="about">
 <h1>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
-<hr class="docutils" />
 <p><strong>orthofisher</strong> extracts and determines the copy number of a predetermined set of orthologs, which
 can be used for the identification of single copy orthologous genes or estimation of gene family copy number.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<hr class="docutils" />
+<div class="section" id="performance-assessment">
+<h2>Performance Assessment<a class="headerlink" href="#performance-assessment" title="Permalink to this headline">¶</a></h2>
+<p>Using 291,604 sequence similarity searches across 1,294 eukaryotic proteomes, the performance of orthofisher
+was compared to results obtained from BUSCO. Examination of precision, recall, and F-measure revealed the efficacy
+of orthofisher’s approach. More specifically, orthofisher had a &lt;strong&gt;recall of 1.0, precision of 0.978195, and
+an F-measure of 0.988977&lt;/strong&gt;. Precision is less than 1.0 because priors of expected sequence length and
+sequence similarity scores–which are not implemented in orthofisher–resulted in more missing genes in the BUSCO
+pipeline than the orthofisher pipeline.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="the-developers">
 <h2>The Developers<a class="headerlink" href="#the-developers" title="Permalink to this headline">¶</a></h2>
-<hr class="docutils" />
 <p>orthofisher is developed and maintained by <a class="reference external" href="https://jlsteenwyk.github.io/">Jacob L. Steenwyk</a>.</p>
 <div class="line-block">
 <div class="line"><br /></div>
