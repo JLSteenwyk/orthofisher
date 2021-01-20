@@ -45,9 +45,11 @@ def create_parser():
         "required arguments",
         description=textwrap.dedent(
             """\
-        -f, --fasta <fasta file list>                        input file
+        -f, --fasta <fasta file list> 
+            input file
 
-        -m, --hmm <hmms file list>                         second input file
+        -m, --hmm <hmms file list>
+            second input file
         """
         ),
     )
@@ -65,23 +67,21 @@ def create_parser():
         "optional arguments",
         description=textwrap.dedent(
             """\
-        -e, --evalue <e-value threshold>                      e-value threshold used when conducting sequence similarity searches
+        -e, --evalue <e-value threshold>
+            e-value threshold used when conducting sequence similarity searches
 
 
         -------------------------------------
         | Detailed explanation of arguments | 
         -------------------------------------
         -f, --fasta
-            A two column file that points to the location of fasta files that will be searched using HMMs in the first column. 
-            Typically, these are protein fasta files from the entire genome/transcriptome of an organism. The second column of the
-            file specifies the identifier for the organism
+            A two column file that points to the location of fasta files that will be searched using HMMs in the first column. Typically, these are protein fasta files from the entire genome/transcriptome of an organism. The second column of the file specifies the identifier for the organism
         
         -m, --hmm
             A single column file with the location of HMMs that you wish to identify or fish out of a given proteome.
 
         -e, --evalue
             Specify an e-value threshold to use when conducting sequence similarity searches (default: 0.001). Format can be 1e-3 or 0.001.
-
         """
         ),
     )

@@ -9,5 +9,5 @@
 # Target file:     tests/samples/multi_copy.faa
 # Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/multi_copy.faa_1001705at2759.hmm --noali --notextw -E 1e-25 tests/samples/1001705at2759.hmm tests/samples/multi_copy.faa 
 # Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Wed Jan 20 06:21:29 2021
+# Date:            Wed Jan 20 06:35:14 2021
 # [ok]

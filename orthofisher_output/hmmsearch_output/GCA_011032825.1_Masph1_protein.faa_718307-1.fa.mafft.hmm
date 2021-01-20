@@ -10,5 +10,5 @@ KAF2869753.1         -          718307-1.fa          -           1.1e-252  837.9
 # Target file:     tests/samples/GCA_011032825.1_Masph1_protein.faa
 # Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/GCA_011032825.1_Masph1_protein.faa_718307-1.fa.mafft.hmm --noali --notextw -E 1e-25 tests/samples/718307-1.fa.mafft.hmm tests/samples/GCA_011032825.1_Masph1_protein.faa 
 # Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Wed Jan 20 06:21:29 2021
+# Date:            Wed Jan 20 06:35:13 2021
 # [ok]
