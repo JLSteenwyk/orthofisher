@@ -112,7 +112,7 @@ def handle_single_copy_writing(
 
     # write to long log file
     with open(long_summary_name, 'a') as f:
-        f.write('\t'.join([fasta_name, hmm_name, 'single_copy', str(1), hits[0]._id]) + '\n')
+        f.write('\t'.join([fasta_name, hmm_name, 'single-copy', str(1), hits[0]._id]) + '\n')
 
 def handle_multi_copy_writing(
     fasta: str,
