@@ -188,9 +188,9 @@ the following link:</p>
 <div class="section" id="run-orthofisher">
 <h2>2. Run orthofisher<a class="headerlink" href="#run-orthofisher" title="Permalink to this headline">¶</a></h2>
 <p>Two arguments are required when using orthofisher.</p>
-<p>The first arument, -f/–fasta, points to a two column file that points to the location
-of fasta files that will be searched using HMMs. Typically, these are protein fasta
-files from the entire genome/transcriptome of an organism. Additionally, the second
+<p>The first arument, -f/–fasta, points to a two column tab delimited file that specifies
+the location of fasta files that will be searched using HMMs. Typically, these are protein
+fasta files from the entire genome/transcriptome of an organism. Additionally, the second
 column of the file specifies the identifier for the organism. This will be used when
 representing sequences from a given proteome in a multi-fasta file. In this tutorial,
 this is file <strong>fasta_arg.txt</strong>.</p>
@@ -217,10 +217,10 @@ Each subdirectory therein contains desirable output, which is briefly desired as
 <p>1. long_summary.txt: Hits identified during sequence similarity search per fasta file per HMM.
 HMMs are considered single-copy, multi-copy, or absent in a given fasta file.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ cat orthofisher_output/long_summary.txt
-GCF_010094145.1_Didex1_protein.faa      <span class="m">718307</span>-1.fa.mafft.hmm single_copy      <span class="m">1</span>       XP_033451061.1
-GCF_010094145.1_Didex1_protein.faa      1001705at2759.hmm     single_copy      <span class="m">1</span>       XP_033445010.1
-GCA_011032825.1_Masph1_protein.faa      <span class="m">718307</span>-1.fa.mafft.hmm single_copy      <span class="m">1</span>       KAF2869753.1
-GCA_011032825.1_Masph1_protein.faa      1001705at2759.hmm     single_copy      <span class="m">1</span>       KAF2868776.1
+GCF_010094145.1_Didex1_protein.faa      <span class="m">718307</span>-1.fa.mafft.hmm single-copy      <span class="m">1</span>       XP_033451061.1
+GCF_010094145.1_Didex1_protein.faa      1001705at2759.hmm     single-copy      <span class="m">1</span>       XP_033445010.1
+GCA_011032825.1_Masph1_protein.faa      <span class="m">718307</span>-1.fa.mafft.hmm single-copy      <span class="m">1</span>       KAF2869753.1
+GCA_011032825.1_Masph1_protein.faa      1001705at2759.hmm     single-copy      <span class="m">1</span>       KAF2868776.1
 no_copy.faa     <span class="m">718307</span>-1.fa.mafft.hmm   absent  <span class="m">0</span>       NA
 no_copy.faa     1001705at2759.hmm       absent  <span class="m">0</span>       NA
 multi_copy.faa  <span class="m">718307</span>-1.fa.mafft.hmm   multi-copy      <span class="m">2</span>     Massariosphaeria_phaeospora
