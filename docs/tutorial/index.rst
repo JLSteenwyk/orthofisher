@@ -70,10 +70,10 @@ HMMs are considered single-copy, multi-copy, or absent in a given fasta file.
 .. code-block:: shell
 
    $ cat orthofisher_output/long_summary.txt
-   GCF_010094145.1_Didex1_protein.faa      718307-1.fa.mafft.hmm single_copy      1       XP_033451061.1
-   GCF_010094145.1_Didex1_protein.faa      1001705at2759.hmm     single_copy      1       XP_033445010.1
-   GCA_011032825.1_Masph1_protein.faa      718307-1.fa.mafft.hmm single_copy      1       KAF2869753.1
-   GCA_011032825.1_Masph1_protein.faa      1001705at2759.hmm     single_copy      1       KAF2868776.1
+   GCF_010094145.1_Didex1_protein.faa      718307-1.fa.mafft.hmm single-copy      1       XP_033451061.1
+   GCF_010094145.1_Didex1_protein.faa      1001705at2759.hmm     single-copy      1       XP_033445010.1
+   GCA_011032825.1_Masph1_protein.faa      718307-1.fa.mafft.hmm single-copy      1       KAF2869753.1
+   GCA_011032825.1_Masph1_protein.faa      1001705at2759.hmm     single-copy      1       KAF2868776.1
    no_copy.faa     718307-1.fa.mafft.hmm   absent  0       NA
    no_copy.faa     1001705at2759.hmm       absent  0       NA
    multi_copy.faa  718307-1.fa.mafft.hmm   multi-copy      2     Massariosphaeria_phaeospora
