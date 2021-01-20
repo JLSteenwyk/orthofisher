@@ -34,9 +34,9 @@ Next, unzip the downloaded directory and change directory to the newly downloade
 
 Two arguments are required when using orthofisher. 
 
-The first arument, -f/--fasta, points to a two column file that points to the location 
-of fasta files that will be searched using HMMs. Typically, these are protein fasta
-files from the entire genome/transcriptome of an organism. Additionally, the second
+The first arument, -f/--fasta, points to a two column tab delimited file that specifies
+the location of fasta files that will be searched using HMMs. Typically, these are protein
+fasta files from the entire genome/transcriptome of an organism. Additionally, the second
 column of the file specifies the identifier for the organism. This will be used when
 representing sequences from a given proteome in a multi-fasta file. In this tutorial,
 this is file **fasta_arg.txt**.
