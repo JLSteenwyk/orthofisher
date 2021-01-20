@@ -16,7 +16,7 @@ CLASSIFIERS = [
     'Topic :: Scientific/Engineering',
 ]
 
-REQUIRES = ["biopython==1.78", "tqdm==4.56.0"]
+REQUIRES = ["biopython==1.78", "numpy-1.19.5", "tqdm==4.56.0"]
 
 setup(
     name="orthofisher",
@@ -29,7 +29,7 @@ setup(
     packages=["orthofisher"],
     classifiers=CLASSIFIERS,
     entry_points={"console_scripts": ["orthofisher = orthofisher.orthofisher:main"]},
-    version="0.0.5",
+    version="0.0.6",
     include_package_data=True,
     install_requires=REQUIRES,
 )

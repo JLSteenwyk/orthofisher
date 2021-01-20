@@ -10,5 +10,5 @@ XP_033445010.1       -          1001705at2759        -            4.8e-69  232.3
 # Target file:     tests/samples/GCF_010094145.1_Didex1_protein.faa
 # Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/GCF_010094145.1_Didex1_protein.faa_1001705at2759.hmm --noali --notextw -E 1e-25 tests/samples/1001705at2759.hmm tests/samples/GCF_010094145.1_Didex1_protein.faa 
 # Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Wed Jan 20 05:44:37 2021
+# Date:            Wed Jan 20 06:21:29 2021
 # [ok]

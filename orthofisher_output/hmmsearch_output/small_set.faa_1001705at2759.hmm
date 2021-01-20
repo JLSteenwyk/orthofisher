@@ -9,5 +9,5 @@
 # Target file:     tests/samples/small_set.faa
 # Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/small_set.faa_1001705at2759.hmm --noali --notextw -E 1e-25 tests/samples/1001705at2759.hmm tests/samples/small_set.faa 
 # Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Wed Jan 20 05:44:37 2021
+# Date:            Wed Jan 20 06:21:29 2021
 # [ok]
