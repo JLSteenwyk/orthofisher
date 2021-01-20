@@ -75,7 +75,7 @@ def create_parser():
         | Detailed explanation of arguments | 
         -------------------------------------
         -f, --fasta
-            A two column file that points to the location of fasta files that will be searched using HMMs in the first column. Typically, these are protein fasta files from the entire genome/transcriptome of an organism. The second column of the file specifies the identifier for the organism
+            A two column tab delimited file that points to the location of fasta files that will be searched using HMMs in the first column. Typically, these are protein fasta files from the entire genome/transcriptome of an organism. The second column of the file specifies the identifier for the organism
         
         -m, --hmm
             A single column file with the location of HMMs that you wish to identify or fish out of a given proteome.
