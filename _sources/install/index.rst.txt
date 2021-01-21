@@ -19,8 +19,8 @@ add HMMER to your *.bashrc* path. For example, my *.bashrc* has the following:
 2) Install orthofisher
 ######
 
-If you are having trouble installing orthofisher, please contact the lead developer, Jacob L. 
-Steenwyk, via `email <https://jlsteenwyk.com/contact.html>`_ or `twitter <https://twitter.com/jlsteenwyk>`_
+If you are having trouble installing orthofisher, please contact the lead developer, `Jacob L. 
+Steenwyk <https://jlsteenwyk.com>`_ , via `email <https://jlsteenwyk.com/contact.html>`_ or `twitter <https://twitter.com/jlsteenwyk>`_
 to get help.
 
 |
