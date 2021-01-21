@@ -29,7 +29,7 @@ setup(
     packages=["orthofisher"],
     classifiers=CLASSIFIERS,
     entry_points={"console_scripts": ["orthofisher = orthofisher.orthofisher:main"]},
-    version="0.0.7",
+    version="0.0.8",
     include_package_data=True,
     install_requires=REQUIRES,
 )
