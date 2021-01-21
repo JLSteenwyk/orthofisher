@@ -76,7 +76,7 @@ To install via *anaconda*, execute the follwoing command:
 ``` shell
 conda install -c jlsteenwyk orthofisher
 ```
-Visit here for more information: https://anaconda.org/jlsteenwyk/clipkit
+Visit here for more information: https://anaconda.org/jlsteenwyk/orthofisher
 
 <br/>
 
