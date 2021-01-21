@@ -5,9 +5,9 @@
 # Program:         hmmsearch
 # Version:         3.3.1 (Jul 2020)
 # Pipeline mode:   SEARCH
-# Query file:      tests/samples/1001705at2759.hmm
-# Target file:     tests/samples/multi_copy.faa
-# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/multi_copy.faa_1001705at2759.hmm --noali --notextw -E 0.001 tests/samples/1001705at2759.hmm tests/samples/multi_copy.faa 
-# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Thu Jan 21 06:27:15 2021
+# Query file:      ../data/1001705at2759.hmm
+# Target file:     ../data/small_set.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/small_set.faa_1001705at2759.hmm --noali --notextw -E 0.001 ../data/1001705at2759.hmm ../data/small_set.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/orthofisher
+# Date:            Thu Jan 21 06:16:30 2021
 # [ok]

@@ -67,9 +67,9 @@ XP_033449991.1       -          1001705at2759        -            0.00097   18.1
 # Program:         hmmsearch
 # Version:         3.3.1 (Jul 2020)
 # Pipeline mode:   SEARCH
-# Query file:      tests/samples/1001705at2759.hmm
-# Target file:     tests/samples/GCF_010094145.1_Didex1_protein.faa
-# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/GCF_010094145.1_Didex1_protein.faa_1001705at2759.hmm --noali --notextw -E 0.001 tests/samples/1001705at2759.hmm tests/samples/GCF_010094145.1_Didex1_protein.faa 
-# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Thu Jan 21 06:27:14 2021
+# Query file:      ../data/1001705at2759.hmm
+# Target file:     ../data/GCF_010094145.1_Didex1_protein.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/GCF_010094145.1_Didex1_protein.faa_1001705at2759.hmm --noali --notextw -E 0.001 ../data/1001705at2759.hmm ../data/GCF_010094145.1_Didex1_protein.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/orthofisher
+# Date:            Thu Jan 21 06:16:30 2021
 # [ok]

@@ -7,9 +7,9 @@ Didymella_exigua            -          718307-1.fa          -           1.1e-242
 # Program:         hmmsearch
 # Version:         3.3.1 (Jul 2020)
 # Pipeline mode:   SEARCH
-# Query file:      tests/samples/718307-1.fa.mafft.hmm
-# Target file:     tests/samples/multi_copy.faa
-# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/multi_copy.faa_718307-1.fa.mafft.hmm --noali --notextw -E 0.001 tests/samples/718307-1.fa.mafft.hmm tests/samples/multi_copy.faa 
-# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Thu Jan 21 06:27:15 2021
+# Query file:      ../data/718307-1.fa.mafft.hmm
+# Target file:     ../data/multi_copy.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/multi_copy.faa_718307-1.fa.mafft.hmm --noali --notextw -E 0.001 ../data/718307-1.fa.mafft.hmm ../data/multi_copy.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/orthofisher
+# Date:            Thu Jan 21 06:16:30 2021
 # [ok]

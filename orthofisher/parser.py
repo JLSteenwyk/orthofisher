@@ -70,6 +70,9 @@ def create_parser():
         -e, --evalue <e-value threshold>
             e-value threshold used when conducting sequence similarity searches
 
+        -b, --bitscore <fraction bitscore threshold>
+            fraction of a bitscore to be considered similar to top hit
+
 
         -------------------------------------
         | Detailed explanation of arguments | 
@@ -82,6 +85,9 @@ def create_parser():
 
         -e, --evalue
             Specify an e-value threshold to use when conducting sequence similarity searches (default: 0.001). Format can be 1e-3 or 0.001.
+
+        -b, --bitscore
+            A fraction threshold to specify the bitscore threshold for sequences to be considered similar. More specifically, if a hit has a bitscore less than the specified fraction, the gene will not be considered sufficiently similar to be considered putatively orthologous. Value must range from 0 to 1 (default: 0.85).
         """
         ),
     )
@@ -93,6 +99,15 @@ def create_parser():
         required=False,
         help=SUPPRESS,
         metavar="evalue threshold",
+    )
+
+    optional.add_argument(
+        "-b",
+        "--bitscore",
+        type=float,
+        required=False,
+        help=SUPPRESS,
+        metavar="bitscore threshold",
     )
 
     optional.add_argument(

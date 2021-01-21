@@ -23,7 +23,8 @@ from .helper import (
 def execute(
     fasta_file_list: str,
     hmms_file_list: str,
-    evalue: float
+    evalue,
+    percent_bitscore: float
 ):
 
     # read input files
@@ -70,10 +71,10 @@ def execute(
                     top_score = matches[0].bitscore
                     hits = []
 
-                    # remove genes with bitscores less than 85% of the bitscore
-                    # value as the top hit in the hmmsearch
+                    # remove genes with bitscores less than specified value (-b arg)
+                    # of the bitscore value as the top hit in the hmmsearch
                     for hit in matches:
-                        if hit.bitscore >= (0.85*top_score):
+                        if hit.bitscore >= (percent_bitscore*top_score):
                             hits.append(hit)
                     
                     num_hits = len(hits)
