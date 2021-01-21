@@ -7,7 +7,7 @@ Install
 ############
 
 Before installing orthofisher, please first install `HMMER3 <http://hmmer.org/download.html>`_ and 
-add the HMMER to your *.bashrc* path. For example, my *.bashrc* has the following:
+add HMMER to your *.bashrc* path. For example, my *.bashrc* has the following:
 
 .. code-block:: shell
 
