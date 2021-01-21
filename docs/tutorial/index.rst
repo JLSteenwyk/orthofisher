@@ -9,7 +9,7 @@ easy-to-implement workflow needed for using orthofisher.
 
 ^^^^^
 
-1. Download the test data
+1) Download the test data
 #########################
 
 For ease of use, this tutorial will rely on a small dataset, which can be downloaded using
@@ -29,7 +29,7 @@ Next, unzip the downloaded directory and change directory to the newly downloade
 
 ^^^^^
 
-2. Run orthofisher
+2) Run orthofisher
 ##################
 
 Two arguments are required when using orthofisher. 
@@ -52,7 +52,7 @@ identify or *fish out* of a given proteome. In this tutorial, this is file **hmm
 
 ^^^^^
 
-3. Examine output
+3) Examine output
 #################
 
 In the current working directory, a subdirectory will be made titled *orthofisher_output*.
