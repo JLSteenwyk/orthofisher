@@ -25,6 +25,7 @@ If you found **orthofisher** useful, please cite this website.
 	:maxdepth: 4
 
 	about/index
+	arguments/index
 	install/index
 	tutorial/index
 	faq/index

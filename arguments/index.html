@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>About &mdash; orthofisher  documentation</title>
+  <title>Arguments &mdash; orthofisher  documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Arguments" href="../arguments/index.html" />
-    <link rel="prev" title="Introduction" href="../index.html" /> 
+    <link rel="next" title="Install" href="../install/index.html" />
+    <link rel="prev" title="About" href="../about/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,12 +89,12 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#performance-assessment">Performance Assessment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-developers">The Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Arguments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#required">Required</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional">Optional</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../arguments/index.html">Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
@@ -144,7 +144,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>About</li>
+      <li>Arguments</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,42 +161,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="about">
-<h1>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
-<p><strong>orthofisher</strong> extracts and determines the copy number of a predetermined set of orthologs, which
-can be used for the identification of single copy orthologous genes or estimation of gene family copy number.</p>
+  <div class="section" id="arguments">
+<h1>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h1>
+<p><strong>orthofisher</strong> provides researchers with flexibility to change parameters thereby allowing
+for nuanced changes to pipeline that better fit their research question.</p>
+<p>Further clarification about the usage of these parameters may be gained from checking out our tutorial.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <hr class="docutils" />
-<div class="section" id="performance-assessment">
-<h2>Performance Assessment<a class="headerlink" href="#performance-assessment" title="Permalink to this headline">¶</a></h2>
-<p>Using 291,604 sequence similarity searches across 1,294 eukaryotic proteomes, the performance of orthofisher
-was compared to results obtained from BUSCO. Examination of precision, recall, and F-measure revealed the efficacy
-of orthofisher’s approach. More specifically, orthofisher had a <strong>recall of 1.0, precision of 0.978195, and
-an F-measure of 0.988977</strong>. Precision is less than 1.0 because priors of expected sequence length and
-sequence similarity scores–which are not implemented in orthofisher–resulted in more missing genes in the BUSCO
-pipeline than the orthofisher pipeline.</p>
+<div class="section" id="required">
+<h2>Required<a class="headerlink" href="#required" title="Permalink to this headline">¶</a></h2>
+<p><strong>-f, –fasta</strong>:
+A two column tab delimited file that points to the location of fasta files that will be searched
+using HMMs in the first column. Typically, these are protein fasta files from the entire genome/
+transcriptome of an organism. The second column of the file specifies the identifier for the organism.</p>
+<p><strong>-m, –hmm</strong>:
+A single column file with the location of HMMs that you wish to identify or fish out of a given proteome.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </div>
-<hr class="docutils" />
-<div class="section" id="the-developers">
-<h2>The Developers<a class="headerlink" href="#the-developers" title="Permalink to this headline">¶</a></h2>
-<p>orthofisher is developed and maintained by <a class="reference external" href="https://jlsteenwyk.github.io/">Jacob L. Steenwyk</a>.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p><a class="reference internal" href="../_images/Steenwyk.jpg"><img alt="JLSteenwyk" src="../_images/Steenwyk.jpg" style="width: 35%;" /></a></p>
-<p><a class="reference external" href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&amp;hl=en"><img alt="GoogleScholarSteenwyk" src="../_images/GoogleScholar.png" style="width: 4.5%;" /></a> <a class="reference external" href="https://github.com/JLSteenwyk"><img alt="GitHubSteenwyk" src="../_images/Github.png" style="width: 4.5%;" /></a> <a class="reference external" href="https://twitter.com/jlsteenwyk"><img alt="TwitterSteenwyk" src="../_images/Twitter.png" style="width: 4.5%;" /></a></p>
-<p><a class="reference external" href="https://jlsteenwyk.github.io/">Jacob L. Steenwyk</a> is a Howard Hughes Medical Institute
-Gilliam fellow in the <a class="reference external" href="https://as.vanderbilt.edu/rokaslab/">Antonis Rokas Laboratory</a> at
-<a class="reference external" href="https://www.vanderbilt.edu/">Vanderbilt University</a>. His research foci include understanding
-the parameters that influence genome stability, the genomics of microbial domestication, and
-the evolution of pathogenicity. Beyond research, Steenwyk aims to make education more accessible
-through diverse avenues of community engagement. Find out more information at his
-<a class="reference external" href="http://jlsteenwyk.github.io/">personal website</a>.</p>
+<div class="section" id="optional">
+<h2>Optional<a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h2>
+<p><strong>-e, –evalue</strong>:
+Specify an e-value threshold to use when conducting sequence similarity searches (default: 0.001).
+Format can be 1e-3 or 0.001.</p>
+<p><strong>-b, –bitscore</strong>:
+A fraction threshold to specify the bitscore threshold for sequences to be considered similar. More
+specifically, if a hit has a bitscore less than the specified fraction, the gene will not be considered
+sufficiently similar to be considered putatively orthologous. Value must range from 0 to 1 (default: 0.85).</p>
 </div>
 </div>
 
@@ -208,10 +202,10 @@ through diverse avenues of community engagement. Find out more information at hi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../arguments/index.html" class="btn btn-neutral float-right" title="Arguments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../install/index.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../about/index.html" class="btn btn-neutral float-left" title="About" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
