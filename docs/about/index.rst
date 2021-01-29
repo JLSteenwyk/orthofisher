@@ -10,12 +10,11 @@ can be used for the identification of single copy orthologous genes or estimatio
 
 Performance Assessment
 ----------------------
-Using 291,604 sequence similarity searches across 1,294 eukaryotic proteomes, the performance of orthofisher
-was compared to results obtained from BUSCO. Examination of precision, recall, and F-measure revealed the efficacy
-of orthofisher's approach. More specifically, orthofisher had a **recall of 1.0, precision of 0.978195, and
-an F-measure of 0.988977**. Precision is less than 1.0 because priors of expected sequence length and 
-sequence similarity scores--which are not implemented in orthofisher--resulted in more missing genes in the BUSCO
-pipeline than the orthofisher pipeline.
+Using 1,530 sequence similarity searches across six model eukaryotic proteomes, the performance of orthofisher
+was compared to results obtained from BUSCO. Examination of precision and recall revealed near perfect performance.
+More specifically, orthofisher had a **recall of 1.0 and precision of 0.99**. Precision is less
+than 1.0 because priors of expected sequence length and sequence similarity scores--which are not implemented
+in orthofisher--resulted in more missing genes in the BUSCO pipeline than the orthofisher pipeline.
 
 |
 

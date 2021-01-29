@@ -1,6 +1,8 @@
 from os import path
 from setuptools import setup
 
+from orthofisher.version import __version__
+
 here = path.abspath(path.dirname(__file__))
 
 with open(path.join(here, "README.md"), encoding="utf-8") as f:
@@ -29,7 +31,7 @@ setup(
     packages=["orthofisher"],
     classifiers=CLASSIFIERS,
     entry_points={"console_scripts": ["orthofisher = orthofisher.orthofisher:main"]},
-    version="0.0.8",
+    version=__version__,
     include_package_data=True,
     install_requires=REQUIRES,
 )

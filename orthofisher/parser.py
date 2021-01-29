@@ -8,6 +8,8 @@ from argparse import (
     RawDescriptionHelpFormatter,
 )
 
+from .version import __version__
+
 def create_parser():
     parser = ArgumentParser(
         add_help=False,
@@ -22,6 +24,7 @@ def create_parser():
         | (_) | |  | |_| | | | (_) | | | \__ \ | | |  __/ |   
          \___/|_|   \__|_| |_|\___/|_| |_|___/_| |_|\___|_|   
 
+        Version: {__version__}
         Citation: Steenwyk et al.
 
         orthofisher conducts high-throughput automated sequence similarity searches across proteomes and
@@ -112,6 +115,10 @@ def create_parser():
 
     optional.add_argument(
         "-h", "--help", action="help", help=SUPPRESS,
+    )
+
+    optional.add_argument(
+        "-v", "--version", action="version", version=f"orthofisher {__version__}", help=SUPPRESS,
     )
 
     return parser
