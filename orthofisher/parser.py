@@ -38,10 +38,10 @@ def create_parser():
         ),
     )
 
-    # # if no arguments are given, print help and exit
-    # if len(sys.argv) == 1:
-    #     parser.print_help(sys.stderr)
-    #     sys.exit()
+    # if no arguments are given, print help and exit
+    if len(sys.argv) == 1:
+        parser.print_help(sys.stderr)
+        sys.exit()
 
     ## required arguments
     required = parser.add_argument_group(
