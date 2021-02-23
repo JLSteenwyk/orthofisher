@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>About &mdash; orthofisher  documentation</title>
+  <title>Other software &mdash; orthofisher  documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Arguments" href="../arguments/index.html" />
-    <link rel="prev" title="Introduction" href="../index.html" /> 
+    <link rel="next" title="FAQ" href="../frequently_asked_questions/index.html" />
+    <link rel="prev" title="Tutorial" href="../tutorial/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,15 +89,17 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#performance-assessment">Performance Assessment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-developers">The Developers</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../arguments/index.html">Arguments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../other_software/index.html">Other software</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Other software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#clipkit">ClipKIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#phykit">PhyKIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#treehouse">treehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ggpubfigs">ggpubfigs</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../frequently_asked_questions/index.html">FAQ</a></li>
 </ul>
 
@@ -145,7 +147,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>About</li>
+      <li>Other software</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,41 +164,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="about">
-<h1>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
-<p><strong>orthofisher</strong> extracts and determines the copy number of a predetermined set of orthologs, which
-can be used for the identification of single copy orthologous genes or estimation of gene family copy number.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
+  <div class="section" id="other-software">
+<span id="id1"></span><h1>Other software<a class="headerlink" href="#other-software" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
-<div class="section" id="performance-assessment">
-<h2>Performance Assessment<a class="headerlink" href="#performance-assessment" title="Permalink to this headline">¶</a></h2>
-<p>Using 1,530 sequence similarity searches across six model eukaryotic proteomes, the performance of orthofisher
-was compared to results obtained from BUSCO. Examination of precision and recall revealed near perfect performance.
-More specifically, orthofisher had a <strong>recall of 1.0 and precision of 0.99</strong>. Precision is less
-than 1.0 because priors of expected sequence length and sequence similarity scores–which are not implemented
-in orthofisher–resulted in more missing genes in the BUSCO pipeline than the orthofisher pipeline.</p>
+<p>We are grateful that you are exploring our software! If this software is of interest
+to you, our other software will likely be too. Please see other software below.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="clipkit">
+<h2>ClipKIT<a class="headerlink" href="#clipkit" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/clipkit_logo.jpg"><img alt="ClipKIT" src="../_images/clipkit_logo.jpg" style="width: 50%;" /></a></p>
+<p>A multiple sequence alignment trimming software for accurate phylogenomic inference</p>
+<p><a class="reference external" href="https://jlsteenwyk.com/publication_pdfs/2019_Steenwyk_and_Rokas_BMC_Research_Notes.pdf">Publication PDF</a>;
+<a class="reference external" href="https://jlsteenwyk.com/ClipKIT/">Documentation</a>;
+<a class="reference external" href="https://github.com/JLSteenwyk/ClipKIT">Source code</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </div>
-<hr class="docutils" />
-<div class="section" id="the-developers">
-<h2>The Developers<a class="headerlink" href="#the-developers" title="Permalink to this headline">¶</a></h2>
-<p>orthofisher is developed and maintained by <a class="reference external" href="https://jlsteenwyk.github.io/">Jacob L. Steenwyk</a>.</p>
+<div class="section" id="phykit">
+<h2>PhyKIT<a class="headerlink" href="#phykit" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/phykit_logo.png"><img alt="PhyKIT" src="../_images/phykit_logo.png" style="width: 50%;" /></a></p>
+<p>A broadly applicable command line toolkit with 30 (and counting) functions for analyzing
+and processing phylogenetic trees and multiple sequence alignments.</p>
+<p><a class="reference external" href="https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab096/6131675">Advanced access article</a>;
+<a class="reference external" href="https://jlsteenwyk.com/PhyKIT/">Documentation</a>;
+<a class="reference external" href="https://github.com/JLSteenwyk/PhyKIT">Source code</a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><a class="reference internal" href="../_images/Steenwyk.jpg"><img alt="JLSteenwyk" src="../_images/Steenwyk.jpg" style="width: 35%;" /></a></p>
-<p><a class="reference external" href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&amp;hl=en"><img alt="GoogleScholarSteenwyk" src="../_images/GoogleScholar.png" style="width: 4.5%;" /></a> <a class="reference external" href="https://github.com/JLSteenwyk"><img alt="GitHubSteenwyk" src="../_images/Github.png" style="width: 4.5%;" /></a> <a class="reference external" href="https://twitter.com/jlsteenwyk"><img alt="TwitterSteenwyk" src="../_images/Twitter.png" style="width: 4.5%;" /></a></p>
-<p><a class="reference external" href="https://jlsteenwyk.github.io/">Jacob L. Steenwyk</a> is a Howard Hughes Medical Institute
-Gilliam fellow in the <a class="reference external" href="https://as.vanderbilt.edu/rokaslab/">Antonis Rokas Laboratory</a> at
-<a class="reference external" href="https://www.vanderbilt.edu/">Vanderbilt University</a>. His research foci include understanding
-the parameters that influence genome stability, the genomics of microbial domestication, and
-the evolution of pathogenicity. Beyond research, Steenwyk aims to make education more accessible
-through diverse avenues of community engagement. Find out more information at his
-<a class="reference external" href="http://jlsteenwyk.github.io/">personal website</a>.</p>
+</div>
+<div class="section" id="treehouse">
+<h2>treehouse<a class="headerlink" href="#treehouse" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/treehouse_logo.png"><img alt="treehouse" src="../_images/treehouse_logo.png" style="width: 50%;" /></a></p>
+<p>prune user inputted phylogenies or phylogenies in our database using an intuitive graphical
+user interface.</p>
+<p><a class="reference external" href="https://jlsteenwyk.com/publication_pdfs/2019_Steenwyk_and_Rokas_BMC_Research_Notes.pdf">Publication PDF</a>;
+<a class="reference external" href="https://github.com/JLSteenwyk/treehouse">Source code</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="ggpubfigs">
+<h2>ggpubfigs<a class="headerlink" href="#ggpubfigs" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/ggpubfigs_logo.png"><img alt="ggpubfigs" src="../_images/ggpubfigs_logo.png" style="width: 50%;" /></a></p>
+<p>create publication ready figures that are colorblind friendly using our collection of ggplot2 themes</p>
+<p><a class="reference external" href="https://zenodo.org/record/4126988#.YCK_2ZNKhlc">Zenodo record</a>;
+<a class="reference external" href="https://github.com/JLSteenwyk/ggpubfigs">Source code</a></p>
 </div>
 </div>
 
@@ -208,10 +223,10 @@ through diverse avenues of community engagement. Find out more information at hi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../arguments/index.html" class="btn btn-neutral float-right" title="Arguments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../frequently_asked_questions/index.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../tutorial/index.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
