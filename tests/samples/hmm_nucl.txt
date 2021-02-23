@@ -1,0 +1,2 @@
+./tests/samples/bena.fa.mafft.hmm
+./tests/samples/calmodulin.fa.mafft.hmm

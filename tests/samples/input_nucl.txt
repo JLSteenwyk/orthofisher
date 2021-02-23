@@ -1,0 +1,3 @@
+./tests/samples/GCA_000002655.1_ASM265v1_cds_from_genomic.fna	test1
+./tests/samples/GCA_000149205.2_ASM14920v2_cds_from_genomic.fna	test2
+./tests/samples/GCA_009017415.1_ASM901741v1_cds_from_genomic.fna	test3

@@ -17,7 +17,7 @@ or absent in a given genome. For the purposes of phylogenomics/phylogenetics, mu
 for all sequences as well as those that are single-copy; for gene family copy number determination, easily
 parsed output files contain absolute copy number of hits from the sequence similarity search.
 
-If you found **orthofisher** useful, please cite this website.
+**If you found orthofisher useful, please cite this website.**
 
 ^^^^
 
@@ -28,7 +28,8 @@ If you found **orthofisher** useful, please cite this website.
 	arguments/index
 	install/index
 	tutorial/index
-	faq/index
+	other_software/index
+	frequently_asked_questions/index
 
 ^^^^
 
