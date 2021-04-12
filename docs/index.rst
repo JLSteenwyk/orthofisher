@@ -8,12 +8,12 @@
 Introduction
 ------------
 
-Automated and high-throughout identification of a predetermined set of orthologs can be a helpful task
-for phylogenomics/phylogenetics, gene family copy number determination, etc. 
+Automated and high-throughout identification of a predetermined set of putative orthologous genes can be
+a helpful task for phylogenomics/phylogenetics, gene family copy number determination, etc. 
 
 To facilitate these analyses, **orthofisher** conducts automated HMMsearches among a set of proteomes using
 a predetermined set of orthologs. Sequence similarity searches classify results as multi-copy, single-copy,
-or absent in a given genome. For the purposes of phylogenomics/phylogenetics, multi-fasta files are generated
+or absent in a given proteome. For the purposes of phylogenomics/phylogenetics, multi-fasta files are generated
 for all sequences as well as those that are single-copy; for gene family copy number determination, easily
 parsed output files contain absolute copy number of hits from the sequence similarity search.
 

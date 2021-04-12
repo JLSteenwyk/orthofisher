@@ -22,7 +22,7 @@ def process_args(args) -> dict:
     evalue = args.evalue or 0.001
 
     percent_bitscore = args.bitscore or 0.85
-    # if percent_bitscore > 
+    
 
     return dict(
         fasta_file_list=fasta_file_list,
