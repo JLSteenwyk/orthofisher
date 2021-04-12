@@ -16,14 +16,18 @@ More specifically, orthofisher had a **recall of 1.0 and precision of 0.99**. Pr
 than 1.0 because priors of expected sequence length and sequence similarity scores--which are not implemented
 in orthofisher--resulted in more missing genes in the BUSCO pipeline than the orthofisher pipeline.
 
+We also compared the orthofisher and BUSCO pipelines to OrthoFinder and found all three performed similarly. Details
+about similarities and differences can be examined further in our manuscript.
+
 |
 
 ^^^^^
 
-The Developers
---------------
+The Team
+--------
 
-orthofisher is developed and maintained by `Jacob L. Steenwyk <https://jlsteenwyk.github.io/>`_.
+orthofisher is developed and maintained by `Jacob L. Steenwyk <https://jlsteenwyk.github.io/>`_ with guidance
+and invaluable suggestions from `Antonis Rokas <https://as.vanderbilt.edu/rokaslab/>`_.
 
 |
 
@@ -52,5 +56,31 @@ through diverse avenues of community engagement. Find out more information at hi
 
 .. |GitHubSteenwyk| image:: ../_static/img/Github.png
    :target: https://github.com/JLSteenwyk
+   :width: 4.5%
+
+|
+
+|ARokas|
+
+|GoogleScholarRokas| |TwitterRokas| 
+
+`Antonis Rokas <https://as.vanderbilt.edu/rokaslab/>`_ is the Cornelius Vanderbilt Chair in 
+Biological Sciences and Director of the `Evolutionary Studies Initiative 
+<https://www.vanderbilt.edu/evolution/>`_ at `Vanderbilt University <https://www.vanderbilt.edu/>`_.
+Research in his laboratory focuses on the study of the DNA record to gain insight into the patterns and 
+processes of evolution. Using a combination of computational and experimental approaches, his lab’s current
+research aims to understand the molecular foundations of the fungal lifestyle, the reconstruction of the
+tree of life, and the evolution of human pregnancy. Find out more information at his 
+`laboratory’s website <https://as.vanderbilt.edu/rokaslab/>`_.
+
+.. |ARokas| image:: ../_static/img/Rokas.jpeg
+   :width: 35%
+
+.. |GoogleScholarRokas| image:: ../_static/img/GoogleScholar.png
+   :target: https://scholar.google.com/citations?user=OvAV_eoAAAAJ&hl=en
+   :width: 4.5%
+
+.. |TwitterRokas| image:: ../_static/img/Twitter.png
+   :target: https://twitter.com/RokasLab
    :width: 4.5%
 
