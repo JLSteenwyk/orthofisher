@@ -28,7 +28,6 @@ Next, I downloaded the aligned FASTA sequences for each gene, which can be downl
 .. centered::
    Download GAL1/7/10 alignments:
    :download:`GAL alignments </data/gal_sequences.tar.gz>`
-   
 
 Unzip the directory and from within the new directory, and generate alignments for each set
 of protein sequences. To do so, I will use `Clustal Omega <http://www.clustal.org/omega/>`_
