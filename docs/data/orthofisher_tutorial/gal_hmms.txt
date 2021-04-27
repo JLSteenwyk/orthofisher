@@ -1,0 +1,3 @@
+../gal_alignments/Gal10p.hmm
+../gal_alignments/Gal1p.hmm
+../gal_alignments/Gal7p.hmm

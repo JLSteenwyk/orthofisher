@@ -1,0 +1,42 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+XP_451688.1          -          zf-C2H2              PF00096.28   1.1e-33  112.0  71.5     1e-05   24.0   3.7   9.4   9   0   0   9   9   9   9 uncharacterized protein KLLA0_B03454g [Kluyveromyces lactis]
+XP_455146.1          -          zf-C2H2              PF00096.28   1.5e-25   86.4  40.4   1.9e-06   26.3   3.6   8.2   7   0   0   7   7   7   5 uncharacterized protein KLLA0_F01463g [Kluyveromyces lactis]
+XP_456139.1          -          zf-C2H2              PF00096.28   1.4e-20   70.8  26.7   2.7e-05   22.6   0.5   4.7   4   0   0   4   4   4   4 uncharacterized protein KLLA0_F23782g [Kluyveromyces lactis]
+XP_451454.1          -          zf-C2H2              PF00096.28   2.4e-17   60.6  24.5   9.6e-06   24.1   1.0   5.1   5   0   0   5   5   5   4 uncharacterized protein KLLA0_A10373g [Kluyveromyces lactis]
+XP_454342.1          -          zf-C2H2              PF00096.28   8.4e-14   49.4  10.1   2.4e-07   29.1   1.2   3.8   3   0   0   3   3   3   3 uncharacterized protein KLLA0_E08713g [Kluyveromyces lactis]
+XP_456006.1          -          zf-C2H2              PF00096.28   4.9e-13   47.0   3.4   9.5e-06   24.1   0.2   3.1   2   0   0   2   2   2   2 uncharacterized protein KLLA0_F20636g [Kluyveromyces lactis]
+XP_452963.1          -          zf-C2H2              PF00096.28   1.7e-12   45.3  13.3   1.1e-06   27.0   3.0   2.7   2   0   0   2   2   2   2 uncharacterized protein KLLA0_C17072g [Kluyveromyces lactis]
+XP_454558.1          -          zf-C2H2              PF00096.28   4.2e-11   40.9   9.0   3.2e-05   22.4   0.2   2.5   2   0   0   2   2   2   2 uncharacterized protein KLLA0_E13487g [Kluyveromyces lactis]
+XP_456279.1          -          zf-C2H2              PF00096.28   1.6e-10   39.1  17.2   5.5e-06   24.8   4.4   2.9   2   0   0   2   2   2   2 uncharacterized protein KLLA0_F26961g [Kluyveromyces lactis]
+XP_453592.1          -          zf-C2H2              PF00096.28   2.2e-10   38.7   7.8   1.7e-05   23.3   3.4   2.6   2   0   0   2   2   2   2 uncharacterized protein KLLA0_D11902g [Kluyveromyces lactis]
+XP_456077.1          -          zf-C2H2              PF00096.28   3.1e-10   38.2  19.5   1.3e-06   26.8   1.4   3.2   2   1   1   3   3   3   2 uncharacterized protein KLLA0_F22319g [Kluyveromyces lactis]
+XP_452915.1          -          zf-C2H2              PF00096.28     6e-10   37.3  11.8   1.5e-05   23.4   2.4   3.2   2   1   0   2   2   2   2 uncharacterized protein KLLA0_C16005g [Kluyveromyces lactis]
+XP_453786.1          -          zf-C2H2              PF00096.28   4.2e-09   34.6  27.4   0.00086   17.9   3.4   4.0   4   0   0   4   4   3   3 uncharacterized protein KLLA0_D16456g [Kluyveromyces lactis]
+XP_454446.1          -          zf-C2H2              PF00096.28   4.5e-09   34.6  12.8   0.00015   20.3   1.9   2.9   2   0   0   2   2   2   2 uncharacterized protein KLLA0_E11023g [Kluyveromyces lactis]
+XP_455610.1          -          zf-C2H2              PF00096.28   9.9e-09   33.5  16.9   7.3e-07   27.6   0.1   3.8   3   0   0   3   3   3   2 uncharacterized protein KLLA0_F11682g [Kluyveromyces lactis]
+XP_455910.1          -          zf-C2H2              PF00096.28   1.8e-08   32.6  13.3   4.9e-05   21.8   1.2   2.8   2   0   0   2   2   2   2 uncharacterized protein KLLA0_F18524g [Kluyveromyces lactis]
+XP_455667.1          -          zf-C2H2              PF00096.28   1.9e-08   32.6  15.4   1.6e-05   23.4   2.0   3.6   3   0   0   3   3   2   2 uncharacterized protein KLLA0_F13046g [Kluyveromyces lactis]
+XP_451882.1          -          zf-C2H2              PF00096.28   5.4e-08   31.1  12.1   1.9e-05   23.1   2.2   2.9   2   0   0   2   2   2   2 uncharacterized protein KLLA0_B07909g [Kluyveromyces lactis]
+XP_451202.1          -          zf-C2H2              PF00096.28   6.7e-08   30.8  16.9    0.0002   19.9   3.0   2.9   2   0   0   2   2   2   2 uncharacterized protein KLLA0_A04609g [Kluyveromyces lactis]
+XP_451732.1          -          zf-C2H2              PF00096.28   8.2e-07   27.4  14.7   7.1e-05   21.3   1.6   3.6   3   0   0   3   3   2   2 uncharacterized protein KLLA0_B04477g [Kluyveromyces lactis]
+XP_453982.1          -          zf-C2H2              PF00096.28   1.4e-06   26.7  25.3   1.3e-05   23.6   1.8   4.2   4   0   0   4   4   3   3 uncharacterized protein KLLA0_E00793g [Kluyveromyces lactis]
+XP_452991.1          -          zf-C2H2              PF00096.28   1.2e-05   23.8  14.2    0.0025   16.5   2.6   2.9   2   0   0   2   2   2   2 uncharacterized protein KLLA0_C17710g [Kluyveromyces lactis]
+XP_454789.1          -          zf-C2H2              PF00096.28   2.5e-05   22.8   4.0   2.5e-05   22.8   4.0   3.6   3   0   0   3   3   3   1 uncharacterized protein KLLA0_E18547g [Kluyveromyces lactis]
+XP_453932.1          -          zf-C2H2              PF00096.28   3.3e-05   22.4   8.8    0.0011   17.5   1.3   2.6   2   0   0   2   2   2   2 uncharacterized protein KLLA0_D19602g [Kluyveromyces lactis]
+XP_451909.1          -          zf-C2H2              PF00096.28   3.4e-05   22.3   5.3     0.033   12.9   1.7   2.6   2   0   0   2   2   2   2 uncharacterized protein KLLA0_B08547g [Kluyveromyces lactis]
+XP_451116.1          -          zf-C2H2              PF00096.28     8e-05   21.2  17.5    0.0069   15.1   4.6   4.1   3   1   0   3   3   3   2 uncharacterized protein KLLA0_A02629g [Kluyveromyces lactis]
+XP_455540.1          -          zf-C2H2              PF00096.28   9.8e-05   20.9   2.7   9.8e-05   20.9   2.7   4.3   4   0   0   4   4   4   1 uncharacterized protein KLLA0_F10109g [Kluyveromyces lactis]
+XP_455401.1          -          zf-C2H2              PF00096.28   0.00022   19.8   0.6   0.00022   19.8   0.6   6.9   7   0   0   7   7   5   1 uncharacterized protein KLLA0_F07073g [Kluyveromyces lactis]
+XP_452380.1          -          zf-C2H2              PF00096.28   0.00071   18.2   7.6     0.018   13.8   0.4   2.9   2   1   0   2   2   2   1 uncharacterized protein KLLA0_C04103g [Kluyveromyces lactis]
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      ../PF00096.hmm
+# Target file:     Kluyveromyces_lactis_NRRL_Y-1140.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/Kluyveromyces_lactis_NRRL_Y-1140.faa_PF00096.hmm --noali --notextw -E 0.001 ../PF00096.hmm Kluyveromyces_lactis_NRRL_Y-1140.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/docs/data/gal_tutorial
+# Date:            Mon Apr 12 15:59:57 2021
+# [ok]

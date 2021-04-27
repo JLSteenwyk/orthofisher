@@ -1,0 +1,50 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+NP_015512.1          -          zf-C2H2              PF00096.28   1.9e-31  105.3  69.5   9.2e-05   21.2   5.4   9.3   9   0   0   9   9   9   9 Pzf1p [Saccharomyces cerevisiae S288C]
+NP_012479.1          -          zf-C2H2              PF00096.28   5.3e-22   75.5  71.6   4.9e-06   25.2   1.0   9.7  10   0   0  10  10   7   7 Zap1p [Saccharomyces cerevisiae S288C]
+NP_014756.3          -          zf-C2H2              PF00096.28   3.3e-20   69.8  24.5   1.2e-05   24.0   0.2   4.9   4   0   0   4   4   4   4 Azf1p [Saccharomyces cerevisiae S288C]
+NP_014371.1          -          zf-C2H2              PF00096.28     1e-14   52.6  10.4   1.5e-07   30.0   1.1   3.8   3   0   0   3   3   3   3 DNA-binding transcription factor CRZ1 [Saccharomyces cerevisiae S288C]
+NP_011260.1          -          zf-C2H2              PF00096.28   6.7e-13   46.8  36.9   3.7e-05   22.4   0.6   6.0   6   0   0   6   6   6   4 Fzf1p [Saccharomyces cerevisiae S288C]
+NP_013751.1          -          zf-C2H2              PF00096.28   2.3e-12   45.1  17.5   2.2e-06   26.3   2.4   2.8   2   0   0   2   2   2   2 stress-responsive transcriptional activator MSN2 [Saccharomyces cerevisiae S288C]
+NP_013907.1          -          zf-C2H2              PF00096.28   9.4e-12   43.2   8.8   2.2e-06   26.3   1.5   2.4   2   0   0   2   2   2   2 Rgm1p [Saccharomyces cerevisiae S288C]
+NP_012861.1          -          zf-C2H2              PF00096.28   1.6e-11   42.5  13.4   4.7e-07   28.4   3.2   3.0   3   0   0   3   3   2   2 stress-responsive transcriptional activator MSN4 [Saccharomyces cerevisiae S288C]
+NP_010539.1          -          zf-C2H2              PF00096.28   2.2e-11   42.0   5.2     3e-05   22.7   1.9   2.4   2   0   0   2   2   2   2 Met32p [Saccharomyces cerevisiae S288C]
+NP_010430.1          -          zf-C2H2              PF00096.28   2.5e-11   41.9  13.7   0.00018   20.3   1.4   3.6   3   0   0   3   3   3   3 DNA-binding transcription factor SWI5 [Saccharomyces cerevisiae S288C]
+NP_015340.1          -          zf-C2H2              PF00096.28   2.9e-11   41.7  12.1   1.9e-05   23.4   1.4   2.7   2   0   0   2   2   2   2 uncharacterized protein YPR015C [Saccharomyces cerevisiae S288C]
+NP_011056.1          -          zf-C2H2              PF00096.28   3.4e-11   41.4  16.6   2.4e-06   26.2   3.4   3.1   3   0   0   3   3   2   2 Com2p [Saccharomyces cerevisiae S288C]
+NP_013232.1          -          zf-C2H2              PF00096.28   8.3e-11   40.2  13.5   0.00019   20.2   1.2   3.8   3   0   0   3   3   3   3 DNA-binding transcription factor ACE2 [Saccharomyces cerevisiae S288C]
+NP_015094.1          -          zf-C2H2              PF00096.28   2.4e-10   38.8   7.9     5e-06   25.2   1.5   3.2   2   0   0   2   2   2   2 Usv1p [Saccharomyces cerevisiae S288C]
+NP_015338.1          -          zf-C2H2              PF00096.28     5e-10   37.8   9.1   0.00011   20.9   1.2   2.7   2   0   0   2   2   2   2 Cmr3p [Saccharomyces cerevisiae S288C]
+NP_015287.1          -          zf-C2H2              PF00096.28   5.1e-10   37.7   7.4   8.2e-05   21.4   1.6   2.4   2   0   0   2   2   2   2 Met31p [Saccharomyces cerevisiae S288C]
+NP_010502.3          -          zf-C2H2              PF00096.28   4.5e-09   34.8  18.0   9.8e-06   24.3   2.3   3.4   4   0   0   4   4   2   2 DNA-binding transcription factor ADR1 [Saccharomyces cerevisiae S288C]
+NP_014172.1          -          zf-C2H2              PF00096.28   1.4e-08   33.2   6.1   7.8e-05   21.4   1.4   2.8   2   0   0   2   2   2   2 Jjj1p [Saccharomyces cerevisiae S288C]
+NP_011306.1          -          zf-C2H2              PF00096.28   5.8e-08   31.3  21.1   2.8e-06   26.0   3.7   2.6   2   0   0   2   2   2   2 Mig2p [Saccharomyces cerevisiae S288C]
+NP_011836.1          -          zf-C2H2              PF00096.28   6.9e-08   31.0  20.1   0.00014   20.6   1.8   4.0   3   0   0   3   3   3   3 alkaline-responsive transcriptional regulator RIM101 [Saccharomyces cerevisiae S288C]
+NP_011581.4          -          zf-C2H2              PF00096.28     8e-08   30.8  13.2   1.8e-05   23.4   2.4   2.9   2   0   0   2   2   2   2 uncharacterized protein YGR067C [Saccharomyces cerevisiae S288C]
+NP_010945.1          -          zf-C2H2              PF00096.28   3.2e-07   28.9  20.2   2.4e-06   26.2   2.5   2.9   3   0   0   3   3   2   2 Mig3p [Saccharomyces cerevisiae S288C]
+NP_011480.1          -          zf-C2H2              PF00096.28   1.6e-06   26.7  15.9    0.0012   17.7   1.4   2.6   2   0   0   2   2   2   2 transcription factor MIG1 [Saccharomyces cerevisiae S288C]
+NP_013630.1          -          zf-C2H2              PF00096.28   1.8e-06   26.6  15.6   0.00012   20.8   3.9   3.0   2   0   0   2   2   2   2 Tda9p [Saccharomyces cerevisiae S288C]
+NP_011096.1          -          zf-C2H2              PF00096.28   4.2e-06   25.4  15.9    0.0027   16.6   2.6   3.0   2   0   0   2   2   2   2 Rph1p [Saccharomyces cerevisiae S288C]
+NP_015347.1          -          zf-C2H2              PF00096.28     8e-06   24.5  16.9   0.00055   18.7   4.7   3.3   3   0   0   3   3   2   2 Sdd4p [Saccharomyces cerevisiae S288C]
+NP_011558.1          -          zf-C2H2              PF00096.28     1e-05   24.2  12.4    0.0005   18.9   0.4   3.4   3   0   0   3   3   3   2 Rme1p [Saccharomyces cerevisiae S288C]
+NP_011870.1          -          zf-C2H2              PF00096.28     2e-05   23.3  14.0   0.00069   18.4   2.8   3.7   3   0   0   3   3   3   1 Stp2p [Saccharomyces cerevisiae S288C]
+NP_012661.3          -          zf-C2H2              PF00096.28   2.7e-05   22.9  13.5    0.0018   17.1   4.6   2.9   2   0   0   2   2   2   2 Rsf2p [Saccharomyces cerevisiae S288C]
+NP_010381.1          -          zf-C2H2              PF00096.28   2.7e-05   22.9  15.3    0.0081   15.1   2.6   2.8   2   0   0   2   2   2   2 histone demethylase GIS1 [Saccharomyces cerevisiae S288C]
+NP_013786.1          -          zf-C2H2              PF00096.28   6.9e-05   21.6   4.4   6.9e-05   21.6   4.4   3.4   3   0   0   3   3   2   1 Mot3p [Saccharomyces cerevisiae S288C]
+NP_010751.4          -          zf-C2H2              PF00096.28   0.00014   20.6  12.3   0.00038   19.3   2.5   4.0   3   0   0   3   3   3   1 Stp1p [Saccharomyces cerevisiae S288C]
+NP_010235.1          -          zf-C2H2              PF00096.28   0.00017   20.4   1.8   0.00017   20.4   1.8   5.3   4   1   0   4   4   4   1 Stp4p [Saccharomyces cerevisiae S288C]
+NP_009622.1          -          zf-C2H2              PF00096.28   0.00019   20.2  20.0    0.0046   15.8   4.5   2.8   2   0   0   2   2   2   2 Nrg2p [Saccharomyces cerevisiae S288C]
+NP_010328.3          -          zf-C2H2              PF00096.28   0.00021   20.1   0.7   0.00021   20.1   0.7   2.7   2   0   0   2   2   2   1 transcriptional regulator NRG1 [Saccharomyces cerevisiae S288C]
+NP_013507.1          -          zf-C2H2              PF00096.28   0.00024   19.9  16.2     0.013   14.5   1.0   3.6   3   0   0   3   3   3   2 zinc-coordinating transcription factor SFP1 [Saccharomyces cerevisiae S288C]
+NP_013479.3          -          zf-C2H2              PF00096.28   0.00053   18.8   4.3   0.00053   18.8   4.3   4.9   4   0   0   4   4   4   1 Stp3p [Saccharomyces cerevisiae S288C]
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      ../PF00096.hmm
+# Target file:     Saccharomyces_cerevisiae_S288C.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/Saccharomyces_cerevisiae_S288C.faa_PF00096.hmm --noali --notextw -E 0.001 ../PF00096.hmm Saccharomyces_cerevisiae_S288C.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/docs/data/gal_tutorial
+# Date:            Mon Apr 12 15:59:57 2021
+# [ok]

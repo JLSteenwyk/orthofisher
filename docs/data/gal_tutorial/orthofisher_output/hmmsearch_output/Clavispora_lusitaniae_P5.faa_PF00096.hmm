@@ -1,0 +1,41 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+QFZ46112.1           -          zf-C2H2              PF00096.28   7.3e-27   90.7  78.0   4.1e-05   22.2   1.9   9.3   9   0   0   9   9   9   9 putative transcription factor [Clavispora lusitaniae]
+QFZ46583.1           -          zf-C2H2              PF00096.28     8e-21   71.7  22.7   8.3e-07   27.6   0.2   4.5   4   0   0   4   4   4   4 putative asparagine-rich zinc finger protein [Clavispora lusitaniae]
+QFZ46889.1           -          zf-C2H2              PF00096.28   4.5e-16   56.7  14.2   6.4e-07   27.9   1.1   3.7   3   0   0   3   3   3   3 putative C2H2 finger domain transcription factor [Clavispora lusitaniae]
+QFZ45890.1           -          zf-C2H2              PF00096.28   4.3e-15   53.6  11.8   3.7e-07   28.7   1.4   3.9   3   0   0   3   3   3   3 putative transcriptional regulator [Clavispora lusitaniae]
+QFZ44313.1           -          zf-C2H2              PF00096.28   5.2e-14   50.2  50.7   3.9e-05   22.3   0.8   8.9   8   0   0   8   8   8   4 putative zinc-responsive transcriptional regulator [Clavispora lusitaniae]
+QFZ43269.1           -          zf-C2H2              PF00096.28     1e-12   46.2  14.3   1.8e-07   29.7   2.0   2.7   2   0   0   2   2   2   2 putative zinc finger protein [Clavispora lusitaniae]
+QFZ43398.1           -          zf-C2H2              PF00096.28   2.9e-12   44.7  20.6   2.4e-06   26.1   3.5   3.8   3   0   0   3   3   3   2 putative cell wall transcription factor [Clavispora lusitaniae]
+QFZ43397.1           -          zf-C2H2              PF00096.28   5.9e-12   43.8  12.4     1e-05   24.2   0.7   2.9   2   0   0   2   2   2   2 putative transcriptional regulator [Clavispora lusitaniae]
+QFZ42509.1           -          zf-C2H2              PF00096.28   1.4e-11   42.6  14.6   1.3e-05   23.8   3.4   2.8   2   0   0   2   2   2   2 putative biofilm and cell wall regulator [Clavispora lusitaniae]
+QFZ46877.1           -          zf-C2H2              PF00096.28   3.2e-11   41.5   3.7   1.4e-05   23.7   1.2   2.8   2   0   0   2   2   2   2 putative transcriptional regulator [Clavispora lusitaniae]
+QFZ45825.1           -          zf-C2H2              PF00096.28   1.7e-09   36.0  11.0   0.00013   20.7   2.5   3.0   2   0   0   2   2   2   2 putative transcriptional regulator [Clavispora lusitaniae]
+QFZ42767.1           -          zf-C2H2              PF00096.28     2e-09   35.8  15.4   3.7e-05   22.4   2.0   2.5   2   0   0   2   2   2   2 putative regulatory protein [Clavispora lusitaniae]
+QFZ43046.1           -          zf-C2H2              PF00096.28   1.2e-08   33.4  25.0     0.001   17.9   1.2   4.2   4   0   0   4   4   3   3 putative C2H2 finger domain transcription factor [Clavispora lusitaniae]
+QFZ42921.1           -          zf-C2H2              PF00096.28   1.6e-08   33.0  14.9   0.00017   20.3   4.9   2.9   2   0   0   2   2   2   2 putative DNA-binding protein [Clavispora lusitaniae]
+QFZ43286.1           -          zf-C2H2              PF00096.28   9.2e-08   30.6  11.3   0.00055   18.7   3.2   3.0   2   0   0   2   2   2   2 putative transcription factor [Clavispora lusitaniae]
+QFZ43314.1           -          zf-C2H2              PF00096.28   2.5e-07   29.2   0.9    0.0024   16.7   0.1   2.9   2   0   0   2   2   2   2 putative transcriptional regulator [Clavispora lusitaniae]
+QFZ43059.1           -          zf-C2H2              PF00096.28   3.5e-07   28.7  12.5   0.00015   20.5   2.9   3.1   2   0   0   2   2   2   2 putative zinc finger protein [Clavispora lusitaniae]
+QFZ46293.1           -          zf-C2H2              PF00096.28   3.6e-07   28.7  17.6   2.4e-06   26.1   0.5   3.5   4   0   0   4   4   3   2 putative cell wall integrity transcriptional regulator [Clavispora lusitaniae]
+QFZ47535.1           -          zf-C2H2              PF00096.28     1e-06   27.3  14.8   4.3e-05   22.2   3.8   2.8   2   0   0   2   2   2   2 putative transcriptional regulator [Clavispora lusitaniae]
+QFZ43627.1           -          zf-C2H2              PF00096.28   1.5e-06   26.7  17.3   3.4e-05   22.5   3.0   4.1   3   0   0   3   3   3   2 putative pH-response transcription factor [Clavispora lusitaniae]
+QFZ47424.1           -          zf-C2H2              PF00096.28   2.1e-06   26.3   6.3   0.00015   20.5   0.5   3.3   2   0   0   2   2   2   1 hypothetical protein EJF18_80119 [Clavispora lusitaniae]
+QFZ45224.1           -          zf-C2H2              PF00096.28   5.6e-06   24.9   4.6     0.018   13.9   0.2   3.2   3   0   0   3   3   2   2 putative filamentous growth regulator [Clavispora lusitaniae]
+QFZ45961.1           -          zf-C2H2              PF00096.28   2.9e-05   22.7   3.0   2.9e-05   22.7   3.0   3.7   3   0   0   3   3   3   1 putative transcriptional regulator [Clavispora lusitaniae]
+QFZ42023.1           -          zf-C2H2              PF00096.28   2.9e-05   22.7  14.2    0.0017   17.1   2.4   3.0   2   0   0   2   2   2   2 putative transcriptional regulator of adherence protein [Clavispora lusitaniae]
+QFZ47306.1           -          zf-C2H2              PF00096.28   3.9e-05   22.3  16.8    0.0054   15.5   1.0   3.6   3   0   0   3   3   3   2 putative transcription factor [Clavispora lusitaniae]
+QFZ42833.1           -          zf-C2H2              PF00096.28   0.00012   20.7  10.0      0.02   13.8   2.4   2.6   2   0   0   2   2   2   2 putative J protein [Clavispora lusitaniae]
+QFZ45556.1           -          zf-C2H2              PF00096.28   0.00026   19.7  16.2    0.0011   17.7   1.6   4.1   3   0   0   3   3   3   1 putative transcriptional regulator [Clavispora lusitaniae]
+QFZ43588.1           -          zf-C2H2              PF00096.28   0.00089   18.0   0.3   0.00089   18.0   0.3   3.3   4   0   0   4   4   3   1 putative INO80 complex subunit [Clavispora lusitaniae]
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      ../PF00096.hmm
+# Target file:     Clavispora_lusitaniae_P5.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/Clavispora_lusitaniae_P5.faa_PF00096.hmm --noali --notextw -E 0.001 ../PF00096.hmm Clavispora_lusitaniae_P5.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/docs/data/gal_tutorial
+# Date:            Mon Apr 12 15:59:56 2021
+# [ok]

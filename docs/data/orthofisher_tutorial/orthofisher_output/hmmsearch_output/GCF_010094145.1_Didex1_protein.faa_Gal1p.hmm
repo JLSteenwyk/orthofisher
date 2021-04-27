@@ -1,0 +1,14 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+XP_033452855.1       -          Gal1p.aln            -           7.1e-151  502.7   0.0  8.6e-151  502.4   0.0   1.0   1   0   0   1   1   1   1 galactokinase [Didymella exigua CBS 183.55]
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      ../gal_alignments/Gal1p.hmm
+# Target file:     GCF_010094145.1_Didex1_protein.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/GCF_010094145.1_Didex1_protein.faa_Gal1p.hmm --noali --notextw -E 0.001 ../gal_alignments/Gal1p.hmm GCF_010094145.1_Didex1_protein.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/docs/data/orthofisher_tutorial
+# Date:            Mon Apr 12 13:59:59 2021
+# [ok]

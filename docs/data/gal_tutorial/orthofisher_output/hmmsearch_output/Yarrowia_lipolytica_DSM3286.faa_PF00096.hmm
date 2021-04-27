@@ -1,0 +1,41 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+QNP97589.1           -          zf-C2H2              PF00096.28   7.1e-14   50.0  13.3   2.2e-06   26.4   4.6   3.8   3   0   0   3   3   3   3 C2H2 finger domain transcription factor crzA [Yarrowia lipolytica]
+QNP98062.1           -          zf-C2H2              PF00096.28   1.9e-13   48.7  84.9   4.5e-06   25.4   0.7  10.6  11   0   0  11  11   9   5 Zinc-responsive transcriptional regulator ZAP1 [Yarrowia lipolytica]
+QNP96916.1           -          zf-C2H2              PF00096.28     6e-13   47.1  17.4   1.1e-07   30.5   1.3   3.2   3   0   0   3   3   3   2 C2H2 finger domain transcription factor sebA [Yarrowia lipolytica]
+QNP95823.1           -          zf-C2H2              PF00096.28   4.6e-11   41.1  19.6   1.3e-05   24.0   9.4   2.8   2   0   0   2   2   2   2 C2H2 type master regulator of conidiophore development brlA [Yarrowia lipolytica]
+QNP97162.1           -          zf-C2H2              PF00096.28   1.2e-10   39.8  12.4   4.6e-06   25.4   3.2   3.7   3   0   0   3   3   3   3 pH-response transcription factor [Yarrowia lipolytica]
+QNP96925.1           -          zf-C2H2              PF00096.28   1.3e-10   39.7  11.7   7.2e-06   24.8   2.1   2.7   2   0   0   2   2   2   2 C2H2 finger domain transcription factor dvrA [Yarrowia lipolytica]
+QNP95702.1           -          zf-C2H2              PF00096.28   1.6e-10   39.4   9.9   2.9e-05   22.9   2.8   2.6   2   0   0   2   2   2   2 Zinc finger protein [Yarrowia lipolytica]
+QNP99024.1           -          zf-C2H2              PF00096.28   2.9e-10   38.6  22.9   0.00023   20.1   1.4   4.2   4   0   0   4   4   3   3 Metallothionein expression activator [Yarrowia lipolytica]
+QNQ01389.1           -          zf-C2H2              PF00096.28   7.1e-10   37.4  13.8   3.3e-05   22.7   0.3   2.9   2   0   0   2   2   2   2 Transcriptional regulator MET32 [Yarrowia lipolytica]
+QNP99672.1           -          zf-C2H2              PF00096.28   7.8e-10   37.3   8.3   7.3e-05   21.6   1.4   3.0   3   0   0   3   3   2   2 Zinc finger protein rsv2 [Yarrowia lipolytica]
+QNQ00555.1           -          zf-C2H2              PF00096.28   1.4e-09   36.5  71.3   1.6e-05   23.7   0.4   9.8  10   0   0  10  10   9   5 Transcription factor IIIA [Yarrowia lipolytica]
+QNP99750.1           -          zf-C2H2              PF00096.28   3.5e-09   35.2   7.0   5.7e-06   25.1   0.4   3.8   3   1   0   3   3   3   1 INO80 complex subunit 1 [Yarrowia lipolytica]
+QNQ00864.1           -          zf-C2H2              PF00096.28   3.6e-09   35.2  33.4   0.00048   19.0   0.1   3.7   4   0   0   4   4   3   3 Transcriptional regulator prz1 [Yarrowia lipolytica]
+QNP95807.1           -          zf-C2H2              PF00096.28   1.1e-08   33.7  12.9   7.6e-06   24.7   1.7   2.5   2   0   0   2   2   2   2 Transcriptional regulator NRG1 [Yarrowia lipolytica]
+QNP98583.1           -          zf-C2H2              PF00096.28   1.4e-08   33.3   8.4   0.00013   20.8   0.4   2.9   2   0   0   2   2   2   2 Krueppel-like factor 15 [Yarrowia lipolytica]
+QNQ00104.1           -          zf-C2H2              PF00096.28   8.5e-08   30.9  16.0   1.6e-05   23.7   0.5   3.8   3   1   0   3   3   3   2 Hypothetical protein YALI2_E01419g [Yarrowia lipolytica]
+QNP96447.1           -          zf-C2H2              PF00096.28   2.1e-07   29.6   6.0   0.00041   19.2   0.7   2.7   2   0   0   2   2   2   2 Zinc finger protein [Yarrowia lipolytica]
+QNP98851.1           -          zf-C2H2              PF00096.28   4.1e-07   28.7  22.6     7e-05   21.7   4.1   3.5   4   0   0   4   4   3   2 DNA-binding protein creA [Yarrowia lipolytica]
+QNQ00679.1           -          zf-C2H2              PF00096.28   5.9e-07   28.2  18.0    0.0013   17.7   1.3   3.7   3   0   0   3   3   3   2 Transcription factor SFP1 [Yarrowia lipolytica]
+QNP97122.1           -          zf-C2H2              PF00096.28   1.4e-06   27.1   3.8    0.0065   15.5   0.3   2.5   2   0   0   2   2   2   2 DnaJ subfamily C member 21 [Yarrowia lipolytica]
+QNP99297.1           -          zf-C2H2              PF00096.28   5.8e-06   25.1  13.9    0.0041   16.1   5.1   2.8   2   0   0   2   2   2   2 Transcriptional regulator of form adherence 5 [Yarrowia lipolytica]
+QNQ00084.1           -          zf-C2H2              PF00096.28   8.9e-06   24.5  13.0    0.0024   16.8   1.7   3.0   2   0   0   2   2   2   2 Hypothetical protein YALI2_E01399g [Yarrowia lipolytica]
+QNP97945.1           -          zf-C2H2              PF00096.28   2.3e-05   23.2  25.3   0.00014   20.7   2.1   3.4   3   0   0   3   3   2   2 Respiration factor 2 [Yarrowia lipolytica]
+QNP97312.1           -          zf-C2H2              PF00096.28   2.6e-05   23.0   1.3   2.6e-05   23.0   1.3   5.4   6   0   0   6   6   4   1 Transcription factor STP2 [Yarrowia lipolytica]
+QNP95200.1           -          zf-C2H2              PF00096.28   4.2e-05   22.4   2.8   4.2e-05   22.4   2.8   3.9   3   1   0   3   3   3   1 Hypothetical protein YALI2_A00199g [Yarrowia lipolytica]
+QNQ01219.1           -          zf-C2H2              PF00096.28     5e-05   22.1  16.4   0.00039   19.3   2.6   3.7   3   0   0   3   3   3   1 Krueppel-like factor 15 [Yarrowia lipolytica]
+QNP99089.1           -          zf-C2H2              PF00096.28   0.00059   18.8  10.2     0.022   13.8   0.3   3.6   3   0   0   3   3   3   2 Transcription factor Sp8 [Yarrowia lipolytica]
+QNP97240.1           -          zf-C2H2              PF00096.28   0.00077   18.4   0.3   0.00077   18.4   0.3   2.6   3   0   0   3   3   2   1 E3 ubiquitin-protein ligase BRE1 [Yarrowia lipolytica]
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      ../PF00096.hmm
+# Target file:     Yarrowia_lipolytica_DSM3286.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/Yarrowia_lipolytica_DSM3286.faa_PF00096.hmm --noali --notextw -E 0.001 ../PF00096.hmm Yarrowia_lipolytica_DSM3286.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher/docs/data/gal_tutorial
+# Date:            Mon Apr 12 15:59:57 2021
+# [ok]
