@@ -159,8 +159,8 @@ Next, follow the step described above to run orthofisher using PF00096.hmm. Of n
 to a less stringent value. The default bitscore threshold is 85% of the best hit, which follows the `BUSCO <https://busco.ezlab.org/>`_ pipeline.
 However, depending on the research question, lowering the threshold may be reasonable. For example, try running orthofisher using the -b parameter 
 set to 0.85 and 0.2. Using a threshold of 0.2, Clavispora_lusitaniae_P5.faa has 27 copies, Kluyveromyces_lactis_NRRL_Y-1140.faa has 23 copies,
-Saccharomyces_cerevisiae_S288C.faa has 31 copies, and Yarrowia_lipolytica_DSM3286.faa has 28 copes of PF00096 whereas the same species have 1, 1, 1, and 3
-copies respectively. 
+Saccharomyces_cerevisiae_S288C.faa has 31 copies, and Yarrowia_lipolytica_DSM3286.faa has 28 copies of PF00096 whereas the same species have 1, 1, 1, and 3
+copies, respectively, using default parameters. 
 
 We provide an additional level of user-flexibility by having a e-value threshold that can be used during HMM-based sequence similarity search. To change the 
 e-value threshold from the default value of 1e-3, use the -e parameter.
