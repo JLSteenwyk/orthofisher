@@ -33,7 +33,7 @@ PhyKIT
 A broadly applicable command line toolkit with 30 (and counting) functions for analyzing
 and processing phylogenetic trees and multiple sequence alignments.
 
-`Advanced access article <https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab096/6131675>`_;
+`Publication PDF <https://jlsteenwyk.com/publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf>`_;
 `Documentation <https://jlsteenwyk.com/PhyKIT/>`_;
 `Source code <https://github.com/JLSteenwyk/PhyKIT>`_
 
@@ -51,7 +51,7 @@ prune user inputted phylogenies or phylogenies in our database using an intuitiv
 user interface.
 
 `Publication PDF <https://jlsteenwyk.com/publication_pdfs/2019_Steenwyk_and_Rokas_BMC_Research_Notes.pdf>`_;
-`Source code <https://github.com/JLSteenwyk/treehouse>`_
+`Documentation & Source code <https://github.com/JLSteenwyk/treehouse>`_
 
 .. |treehouse| image:: ../_static/img/treehouse_logo.png
    :width: 50%
