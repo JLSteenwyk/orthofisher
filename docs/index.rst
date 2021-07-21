@@ -17,7 +17,9 @@ or absent in a given proteome. For the purposes of phylogenomics/phylogenetics, 
 for all sequences as well as those that are single-copy; for gene family copy number determination, easily
 parsed output files contain absolute copy number of hits from the sequence similarity search.
 
-**If you found orthofisher useful, please cite this website.**
+If you found orthofisher useful, please cite orthofisher: a broadly applicable tool for automated gene
+identification and retrieval. Steenwyk & Rokas 2021, G3: Genes | Genomes | Genetics. doi:
+`10.1093/g3journal/jkab250 <https://jlsteenwyk.com/publication_pdfs/2021_Steenwyk_and_Rokas_G3.pdf>`_.
 
 ^^^^
 
