@@ -36,7 +36,7 @@
 
 Orthofisher conducts automated and high-throughout identification of a predetermined set of orthologs, which can be used for phylgenomics, gene family copy number determination and more!<br /><br />
 
-If you found orthofisher useful, please cite *orthofisher: a broadly applicable tool for automated gene identification and retrieval*. Steenwyk & Rokas 2021, G3 G3 Genes|Genomes|Genetics. doi: [10.1093/g3journal/jkab250](https://academic.oup.com/g3journal/advance-article/doi/10.1093/g3journal/jkab250/6321954?login=true).
+If you found orthofisher useful, please cite *orthofisher: a broadly applicable tool for automated gene identification and retrieval*. Steenwyk & Rokas 2021, G3 Genes|Genomes|Genetics. doi: [10.1093/g3journal/jkab250](https://academic.oup.com/g3journal/advance-article/doi/10.1093/g3journal/jkab250/6321954?login=true).
 <br /><br />
 
 ---
