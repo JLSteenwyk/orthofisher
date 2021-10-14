@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/jlsteenwyk/orthofisher">
-    <img src="https://raw.githubusercontent.com/JLSteenwyk/orthofisher/master/docs/_static/img/orthofisher.jpg" alt="Logo" width="400">
+    <img src="https://raw.githubusercontent.com/JLSteenwyk/orthofisher/master/docs/_static/img/orthofisher_full_logo.png" alt="Logo" width="400">
   </a>
   <p align="center">
     <a href="https://jlsteenwyk.com/orthofisher/">Docs</a>
