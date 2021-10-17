@@ -15,10 +15,11 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
     'Topic :: Scientific/Engineering',
 ]
 
-REQUIRES = ["biopython==1.78", "numpy==1.19.5", "tqdm==4.56.0"]
+REQUIRES = ["biopython>=1.79", "numpy>=1.19.5", "tqdm>=4.56.0", "cython"]
 
 setup(
     name="orthofisher",
