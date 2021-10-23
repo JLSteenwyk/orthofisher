@@ -101,14 +101,20 @@ def handle_single_copy_writing(
         f.write(">" + entry_name + '\n')
         sequence = [record_entry.seq[i:i+60] for i in range(0, len(record_entry.seq), 60)]
         for seq in sequence:
-            f.write(seq._data.decode("utf-8") + '\n')
+            if type(seq._data) is str:
+                f.write(seq._data + '\n')
+            else:
+                f.write(seq._data.decode("utf-8") + '\n')
 
     # write to all gene file
     with open(all_name, 'a') as f:
         f.write(">" + entry_name + '\n')
         sequence = [record_entry.seq[i:i+60] for i in range(0, len(record_entry.seq), 60)]
         for seq in sequence:
-            f.write(seq._data.decode("utf-8") + '\n')
+            if type(seq._data) is str:
+                f.write(seq._data + '\n')
+            else:
+                f.write(seq._data.decode("utf-8") + '\n')
 
     # write to long log file
     with open(long_summary_name, 'a') as f:
@@ -141,7 +147,10 @@ def handle_multi_copy_writing(
             f.write(">" + entry_name + '\n')
             sequence = [record_entry.seq[i:i+60] for i in range(0, len(record_entry.seq), 60)]
             for seq in sequence:
-                f.write(seq._data.decode("utf-8") + '\n')
+                if type(seq._data) is str:
+                    f.write(seq._data + '\n')
+                else:
+                    f.write(seq._data.decode("utf-8") + '\n')
 
         # write to long log file
         with open(long_summary_name, 'a') as f:
