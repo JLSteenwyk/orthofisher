@@ -1,0 +1,15 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+scaffold2108.p1      -          42at3041             -                  0 2243.0   3.5         0 1355.3   0.1   2.5   1   1   0   2   2   2   2 GENE.scaffold2108~~scaffold2108.p1  ORF type:complete len:1353 (+),score=226.75,UniRef90_A8I7P5|93.9|0.0,CobN-Mg_chel|PF02514.18|0,DUF3479|PF11965.10|4.5e-48 scaffold2108:845-4903(+)
+scaffold20672.p1     -          42at3041             -           1.3e-176  589.8   1.9   2.9e-83  280.7   0.2   6.7   5   2   0   5   5   5   5 GENE.scaffold20672~~scaffold20672.p1  ORF type:3prime_partial len:1718 (+),score=441.28,UniRef90_D8U8H2|95.7|0.0,CobN-Mg_chel|PF02514.18|9.9e-248,CobN-Mg_chel|PF02514.18|1.3e-35,DUF3479|PF11965.10|1.1e-51 scaffold20672:258-5408(+)
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      chlorophyta_lineage_buscos_hmms/42at3041.hmm
+# Target file:     taxa_protein_files/cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa_42at3041.hmm --noali --notextw -E 0.001 chlorophyta_lineage_buscos_hmms/42at3041.hmm taxa_protein_files/cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/orthofisher_dataset
+# Date:            Sat Oct 23 17:12:43 2021
+# [ok]

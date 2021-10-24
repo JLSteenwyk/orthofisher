@@ -1,0 +1,22 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+C242297.p1           -          45at3041             -           7.2e-257  855.7   3.4  1.2e-256  854.9   3.4   1.3   1   1   0   1   1   1   1 GENE.C242297~~C242297.p1  ORF type:internal len:440 (+),score=150.54,UniRef90_A0A150H423|87.6|1.83e-263,DNA_pol_B|PF00136.23|2.7e+02,DNA_pol_B|PF00136.23|9.8,DNA_pol_B|PF00136.23|0.33,DNA_pol_B_exo1|PF03104.21|0.27 C242297:1-1317(+)
+C238749.p1           -          45at3041             -           3.9e-196  654.4   0.0  4.7e-196  654.1   0.0   1.0   1   0   0   1   1   1   1 GENE.C238749~~C238749.p1  ORF type:internal len:382 (+),score=147.47,UniRef90_D8TKR5|90.0|5.30e-223,DNA_pol_B|PF00136.23|0.0024 C238749:2-1144(+)
+C217391.p1           -          45at3041             -            1.9e-97  327.3   0.4   2.1e-97  327.1   0.4   1.0   1   0   0   1   1   1   1 GENE.C217391~~C217391.p1  ORF type:internal len:180 (+),score=50.96,UniRef90_A0A2J8A053|89.2|2.05e-114,DNA_pol_B_exo1|PF03104.21|1.4e-49,RNase_H_2|PF13482.8|1.9e+02,RNase_H_2|PF13482.8|0.0016,DNA_pol_B_exo2|PF10108.11|2.3e+03,DNA_pol_B_exo2|PF10108.11|0.00059 C217391:3-539(+)
+C231899.p1           -          45at3041             -              8e-50  169.4   0.0   8.7e-50  169.2   0.0   1.0   1   0   0   1   1   1   1 GENE.C231899~~C231899.p1  ORF type:3prime_partial len:227 (+),score=70.56,UniRef90_A0A2K3DXP3|80.5|4.01e-100,DNA_pol_B_exo1|PF03104.21|3.7e-09,Lzipper-MIP1|PF14389.8|0.041,DUF5320|PF17253.4|0.21,DUF5320|PF17253.4|1.7e+03,BMFP|PF04380.15|0.11,DUF4468|PF14730.8|0.22 C231899:210-887(+)
+C210391.p1           -          45at3041             -            6.4e-45  153.1   0.2   7.4e-45  152.9   0.2   1.0   1   0   0   1   1   1   1 GENE.C210391~~C210391.p1  ORF type:internal len:146 (+),score=59.91,UniRef90_A0A150H423|84.8|3.39e-77,DUF1744|PF08490.14|2.9e-41 C210391:3-437(+)
+C225979.p2           -          45at3041             -            3.1e-26   91.1   2.1   1.7e-24   85.4   0.0   2.0   1   1   1   2   2   2   2 GENE.C225979~~C225979.p2  ORF type:internal len:240 (+),score=85.54,UniRef90_D8TKR5|81.2|1.31e-122,Zn_ribbon_SprT|PF17283.4|0.32,Zn_ribbon_SprT|PF17283.4|1e+03,DUF1272|PF06906.13|1.2e+02,DUF1272|PF06906.13|20 C225979:2-718(+)
+C230459.p2           -          45at3041             -            8.4e-17   59.9   1.7   1.6e-07   29.1   0.2   3.2   3   1   0   3   3   3   2 GENE.C230459~~C230459.p2  ORF type:internal len:282 (-),score=124.07,UniRef90_D8TKR5|80.6|6.63e-115,DUF1744|PF08490.14|3.2e-39 C230459:1-843(-)
+C229615.p1           -          45at3041             -            6.6e-07   27.1   1.2    0.0046   14.3   0.0   3.0   3   0   0   3   3   3   3 GENE.C229615~~C229615.p1  ORF type:internal len:273 (+),score=95.01,UniRef90_A0A150H423|57.9|2.88e-76 C229615:2-817(+)
+C259219.p1           -          45at3041             -            0.00019   19.0   0.0     0.042   11.2   0.0   3.1   3   0   0   3   3   3   2 GENE.C259219~~C259219.p1  ORF type:3prime_partial len:1097 (-),score=379.41,UniRef90_A0A2K3E5T4|83.7|0.0,DNA_pol_B|PF00136.23|4.3e-143,DNA_pol_B_exo1|PF03104.21|3.8e-73,zf-C4pol|PF14260.8|4.7e-16,RNase_H_2|PF13482.8|1.1,DNA_pol_B_2|PF03175.15|0.25,zf-RING-like|PF08746.13|4e+03,zf-RING-like|PF08746.13|0.37,CEBP_ZZ|PF16366.7|4.7,CEBP_ZZ|PF16366.7|5.3e+02 C259219:1-3288(-)
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      chlorophyta_lineage_buscos_hmms/45at3041.hmm
+# Target file:     taxa_protein_files/cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa_45at3041.hmm --noali --notextw -E 0.001 chlorophyta_lineage_buscos_hmms/45at3041.hmm taxa_protein_files/cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/orthofisher_dataset
+# Date:            Sat Oct 23 17:12:45 2021
+# [ok]

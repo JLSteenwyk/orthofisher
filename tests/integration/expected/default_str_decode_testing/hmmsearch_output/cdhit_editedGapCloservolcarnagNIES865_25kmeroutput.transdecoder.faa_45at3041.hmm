@@ -1,0 +1,19 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+scaffold7216.p1      -          45at3041             -                  0 1387.0   1.4  2.4e-245  818.0   0.0   2.0   2   0   0   2   2   2   2 GENE.scaffold7216~~scaffold7216.p1  ORF type:5prime_partial len:822 (-),score=192.45,UniRef90_D8TKR5|95.4|0.0,DNA_pol_B|PF00136.23|3.2e+03,DNA_pol_B|PF00136.23|5,DNA_pol_B|PF00136.23|3.7e-07,DNA_pol_B|PF00136.23|0.0038,NAPRTase_C|PF17956.3|0.1 scaffold7216:95-2560(-)
+scaffold7280.p1      -          45at3041             -            1.6e-56  192.1   1.6     1e-45  156.2   0.0   2.0   2   0   0   2   2   2   2 GENE.scaffold7280~~scaffold7280.p1  ORF type:internal len:277 (-),score=73.65,UniRef90_D8TKR5|99.6|1.87e-132,DUF1744|PF08490.14|1.8e-49 scaffold7280:3-830(-)
+C364231.p1           -          45at3041             -            2.5e-48  164.9   0.0   2.8e-48  164.7   0.0   1.0   1   0   0   1   1   1   1 GENE.C364231~~C364231.p1  ORF type:internal len:211 (+),score=49.62,UniRef90_D8TKR5|99.4|1.05e-97,DNA_pol_B_exo1|PF03104.21|9.9e-10 C364231:3-632(+)
+scaffold7281.p7      -          45at3041             -              1e-41  143.0   0.0   1.2e-41  142.7   0.0   1.0   1   0   0   1   1   1   1 GENE.scaffold7281~~scaffold7281.p7  ORF type:3prime_partial len:125 (-),score=26.39,UniRef90_D8TKR5|99.2|4.33e-76,DUF1744|PF08490.14|8.4e-33 scaffold7281:3-374(-)
+scaffold7281.p1      -          45at3041             -            1.5e-16   59.5   0.5   1.9e-06   26.0   0.1   4.1   4   0   0   4   4   4   3 GENE.scaffold7281~~scaffold7281.p1  ORF type:5prime_partial len:483 (-),score=166.72,UniRef90_D8TKR5|99.4|7.51e-275,DUF1744|PF08490.14|2e-28 scaffold7281:685-2133(-)
+scaffold21504.p1     -          45at3041             -            1.3e-05   23.3   0.8    0.0034   15.3   0.0   3.4   3   1   0   3   3   3   2 GENE.scaffold21504~~scaffold21504.p1  ORF type:complete len:1097 (-),score=151.30,UniRef90_D8UDC0|99.4|0.0,DNA_pol_B|PF00136.23|2.4e-143,DNA_pol_B_exo1|PF03104.21|1.5e-76,DNA_pol_B_exo1|PF03104.21|2.7e+03,DNA_pol_B_exo1|PF03104.21|5.6e+02,zf-C4pol|PF14260.8|2.1e-18,DNA_pol_B_2|PF03175.15|0.026,DNA_pol_B_2|PF03175.15|4.4e+03 scaffold21504:2758-6048(-)
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      chlorophyta_lineage_buscos_hmms/45at3041.hmm
+# Target file:     taxa_protein_files/cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa_45at3041.hmm --noali --notextw -E 0.001 chlorophyta_lineage_buscos_hmms/45at3041.hmm taxa_protein_files/cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/orthofisher_dataset
+# Date:            Sat Oct 23 17:12:44 2021
+# [ok]

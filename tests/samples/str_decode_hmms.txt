@@ -1,0 +1,3 @@
+tests/samples/42at3041.hmm
+tests/samples/45at3041.hmm
+tests/samples/52at3041.hmm

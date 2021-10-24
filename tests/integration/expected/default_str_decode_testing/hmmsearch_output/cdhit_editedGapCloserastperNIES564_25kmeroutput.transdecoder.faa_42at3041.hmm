@@ -1,0 +1,16 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+C261893.p1           -          42at3041             -                  0 2222.2   1.3         0 1341.3   0.0   2.5   2   1   0   2   2   2   2 GENE.C261893~~C261893.p1  ORF type:complete len:1398 (+),score=482.05,UniRef90_A8I7P5|92.5|0.0,CobN-Mg_chel|PF02514.18|0,DUF3479|PF11965.10|3.8e-48 C261893:75-4268(+)
+C244573.p1           -          42at3041             -            4.2e-87  292.9   0.0   5.6e-87  292.5   0.0   1.1   1   0   0   1   1   1   1 GENE.C244573~~C244573.p1  ORF type:internal len:482 (+),score=186.97,UniRef90_A0A2K3D8F4|83.1|9.13e-245,CobN-Mg_chel|PF02514.18|5.9e-137,TilS|PF09179.13|1.5e+04,TilS|PF09179.13|0.1 C244573:1-1443(+)
+scaffold2931.p1      -          42at3041             -            1.3e-86  291.3   0.0   1.7e-47  161.8   0.0   4.8   4   1   0   4   4   4   4 GENE.scaffold2931~~scaffold2931.p1  ORF type:3prime_partial len:1335 (+),score=545.40,UniRef90_D8U8H2|64.2|0.0,CobN-Mg_chel|PF02514.18|3.3e+03,CobN-Mg_chel|PF02514.18|8.3e-137,DUF3479|PF11965.10|5.2e-49,Sigma70_ner|PF04546.15|0.017,Sigma70_ner|PF04546.15|1.6e+04 scaffold2931:84-4085(+)
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      chlorophyta_lineage_buscos_hmms/42at3041.hmm
+# Target file:     taxa_protein_files/cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa_42at3041.hmm --noali --notextw -E 0.001 chlorophyta_lineage_buscos_hmms/42at3041.hmm taxa_protein_files/cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/orthofisher_dataset
+# Date:            Sat Oct 23 17:12:45 2021
+# [ok]

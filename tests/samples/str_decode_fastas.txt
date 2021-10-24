@@ -1,0 +1,3 @@
+tests/samples/cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa	volcarnagNIES865
+tests/samples/cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa	astperNIES564
+tests/samples/cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa	pleothompNIES4126

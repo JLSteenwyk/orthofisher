@@ -1,0 +1,15 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+C421666.p1           -          42at3041             -                  0 2239.4   3.9         0 1354.2   0.1   2.5   1   1   0   2   2   2   2 GENE.C421666~~C421666.p1  ORF type:complete len:1399 (-),score=391.54,UniRef90_A8I7P5|94.6|0.0,CobN-Mg_chel|PF02514.18|0,DUF3479|PF11965.10|1.2e-47 C421666:1094-5290(-)
+scaffold18196.p1     -          42at3041             -           6.3e-183  610.7   0.0   9.6e-87  292.1   0.0   6.0   4   2   0   4   4   4   4 GENE.scaffold18196~~scaffold18196.p1  ORF type:complete len:1469 (-),score=488.83,UniRef90_D8U8H2|79.7|0.0,CobN-Mg_chel|PF02514.18|4.8e-249,CobN-Mg_chel|PF02514.18|1.5e-35,DUF3479|PF11965.10|2.4e-52,HrpB7|PF09486.12|0.0038,HrpB7|PF09486.12|1.1e+03,5_3_exonuc|PF01367.22|1.2e+02,5_3_exonuc|PF01367.22|6.7e+03,5_3_exonuc|PF01367.22|5.8,T2SSM|PF04612.14|26,T2SSM|PF04612.14|36 scaffold18196:717-5123(-)
+#
+# Program:         hmmsearch
+# Version:         3.3.1 (Jul 2020)
+# Pipeline mode:   SEARCH
+# Query file:      chlorophyta_lineage_buscos_hmms/42at3041.hmm
+# Target file:     taxa_protein_files/cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa
+# Option settings: hmmsearch --tblout orthofisher_output/hmmsearch_output/cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa_42at3041.hmm --noali --notextw -E 0.001 chlorophyta_lineage_buscos_hmms/42at3041.hmm taxa_protein_files/cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa 
+# Current dir:     /Users/jlsteenwyk/Desktop/orthofisher_dataset
+# Date:            Sat Oct 23 17:12:46 2021
+# [ok]
