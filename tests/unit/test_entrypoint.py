@@ -45,3 +45,9 @@ class TestEntrypoint(object):
         cmd = "orthofisher -f tests/samples/input.txt -m tests/samples/hmms.txt -b error"
         exit_status = os.system(cmd)
         assert exit_status == 512
+
+    @pytest.mark.slow
+    def test_cpu_input_error(self):
+        cmd = "orthofisher -f tests/samples/input.txt -m tests/samples/hmms.txt -c asdf"
+        exit_status = os.system(cmd)
+        assert exit_status == 0
