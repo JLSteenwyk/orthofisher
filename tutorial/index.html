@@ -188,7 +188,7 @@ metabolic gene cluster in fungi. To do so, I individually BLASTed the
 Next, I downloaded the aligned FASTA sequences for each gene, which can be downloaded here:</p>
 <p class="centered">
 <strong>Download GAL1/7/10 alignments:
-<a class="reference download internal" download="" href="../_downloads/5f807891cd2926fbcc3bf875dfa07413/gal_sequences.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">GAL</span> <span class="pre">alignments</span></code></a></strong></p><p>Unzip the directory and from within the new directory, and generate alignments for each set
+<code class="xref download docutils literal notranslate"><span class="pre">GAL</span> <span class="pre">alignments</span></code></strong></p><p>Unzip the directory and from within the new directory, and generate alignments for each set
 of protein sequences. To do so, I will use <a class="reference external" href="http://www.clustal.org/omega/">Clustal Omega</a>
 alignment protocol, which is available via <a class="reference external" href="https://www.ebi.ac.uk/Tools/msa/clustalo/">EMBL-EBI</a>.
 However, other alignment software like <a class="reference external" href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a> can be used.
@@ -209,7 +209,7 @@ $ hmmbuild Gal10p.hmm Gal10p.aln.faa
 the following link:</p>
 <p class="centered">
 <strong>Download test data:
-<a class="reference download internal" download="" href="../_downloads/975936890e1722edb688af9d88632067/orthofisher_tutorial.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">tutorial</span> <span class="pre">dataset</span></code></a></strong></p><p>Next, unzip the downloaded directory and change directory to the newly downloaded directory.</p>
+<code class="xref download docutils literal notranslate"><span class="pre">tutorial</span> <span class="pre">dataset</span></code></strong></p><p>Next, unzip the downloaded directory and change directory to the newly downloaded directory.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> path_to_unzipped_directory/orthofisher_tutorial
 </pre></div>
 </div>
@@ -292,7 +292,7 @@ PF00096 domain copy number among the same set of proteomes.</p>
 <p>To do so, first download the PF00096 HMM from <a class="reference external" href="http://pfam.xfam.org/family/zf-C2H2#tabview=tab6">EMBL-EBI</a>, which is also available here:</p>
 <p class="centered">
 <strong>Download Zinc Finger, C2H2 type, HMM:
-<a class="reference download internal" download="" href="../_downloads/6d3fc0dedd82495c1739ab114c9bba21/PF00096.hmm"><code class="xref download docutils literal notranslate"><span class="pre">PF00096.hmm</span></code></a></strong></p><p>Next, follow the step described above to run orthofisher using PF00096.hmm. Of note, we recommend lowering the bitscore threshold
+<code class="xref download docutils literal notranslate"><span class="pre">PF00096.hmm</span></code></strong></p><p>Next, follow the step described above to run orthofisher using PF00096.hmm. Of note, we recommend lowering the bitscore threshold
 to a less stringent value. The default bitscore threshold is 85% of the best hit, which follows the <a class="reference external" href="https://busco.ezlab.org/">BUSCO</a> pipeline.
 However, depending on the research question, lowering the threshold may be reasonable. For example, try running orthofisher using the -b parameter
 set to 0.85 and 0.2. Using a threshold of 0.2, Clavispora_lusitaniae_P5.faa has 27 copies, Kluyveromyces_lactis_NRRL_Y-1140.faa has 23 copies,
