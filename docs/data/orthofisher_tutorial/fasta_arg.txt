@@ -1,4 +1,0 @@
-GCF_010094145.1_Didex1_protein.faa	Didymella_exigua
-GCA_011032825.1_Masph1_protein.faa	Massariosphaeria_phaeospora
-no_copy.faa	Fasta_file_with_no_copy
-multi_copy.faa	Fasta_file_with_multi-copies

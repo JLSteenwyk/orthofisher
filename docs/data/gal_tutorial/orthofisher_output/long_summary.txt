@@ -1,6 +1,0 @@
-Clavispora_lusitaniae_P5.faa	PF00096.hmm	single-copy	1	QFZ46112.1
-Kluyveromyces_lactis_NRRL_Y-1140.faa	PF00096.hmm	single-copy	1	XP_451688.1
-Saccharomyces_cerevisiae_S288C.faa	PF00096.hmm	single-copy	1	NP_015512.1
-Yarrowia_lipolytica_DSM3286.faa	PF00096.hmm	multi-copy	3	QNP97589.1
-Yarrowia_lipolytica_DSM3286.faa	PF00096.hmm	multi-copy	3	QNP98062.1
-Yarrowia_lipolytica_DSM3286.faa	PF00096.hmm	multi-copy	3	QNP96916.1

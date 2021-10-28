@@ -1,5 +1,0 @@
-file_name	single-copy	multi-copy	absent	per_single-copy	per_multi-copy	per_absent
-Clavispora_lusitaniae_P5.faa	1	0	0	1.0	0.0	0.0
-Kluyveromyces_lactis_NRRL_Y-1140.faa	1	0	0	1.0	0.0	0.0
-Saccharomyces_cerevisiae_S288C.faa	1	0	0	1.0	0.0	0.0
-Yarrowia_lipolytica_DSM3286.faa	0	1	0	0.0	1.0	0.0

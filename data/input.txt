@@ -1,4 +1,0 @@
-../data/GCF_010094145.1_Didex1_protein.faa	Didymella_exigua
-../data/GCA_011032825.1_Masph1_protein.faa	Massariosphaeria_phaeospora
-../data/small_set.faa	no_copy
-../data/multi_copy.faa	multi_copy
