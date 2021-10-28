@@ -10,7 +10,9 @@ def args():
         fasta="tests/samples/input.txt",
         hmm="tests/samples/hmms.txt",
         evalue=0.001,
-        bitscore=0.85
+        bitscore=0.85,
+        output_dir="orthofisher_output",
+        cpu=2
     )
     return Namespace(**kwargs)
 
@@ -45,13 +47,25 @@ class TestArgsProcessing(object):
         res = process_args(args)
         assert res["percent_bitscore"] == 0.5
 
+    def test_process_args_custom_output(self, args):
+        args.output_dir = "custom_out"
+        res = process_args(args)
+        assert res["output_dir"] == "custom_out"
+
+    def test_process_args_custom_cpu(self, args):
+        args.cpu = 4
+        res = process_args(args)
+        assert res["cpu"] == 4
+
     def test_process_args_expected_keywords(self, args):
         res = process_args(args)
         expected_keys = [
             "fasta_file_list",
             "hmms_file_list",
             "evalue",
-            "percent_bitscore"
+            "percent_bitscore",
+            "output_dir",
+            "cpu"
         ]
         assert sorted(res.keys()) == sorted(expected_keys)
 

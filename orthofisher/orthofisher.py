@@ -23,8 +23,10 @@ from .helper import (
 def execute(
     fasta_file_list: str,
     hmms_file_list: str,
-    evalue,
-    percent_bitscore: float
+    evalue: float,
+    percent_bitscore: float,
+    output_dir: str,
+    cpu: int
 ):
 
     # read input files
@@ -32,7 +34,7 @@ def execute(
 
     # create directories that will be
     # populated with output files
-    create_directories()
+    create_directories(output_dir)
 
     # create empty object for checking 
     # hmmsearches with no hits
@@ -49,17 +51,16 @@ def execute(
         fasta_name = re.sub(r'^.*/', '', fasta[0])
 
         ## loop through HMMs
-        num_hmms_present = 0
         for hmm in hmms_file_list:
             hmm_name, \
             singlecopy_name, \
             all_name, \
             short_summary_name, \
             long_summary_name, \
-            hmmsearch_out = set_names(hmm[0], fasta_name)
+            hmmsearch_out = set_names(hmm[0], fasta_name, output_dir)
             
             # execute hmmsearch
-            conduct_hmm_search(hmmsearch_out, hmm[0], fasta[0], evalue)
+            conduct_hmm_search(hmmsearch_out, hmm[0], fasta[0], evalue, cpu)
 
             # identify single copy orthologs and write them to separate scog files
             check_hmmsearch_output(hmmsearch_out)

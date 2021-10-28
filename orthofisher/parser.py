@@ -76,6 +76,12 @@ def create_parser():
         -b, --bitscore <fraction bitscore threshold>
             fraction of a bitscore to be considered similar to top hit
 
+        -c, --cpu <cpu workers for multithreading>
+            CPU workers for multithreading
+
+        -o, --output_dir <output directory name>
+            name of the outputted directory
+
 
         -------------------------------------
         | Detailed explanation of arguments | 
@@ -91,6 +97,12 @@ def create_parser():
 
         -b, --bitscore
             A fraction threshold to specify the bitscore threshold for sequences to be considered similar. More specifically, if a hit has a bitscore less than the specified fraction, the gene will not be considered sufficiently similar to be considered putatively orthologous. Value must range from 0 to 1 (default: 0.85).
+
+        -c, --cpu
+            Specify the number of parallel CPU workers to use for multithreading (default: 2). This argument is passed to HMMER.
+
+        -o, --output_dir
+            Name of the outputted directory with all results from the orthofisher run (default: orthofisher_output). Note, orthofisher will overwrite existing directories with the same name as specified by this argument.
         """
         ),
     )
@@ -111,6 +123,24 @@ def create_parser():
         required=False,
         help=SUPPRESS,
         metavar="bitscore threshold",
+    )
+
+    optional.add_argument(
+        "-c",
+        "--cpu",
+        type=str,
+        required=False,
+        help=SUPPRESS,
+        metavar="output dir",
+    )
+
+    optional.add_argument(
+        "-o",
+        "--output",
+        type=str,
+        required=False,
+        help=SUPPRESS,
+        metavar="output dir",
     )
 
     optional.add_argument(
