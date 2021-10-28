@@ -145,6 +145,8 @@ output/
 # testing output files
 orthofisher/orthofisher_output/
 orthofisher_output
+orthofisher/orthofisher_custom_output/
+orthofisher_custom_output
 data
 
 # remove directions for how to submit to conda
