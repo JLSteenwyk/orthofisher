@@ -136,10 +136,6 @@ col. 1: Query proteome fasta file. |br|
 col. 2-4: Absolute number of sequences represented by HMMs that are present in single-copy, multi-copy, or absent. |br|
 col. 5-7: Percetange of sequences represented by HMMs that are present in single-copy, multi-copy, or absent. |br|
 
-.. |br| raw:: html
-
-   <br />
-
 |
 
 5) Estimating gene family copy number
@@ -165,3 +161,24 @@ copies, respectively, using default parameters.
 We provide an additional level of user-flexibility by having a e-value threshold that can be used during HMM-based sequence similarity search. To change the 
 e-value threshold from the default value of 1e-3, use the -e parameter.
 
+|
+
+6) Running orthofisher faster
+#############################
+
+In this section, I go over some suggestions to make orthofisher run faster.
+
+As of version 1.0.0,
+two new arguments have been added to orthofisher. The first is -c/\-\-cpu, which can be use for
+multithreading during the HMMsearch. The second is -o/\-\-output_dir, which can be used to specify
+the name of the output file. These arguments enable users to accelerate the HMMsearch and
+pseudo-parallelize orthofisher runs. 
+
+To pseudo-parallelize orthofisher runs, users can split up their -f/\-\-fasta input file into
+multiple pieces and then run orthofisher using each smaller file in an array of jobs.
+When doing so, users can write to different output directories for each input file and then
+combine results at the end.
+
+.. |br| raw:: html
+
+   <br />
