@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#run-orthofisher">3) Run orthofisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#examine-output">4) Examine output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#estimating-gene-family-copy-number">5) Estimating gene family copy number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-orthofisher-faster">6) Running orthofisher faster</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../other_software/index.html">Other software</a></li>
@@ -300,6 +301,22 @@ Saccharomyces_cerevisiae_S288C.faa has 31 copies, and Yarrowia_lipolytica_DSM328
 copies, respectively, using default parameters.</p>
 <p>We provide an additional level of user-flexibility by having a e-value threshold that can be used during HMM-based sequence similarity search. To change the
 e-value threshold from the default value of 1e-3, use the -e parameter.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="running-orthofisher-faster">
+<h2>6) Running orthofisher faster<a class="headerlink" href="#running-orthofisher-faster" title="Permalink to this headline">¶</a></h2>
+<p>In this section, I go over some suggestions to make orthofisher run faster.</p>
+<p>As of version 1.0.0,
+two new arguments have been added to orthofisher. The first is -c/--cpu, which can be use for
+multithreading during the HMMsearch. The second is -o/--output_dir, which can be used to specify
+the name of the output file. These arguments enable users to accelerate the HMMsearch and
+pseudo-parallelize orthofisher runs.</p>
+<p>To pseudo-parallelize orthofisher runs, users can split up their -f/--fasta input file into
+multiple pieces and then run orthofisher using each smaller file in an array of jobs.
+When doing so, users can write to different output directories for each input file and then
+combine results at the end.</p>
 </div>
 </div>
 
