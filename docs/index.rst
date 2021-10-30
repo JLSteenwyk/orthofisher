@@ -30,6 +30,7 @@ identification and retrieval. Steenwyk & Rokas 2021, G3: Genes | Genomes | Genet
 	arguments/index
 	install/index
 	tutorial/index
+	change_log/index
 	other_software/index
 	frequently_asked_questions/index
 
