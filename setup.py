@@ -39,5 +39,5 @@ setup(
 
 ## push new version to pypi
 # rm -rf dist
-# python setup.py sdist bdist_wheel --universal
+# python3 setup.py sdist bdist_wheel --universal
 # twine upload dist/* -r pypi

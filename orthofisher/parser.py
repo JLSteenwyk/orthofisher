@@ -136,7 +136,7 @@ def create_parser():
 
     optional.add_argument(
         "-o",
-        "--output",
+        "--output_dir",
         type=str,
         required=False,
         help=SUPPRESS,
