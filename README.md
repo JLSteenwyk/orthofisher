@@ -23,15 +23,21 @@
             <img src="https://img.shields.io/twitter/follow/jlsteenwyk?style=social&logo=twitter"
                 alt="follow on Twitter">
         </a>
+        <br />
+        <a href="https://pepy.tech/badge/orthofisher">
+          <img src="https://static.pepy.tech/personalized-badge/orthofisher?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPi%20Downloads">
+        </a>
         <a href="https://lbesson.mit-license.org/" alt="License">
             <img src="https://img.shields.io/badge/License-MIT-blue.svg">
         </a>
         <a href="https://pypi.org/project/orthofisher/" alt="PyPI - Python Version">
             <img src="https://img.shields.io/pypi/pyversions/orthofisher">
         </a>
+        <br />
         <a href="https://academic.oup.com/g3journal/article/11/9/jkab250/6321954">
           <img src="https://zenodo.org/badge/DOI/10.1093/g3journal/jkab250.svg">
         </a>
+        <a href="https://patreon.com/jlsteenwyk"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Djlsteenwyk%26type%3Dpatrons&style=flat" alt="Support me on Patreon" /></a>
     </p>
 </p>
 
