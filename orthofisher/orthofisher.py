@@ -80,6 +80,13 @@ def execute(
                     
                     num_hits = len(hits)
 
+                    # if there is no second column provided,
+                    # create a placeholder name that is an empty string
+                    try:
+                        name = fasta[1]
+                    except IndexError:
+                        name = ""
+
                     # if single copy
                     if num_hits == 1:
                         # write to single copy orthologous gene file
@@ -87,7 +94,7 @@ def execute(
                         # write to long log file
                         handle_single_copy_writing(
                             singlecopy_name,
-                            fasta[1],
+                            name,
                             all_name,
                             long_summary_name,
                             fasta_name,
@@ -103,7 +110,7 @@ def execute(
                     # if multi-copy
                     elif num_hits > 1:
                         handle_multi_copy_writing(
-                            fasta[1],
+                            name,
                             all_name,
                             long_summary_name,
                             fasta_name,

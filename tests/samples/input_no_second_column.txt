@@ -1,0 +1,4 @@
+tests/samples/GCF_010094145.1_Didex1_protein.faa
+tests/samples/GCA_011032825.1_Masph1_protein.faa
+tests/samples/small_set.faa
+tests/samples/multi_copy.faa

@@ -87,7 +87,9 @@ def create_parser():
         | Detailed explanation of arguments | 
         -------------------------------------
         -f, --fasta
-            A two column tab delimited file that points to the location of fasta files that will be searched using HMMs in the first column. Typically, these are protein fasta files from the entire genome/transcriptome of an organism. The second column of the file specifies the identifier for the organism
+            A one or two column tab delimited file that points to the location of fasta files that will be searched using HMMs in the first column.
+            Typically, these are protein fasta files from the entire genome/transcriptome of an organism. The second column of the file specifies
+            the identifier for the organism. If there is no second column, the gene identifier will be used.
         
         -m, --hmm
             A single column file with the location of HMMs that you wish to identify or fish out of a given proteome.
@@ -96,7 +98,9 @@ def create_parser():
             Specify an e-value threshold to use when conducting sequence similarity searches (default: 0.001). Format can be 1e-3 or 0.001.
 
         -b, --bitscore
-            A fraction threshold to specify the bitscore threshold for sequences to be considered similar. More specifically, if a hit has a bitscore less than the specified fraction, the gene will not be considered sufficiently similar to be considered putatively orthologous. Value must range from 0 to 1 (default: 0.85).
+            A fraction threshold to specify the bitscore threshold for sequences to be considered similar. More specifically, if a hit has a
+            bitscore less than the specified fraction, the gene will not be considered sufficiently similar to be considered putatively orthologous.
+            Value must range from 0 to 1 (default: 0.85).
 
         -c, --cpu
             Specify the number of parallel CPU workers to use for multithreading (default: 2). This argument is passed to HMMER.

@@ -13,9 +13,9 @@ Further clarification about the usage of these parameters may be gained from che
 Required
 ########
 **-f, \-\-fasta**:
-A two column tab delimited file that points to the location of fasta files that will be searched
-using HMMs in the first column. Typically, these are protein fasta files from the entire genome/
-transcriptome of an organism. The second column of the file specifies the identifier for the organism.
+A one or two column tab delimited file that points to the location of fasta files that will be searched using HMMs in the first column.
+Typically, these are protein fasta files from the entire genome/transcriptome of an organism. The second column of the file specifies
+the identifier for the organism. If there is no second column, the gene identifier will be used.
 
 **-m, \-\-hmm**:
 A single column file with the location of HMMs that you wish to identify or fish out of a given proteome.
