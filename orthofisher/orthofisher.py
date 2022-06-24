@@ -83,7 +83,7 @@ def execute(
                     # if there is no second column provided,
                     # create a placeholder name that is an empty string
                     try:
-                        name = fasta[1]
+                        name = fasta[1] + " "
                     except IndexError:
                         name = ""
 

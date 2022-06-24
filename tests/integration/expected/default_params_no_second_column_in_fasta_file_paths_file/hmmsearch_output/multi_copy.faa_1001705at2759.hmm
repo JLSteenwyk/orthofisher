@@ -7,7 +7,7 @@
 # Pipeline mode:   SEARCH
 # Query file:      tests/samples/1001705at2759.hmm
 # Target file:     tests/samples/multi_copy.faa
-# Option settings: hmmsearch --tblout tests/integration/expected/default_params_no_second_column_in_fasta_file_paths_file/hmmsearch_output/multi_copy.faa_1001705at2759.hmm --noali --notextw -E 0.001 --cpu 2 tests/samples/1001705at2759.hmm tests/samples/multi_copy.faa 
+# Option settings: hmmsearch --tblout tests/integration/expected/default_params_no_second_column_in_fasta_file_paths_file//hmmsearch_output/multi_copy.faa_1001705at2759.hmm --noali --notextw -E 0.001 --cpu 2 tests/samples/1001705at2759.hmm tests/samples/multi_copy.faa 
 # Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Wed Jun 22 18:57:09 2022
+# Date:            Thu Jun 23 20:00:25 2022
 # [ok]

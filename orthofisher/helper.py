@@ -96,7 +96,8 @@ def handle_single_copy_writing(
     and to a long-form log file
     """
 
-    entry_name = ''.join([fasta + ' ' + hits[0]._id + '|' + str(hits[0].evalue) + '|' + str(hits[0].bitscore)])
+    
+    entry_name = ''.join([fasta + hits[0]._id + '|' + str(hits[0].evalue) + '|' + str(hits[0].bitscore)])
     record_entry = record_dict[hits[0].id]
 
     # write single copy orthologous gene file
@@ -142,7 +143,7 @@ def handle_multi_copy_writing(
     for idx in range(num_hits):
         hit_ids.append(hits[0]._id)
 
-        entry_name = ''.join([fasta + ' ' + hits[idx]._id + '|' + str(hits[idx].evalue) + '|' + str(hits[idx].bitscore)])
+        entry_name = ''.join([fasta + hits[idx]._id + '|' + str(hits[idx].evalue) + '|' + str(hits[idx].bitscore)])
         record_entry = record_dict[hits[idx].id]
 
         # write to all gene file

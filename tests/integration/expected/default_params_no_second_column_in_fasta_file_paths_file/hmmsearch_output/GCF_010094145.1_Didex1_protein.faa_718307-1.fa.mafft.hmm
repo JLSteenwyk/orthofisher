@@ -8,7 +8,7 @@ XP_033451061.1       -          718307-1.fa          -           6.7e-239  792.3
 # Pipeline mode:   SEARCH
 # Query file:      tests/samples/718307-1.fa.mafft.hmm
 # Target file:     tests/samples/GCF_010094145.1_Didex1_protein.faa
-# Option settings: hmmsearch --tblout tests/integration/expected/default_params_no_second_column_in_fasta_file_paths_file/hmmsearch_output/GCF_010094145.1_Didex1_protein.faa_718307-1.fa.mafft.hmm --noali --notextw -E 0.001 --cpu 2 tests/samples/718307-1.fa.mafft.hmm tests/samples/GCF_010094145.1_Didex1_protein.faa 
+# Option settings: hmmsearch --tblout tests/integration/expected/default_params_no_second_column_in_fasta_file_paths_file//hmmsearch_output/GCF_010094145.1_Didex1_protein.faa_718307-1.fa.mafft.hmm --noali --notextw -E 0.001 --cpu 2 tests/samples/718307-1.fa.mafft.hmm tests/samples/GCF_010094145.1_Didex1_protein.faa 
 # Current dir:     /Users/jlsteenwyk/Desktop/GITHUB/orthofisher
-# Date:            Wed Jun 22 18:57:09 2022
+# Date:            Thu Jun 23 20:00:24 2022
 # [ok]
