@@ -147,7 +147,7 @@ orthofisher/orthofisher_output/
 orthofisher_output
 orthofisher/orthofisher_custom_output/
 orthofisher_custom_output
-data
+/data
 
 # remove directions for how to submit to conda
 submitting_to_conda.txt

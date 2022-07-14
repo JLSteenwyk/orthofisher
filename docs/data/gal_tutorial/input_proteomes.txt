@@ -1,0 +1,4 @@
+Clavispora_lusitaniae_P5.faa	Clavispora_lusitaniae_P5
+Kluyveromyces_lactis_NRRL_Y-1140.faa	Kluyveromyces_lactis_NRRL_Y-1140
+Saccharomyces_cerevisiae_S288C.faa	Saccharomyces_cerevisiae_S288C
+Yarrowia_lipolytica_DSM3286.faa	Yarrowia_lipolytica_DSM3286
