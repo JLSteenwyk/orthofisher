@@ -11,7 +11,7 @@
   </p>
     <p align="center">
         <a href="https://github.com/JLSteenwyk/orthofisher/actions" alt="Build">
-            <img src="https://img.shields.io/github/workflow/status/jlsteenwyk/orthofisher/CI">
+            <img src="https://img.shields.io/github/actions/workflow/status/JLSteenwyk/orthofisher/ci.yml?branch=main">
         </a>
         <a href="https://codecov.io/gh/jlsteenwyk/orthofisher" alt="Coverage">
           <img src="https://codecov.io/gh/JLSteenwyk/orthofisher/branch/main/graph/badge.svg?token=7LYMLHDL9D"/>
