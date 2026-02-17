@@ -77,6 +77,8 @@ export PATH=$PATH:/home/steenwj/SOFTWARE/hmmer-3.1b2-linux-intel-x86_64/binaries
 
 ### 2) Install orthofisher
 
+Supported Python versions: **3.10, 3.11, 3.12, and 3.13**.
+
 **If you are having trouble installing orthofisher, please contact the lead developer, Jacob L. Steenwyk, via [email](https://jlsteenwyk.com/contact.html) or [twitter](https://twitter.com/jlsteenwyk) to get help.**
 
 <br/>

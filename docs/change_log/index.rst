@@ -13,6 +13,7 @@ Major changes to orthofisher are summarized here.
 - Default output is now slim (``scog/``, ``long_summary.txt``, ``short_summary.txt``).
 - Added ``--verbose-output`` to also write ``all_sequences/`` and retain ``hmmsearch_output/`` files.
 - Added ``--force`` to explicitly overwrite an existing output directory.
+- Updated Python support to 3.10-3.13 and dropped 3.9.
 - ``long_summary.txt`` now includes per-hit ``evalue`` and ``bitscore`` columns.
 - Improved CLI validation for ``--evalue``, ``--bitscore``, and ``--cpu``.
 - Improved runtime error handling with clearer typed exceptions and centralized CLI error reporting.

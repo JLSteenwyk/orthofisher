@@ -1,3 +1,7 @@
+1.1.2
+  - default output is slim; use --verbose-output to write large raw outputs
+  - updated Python support to 3.10-3.13 and dropped 3.9
+  - added --force to overwrite an existing output directory
 0.2.0
   - compatible with python 3.9 and biopython 1.79
 0.0.8
