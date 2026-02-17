@@ -117,7 +117,12 @@ sufficiently similar to be considered putatively orthologous. Value must range f
 <p><strong>-c, --cpu</strong>:
 Specify the number of parallel CPU workers to use for multithreading (default: 2). This argument is passed to HMMER.</p>
 <p><strong>-o, --output_dir</strong>:
-Name of the outputted directory with all results from the orthofisher run (default: orthofisher_output). Note, orthofisher will overwrite existing directories with the same name as specified by this argument.</p>
+Name of the outputted directory with all results from the orthofisher run (default: orthofisher_output).</p>
+<p><strong>--force</strong>:
+Overwrite an existing output directory. If omitted and the output directory already exists, orthofisher exits with an error.</p>
+<p><strong>--verbose-output</strong>:
+By default, orthofisher writes slim output (<code class="docutils literal notranslate"><span class="pre">scog/</span></code>, <code class="docutils literal notranslate"><span class="pre">long_summary.txt</span></code>, and <code class="docutils literal notranslate"><span class="pre">short_summary.txt</span></code>).
+Use this flag to also write <code class="docutils literal notranslate"><span class="pre">all_sequences/</span></code> and retain raw <code class="docutils literal notranslate"><span class="pre">hmmsearch_output/</span></code> files.</p>
 </section>
 </section>
 

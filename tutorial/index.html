@@ -154,6 +154,15 @@ identify or <em>fish out</em> of a given proteome. In this tutorial, this is fil
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>orthofisher<span class="w"> </span>-m<span class="w"> </span>hmms.txt<span class="w"> </span>-f<span class="w"> </span>fasta_arg.txt
 </pre></div>
 </div>
+<p>If you rerun the same command to the same output directory, include <code class="docutils literal notranslate"><span class="pre">--force</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>orthofisher<span class="w"> </span>-m<span class="w"> </span>hmms.txt<span class="w"> </span>-f<span class="w"> </span>fasta_arg.txt<span class="w"> </span>--force
+</pre></div>
+</div>
+<p>To write larger raw outputs (<code class="docutils literal notranslate"><span class="pre">all_sequences/</span></code> and <code class="docutils literal notranslate"><span class="pre">hmmsearch_output/</span></code>), include
+<code class="docutils literal notranslate"><span class="pre">--verbose-output</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>orthofisher<span class="w"> </span>-m<span class="w"> </span>hmms.txt<span class="w"> </span>-f<span class="w"> </span>fasta_arg.txt<span class="w"> </span>--verbose-output
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -161,35 +170,33 @@ identify or <em>fish out</em> of a given proteome. In this tutorial, this is fil
 <section id="examine-output">
 <h2>4) Examine output<a class="headerlink" href="#examine-output" title="Link to this heading"></a></h2>
 <p>In the current working directory, a subdirectory will be made titled <em>orthofisher_output</em>.
-Each subdirectory therein contains desirable output, which is briefly desired as:</p>
+By default, orthofisher writes a slim output with:</p>
+<ol class="arabic simple">
+<li><p>scog: a directory of single copy orthologous HMMs identified in the various fasta files</p></li>
+<li><p>long_summary.txt</p></li>
+<li><p>short_summary.txt</p></li>
+</ol>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">--verbose-output</span></code>, orthofisher also writes:</p>
 <ol class="arabic simple">
 <li><p>all_sequences: multi-fasta file sequences of every hit identified during sequence similarity search.</p></li>
-<li><p>hmmsearch_output: output files generated during hmmsearches</p></li>
-<li><p>scog: a directory of single copy orthologous HMMs identified in the various fasta files</p></li>
+<li><p>hmmsearch_output: output files generated during hmmsearches.</p></li>
 </ol>
 <p>Also, two text files are made with helpful information that summarizes all the searches:</p>
 <p>1. long_summary.txt: Hits identified during sequence similarity search per fasta file per HMM.
 HMMs are considered single-copy, multi-copy, or absent in a given fasta file.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>orthofisher_output/long_summary.txt<span class="w"> </span>Clavispora_lusitaniae_P5.faa<span class="w">    </span>Gal10p.hmm<span class="w">      </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>QFZ46524.1
-Clavispora_lusitaniae_P5.faa<span class="w">    </span>Gal1p.hmm<span class="w">       </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>QFZ46523.1
-Clavispora_lusitaniae_P5.faa<span class="w">    </span>Gal7p.hmm<span class="w">       </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>QFZ46527.1
-Kluyveromyces_lactis_NRRL_Y-1140.faa<span class="w">    </span>Gal10p.hmm<span class="w">      </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>XP_455462.1
-Kluyveromyces_lactis_NRRL_Y-1140.faa<span class="w">    </span>Gal1p.hmm<span class="w">       </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>XP_455461.1
-Kluyveromyces_lactis_NRRL_Y-1140.faa<span class="w">    </span>Gal7p.hmm<span class="w">       </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>XP_455463.1
-Saccharomyces_cerevisiae_S288C.faa<span class="w">      </span>Gal10p.hmm<span class="w">      </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>NP_009575.1
-Saccharomyces_cerevisiae_S288C.faa<span class="w">      </span>Gal1p.hmm<span class="w">       </span>multi-copy<span class="w">      </span><span class="m">2</span><span class="w">       </span>NP_009576.1
-Saccharomyces_cerevisiae_S288C.faa<span class="w">      </span>Gal1p.hmm<span class="w">       </span>multi-copy<span class="w">      </span><span class="m">2</span><span class="w">       </span>NP_010292.1
-Saccharomyces_cerevisiae_S288C.faa<span class="w">      </span>Gal7p.hmm<span class="w">       </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>NP_009574.1
-Yarrowia_lipolytica_DSM3286.faa<span class="w"> </span>Gal10p.hmm<span class="w">      </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>QNP99911.1
-Yarrowia_lipolytica_DSM3286.faa<span class="w"> </span>Gal1p.hmm<span class="w">       </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>QNP96229.1
-Yarrowia_lipolytica_DSM3286.faa<span class="w"> </span>Gal7p.hmm<span class="w">       </span>single-copy<span class="w">     </span><span class="m">1</span><span class="w">       </span>QNP99718.1
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>orthofisher_output/long_summary.txt
+Clavispora_lusitaniae_P5.faa<span class="w"> </span>Gal10p.hmm<span class="w"> </span>single-copy<span class="w"> </span><span class="m">1</span><span class="w"> </span>QFZ46524.1<span class="w"> </span><span class="m">2</span>.8e-180<span class="w"> </span><span class="m">597</span>.0
+Saccharomyces_cerevisiae_S288C.faa<span class="w"> </span>Gal1p.hmm<span class="w"> </span>multi-copy<span class="w"> </span><span class="m">2</span><span class="w"> </span>NP_009576.1<span class="w"> </span><span class="m">3</span>.5e-250<span class="w"> </span><span class="m">830</span>.2
+small_set.faa<span class="w"> </span>Gal7p.hmm<span class="w"> </span>absent<span class="w"> </span><span class="m">0</span><span class="w"> </span>NA<span class="w"> </span>NA<span class="w"> </span>NA
 </pre></div>
 </div>
 <p>col. 1: Query proteome fasta file. <br />
 col. 2: HMM file used during sequence similarity search. <br />
 col. 3: The sequence represented by the HMM is considered single_copy, multi-copy, or absent in a query proteome. <br />
 col. 4: Absolute copy number of hits from the sequence similarity search. <br />
-col. 5: The fasta entry identifier of the gene identified. <br /></p>
+col. 5: The fasta entry identifier of the gene identified. <br />
+col. 6: e-value for the identified hit (<code class="docutils literal notranslate"><span class="pre">NA</span></code> if absent). <br />
+col. 7: bitscore for the identified hit (<code class="docutils literal notranslate"><span class="pre">NA</span></code> if absent). <br /></p>
 <p>2. short_summary.txt: Summary of the absolute number and percentage of single-copy, multi-copy, or absent HMMs
 per fasta file.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>orthofisher_output/short_summary.txt

@@ -84,6 +84,16 @@
 <span id="id1"></span><h1>Change log<a class="headerlink" href="#change-log" title="Link to this heading"></a></h1>
 <hr class="docutils" />
 <p>Major changes to orthofisher are summarized here.</p>
+<p><strong>1.1.2</strong>:</p>
+<ul class="simple">
+<li><p>Default output is now slim (<code class="docutils literal notranslate"><span class="pre">scog/</span></code>, <code class="docutils literal notranslate"><span class="pre">long_summary.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">short_summary.txt</span></code>).</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--verbose-output</span></code> to also write <code class="docutils literal notranslate"><span class="pre">all_sequences/</span></code> and retain <code class="docutils literal notranslate"><span class="pre">hmmsearch_output/</span></code> files.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--force</span></code> to explicitly overwrite an existing output directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">long_summary.txt</span></code> now includes per-hit <code class="docutils literal notranslate"><span class="pre">evalue</span></code> and <code class="docutils literal notranslate"><span class="pre">bitscore</span></code> columns.</p></li>
+<li><p>Improved CLI validation for <code class="docutils literal notranslate"><span class="pre">--evalue</span></code>, <code class="docutils literal notranslate"><span class="pre">--bitscore</span></code>, and <code class="docutils literal notranslate"><span class="pre">--cpu</span></code>.</p></li>
+<li><p>Improved runtime error handling with clearer typed exceptions and centralized CLI error reporting.</p></li>
+<li><p>Refactored integration and entrypoint tests to reduce duplication and improve environment portability.</p></li>
+</ul>
 <p><strong>1.0.0</strong>: introduced -c, --cpu argument and -o, --output_dir argument</p>
 <p><strong>0.2.0</strong>: compatible with python 3.9 and biopython 1.79</p>
 <p><strong>0.0.8</strong>: created -b, --bitscore parameter</p>

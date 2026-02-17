@@ -81,17 +81,35 @@ identify or *fish out* of a given proteome. In this tutorial, this is file **hmm
 
    $ orthofisher -m hmms.txt -f fasta_arg.txt
 
+If you rerun the same command to the same output directory, include ``--force``:
+
+.. code-block:: shell
+
+   $ orthofisher -m hmms.txt -f fasta_arg.txt --force
+
+To write larger raw outputs (``all_sequences/`` and ``hmmsearch_output/``), include
+``--verbose-output``:
+
+.. code-block:: shell
+
+   $ orthofisher -m hmms.txt -f fasta_arg.txt --verbose-output
+
 |
 
 4) Examine output
 #################
 
 In the current working directory, a subdirectory will be made titled *orthofisher_output*.
-Each subdirectory therein contains desirable output, which is briefly desired as:
+By default, orthofisher writes a slim output with:
+
+1. scog: a directory of single copy orthologous HMMs identified in the various fasta files
+2. long_summary.txt
+3. short_summary.txt
+
+If you use ``--verbose-output``, orthofisher also writes:
 
 1. all_sequences: multi-fasta file sequences of every hit identified during sequence similarity search.
-2. hmmsearch_output: output files generated during hmmsearches
-3. scog: a directory of single copy orthologous HMMs identified in the various fasta files
+2. hmmsearch_output: output files generated during hmmsearches.
 
 Also, two text files are made with helpful information that summarizes all the searches:
 
@@ -100,25 +118,18 @@ HMMs are considered single-copy, multi-copy, or absent in a given fasta file.
 
 .. code-block:: shell
 
-   $ cat orthofisher_output/long_summary.txt Clavispora_lusitaniae_P5.faa    Gal10p.hmm      single-copy     1       QFZ46524.1
-   Clavispora_lusitaniae_P5.faa    Gal1p.hmm       single-copy     1       QFZ46523.1
-   Clavispora_lusitaniae_P5.faa    Gal7p.hmm       single-copy     1       QFZ46527.1
-   Kluyveromyces_lactis_NRRL_Y-1140.faa    Gal10p.hmm      single-copy     1       XP_455462.1
-   Kluyveromyces_lactis_NRRL_Y-1140.faa    Gal1p.hmm       single-copy     1       XP_455461.1
-   Kluyveromyces_lactis_NRRL_Y-1140.faa    Gal7p.hmm       single-copy     1       XP_455463.1
-   Saccharomyces_cerevisiae_S288C.faa      Gal10p.hmm      single-copy     1       NP_009575.1
-   Saccharomyces_cerevisiae_S288C.faa      Gal1p.hmm       multi-copy      2       NP_009576.1
-   Saccharomyces_cerevisiae_S288C.faa      Gal1p.hmm       multi-copy      2       NP_010292.1
-   Saccharomyces_cerevisiae_S288C.faa      Gal7p.hmm       single-copy     1       NP_009574.1
-   Yarrowia_lipolytica_DSM3286.faa Gal10p.hmm      single-copy     1       QNP99911.1
-   Yarrowia_lipolytica_DSM3286.faa Gal1p.hmm       single-copy     1       QNP96229.1
-   Yarrowia_lipolytica_DSM3286.faa Gal7p.hmm       single-copy     1       QNP99718.1
+   $ cat orthofisher_output/long_summary.txt
+   Clavispora_lusitaniae_P5.faa Gal10p.hmm single-copy 1 QFZ46524.1 2.8e-180 597.0
+   Saccharomyces_cerevisiae_S288C.faa Gal1p.hmm multi-copy 2 NP_009576.1 3.5e-250 830.2
+   small_set.faa Gal7p.hmm absent 0 NA NA NA
 
 col. 1: Query proteome fasta file. |br|
 col. 2: HMM file used during sequence similarity search. |br|
 col. 3: The sequence represented by the HMM is considered single_copy, multi-copy, or absent in a query proteome. |br|
 col. 4: Absolute copy number of hits from the sequence similarity search. |br|
 col. 5: The fasta entry identifier of the gene identified. |br|
+col. 6: e-value for the identified hit (``NA`` if absent). |br|
+col. 7: bitscore for the identified hit (``NA`` if absent). |br|
 
 2. short_summary.txt: Summary of the absolute number and percentage of single-copy, multi-copy, or absent HMMs
 per fasta file.
