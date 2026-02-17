@@ -1,9 +1,9 @@
-cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa	42at3041.hmm	single-copy	1	C261893.p1
-cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa	45at3041.hmm	single-copy	1	C242297.p1
-cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa	52at3041.hmm	single-copy	1	C262321.p1
-cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa	42at3041.hmm	single-copy	1	C421666.p1
-cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa	45at3041.hmm	single-copy	1	scaffold14325.p1
-cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa	52at3041.hmm	single-copy	1	C422052.p1
-cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa	42at3041.hmm	single-copy	1	scaffold2108.p1
-cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa	45at3041.hmm	single-copy	1	scaffold7216.p1
-cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa	52at3041.hmm	single-copy	1	C414684.p1
+cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa	42at3041.hmm	single-copy	1	C261893.p1	0.0	2222.2
+cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa	45at3041.hmm	single-copy	1	C242297.p1	7.2e-257	855.7
+cdhit_editedGapCloserastperNIES564_25kmeroutput.transdecoder.faa	52at3041.hmm	single-copy	1	C262321.p1	0.0	2480.8
+cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa	42at3041.hmm	single-copy	1	C421666.p1	0.0	2239.4
+cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa	45at3041.hmm	single-copy	1	scaffold14325.p1	0.0	2357.7
+cdhit_editedGapCloserpleothompNIES4126_25kmeroutput.transdecoder.faa	52at3041.hmm	single-copy	1	C422052.p1	0.0	2478.8
+cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa	42at3041.hmm	single-copy	1	scaffold2108.p1	0.0	2243.0
+cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa	45at3041.hmm	single-copy	1	scaffold7216.p1	0.0	1387.0
+cdhit_editedGapCloservolcarnagNIES865_25kmeroutput.transdecoder.faa	52at3041.hmm	single-copy	1	C414684.p1	0.0	2480.3

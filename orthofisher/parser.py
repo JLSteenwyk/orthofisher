@@ -3,7 +3,6 @@ import textwrap
 
 from argparse import (
     ArgumentParser,
-    RawTextHelpFormatter,
     SUPPRESS,
     RawDescriptionHelpFormatter,
 )
@@ -16,7 +15,7 @@ def create_parser():
         formatter_class=RawDescriptionHelpFormatter,
         usage=SUPPRESS,
         description=textwrap.dedent(
-            f"""\
+            fr"""\
                     _   _            __ _     _               
                    | | | |          / _(_)   | |              
           ___  _ __| |_| |__   ___ | |_ _ ___| |__   ___ _ __ 
@@ -82,6 +81,12 @@ def create_parser():
         -o, --output_dir <output directory name>
             name of the outputted directory
 
+        --force
+            overwrite an existing output directory
+
+        --verbose-output
+            write larger/raw outputs including all_sequences and retained hmmsearch output files
+
 
         -------------------------------------
         | Detailed explanation of arguments | 
@@ -106,7 +111,14 @@ def create_parser():
             Specify the number of parallel CPU workers to use for multithreading (default: 2). This argument is passed to HMMER.
 
         -o, --output_dir
-            Name of the outputted directory with all results from the orthofisher run (default: orthofisher_output). Note, orthofisher will overwrite existing directories with the same name as specified by this argument.
+            Name of the outputted directory with all results from the orthofisher run (default: orthofisher_output).
+
+        --force
+            Overwrite an existing output directory. If omitted and the directory exists, orthofisher exits with an error.
+
+        --verbose-output
+            By default orthofisher writes slim outputs (scog, long_summary.txt, short_summary.txt).
+            Use this flag to also write all_sequences and retain raw hmmsearch tabular output files.
         """
         ),
     )
@@ -114,7 +126,7 @@ def create_parser():
     optional.add_argument(
         "-e",
         "--evalue",
-        type=str,
+        type=float,
         required=False,
         help=SUPPRESS,
         metavar="evalue threshold",
@@ -132,10 +144,10 @@ def create_parser():
     optional.add_argument(
         "-c",
         "--cpu",
-        type=str,
+        type=int,
         required=False,
         help=SUPPRESS,
-        metavar="output dir",
+        metavar="cpu workers",
     )
 
     optional.add_argument(
@@ -145,6 +157,20 @@ def create_parser():
         required=False,
         help=SUPPRESS,
         metavar="output dir",
+    )
+
+    optional.add_argument(
+        "--force",
+        action="store_true",
+        required=False,
+        help=SUPPRESS,
+    )
+
+    optional.add_argument(
+        "--verbose-output",
+        action="store_true",
+        required=False,
+        help=SUPPRESS,
     )
 
     optional.add_argument(

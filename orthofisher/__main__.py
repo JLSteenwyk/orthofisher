@@ -1,7 +1,8 @@
-"""projectt.__main__: executed when project is called as script"""
+"""Executable module entrypoint for `python -m orthofisher`."""
 
 import sys
 
-from .project import main
+from .orthofisher import main
+
 
 main(sys.argv[1:])

@@ -1,9 +1,10 @@
 import os
 import os.path
-import re
 import shutil
 import subprocess
-import sys
+from pathlib import Path
+
+from .exceptions import HMMSearchError, OutputDirectoryExistsError
 
 def read_input_files(
     fasta_file_list: str,
@@ -14,12 +15,19 @@ def read_input_files(
     """
 
     ## read input files
-    fasta_file_list = [i.strip('\n').split('\t') for i in open(fasta_file_list)]
-    hmms_file_list = [i.strip('\n').split('\t') for i in open(hmms_file_list)]
+    with open(fasta_file_list, "r") as fasta_handle:
+        fasta_file_list = [i.strip('\n').split('\t') for i in fasta_handle]
+    with open(hmms_file_list, "r") as hmms_handle:
+        hmms_file_list = [i.strip('\n').split('\t') for i in hmms_handle]
 
     return fasta_file_list, hmms_file_list
 
-def create_directories(output_dir):
+def create_directories(
+    output_dir,
+    write_all_sequences=True,
+    keep_hmmsearch_output=True,
+    force=False
+):
     """
     create directories for outputting files
     """
@@ -28,12 +36,17 @@ def create_directories(output_dir):
     try:
         os.mkdir(output_dir)
     except FileExistsError:
-        print(f"WARNING: {output_dir} output exists. Overwriting directory now...")
+        if not force:
+            raise OutputDirectoryExistsError(
+                f"{output_dir} already exists. Use --force to overwrite."
+            )
         shutil.rmtree(output_dir)
         os.mkdir(output_dir)
     os.mkdir(f'{output_dir}/scog')
-    os.mkdir(f'{output_dir}/hmmsearch_output')
-    os.mkdir(f'{output_dir}/all_sequences')
+    if keep_hmmsearch_output:
+        os.mkdir(f'{output_dir}/hmmsearch_output')
+    if write_all_sequences:
+        os.mkdir(f'{output_dir}/all_sequences')
 
 def conduct_hmm_search(
     hmmsearch_out: str,
@@ -46,23 +59,30 @@ def conduct_hmm_search(
     execute hmm search using subprocess
     """
     # execute hmmsearch
-    subprocess.call(
-        [
-            'hmmsearch', '--noali', 
-            '--notextw', '-E', str(evalue),
-            '--cpu', str(cpu),
-            '--tblout', hmmsearch_out, 
-            hmm, fasta
-        ], stdout=subprocess.DEVNULL
-    )
+    try:
+        subprocess.run(
+            [
+                'hmmsearch', '--noali',
+                '--notextw', '-E', str(evalue),
+                '--cpu', str(cpu),
+                '--tblout', hmmsearch_out,
+                hmm, fasta
+            ],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True,
+        )
+    except subprocess.CalledProcessError as exc:
+        err = exc.stderr.strip() if exc.stderr else "hmmsearch failed without stderr output."
+        raise HMMSearchError(f"HMM search failed: {err}")
 
 def check_hmmsearch_output(
     hmmsearch_out: str
 ):
     
     if not os.path.isfile(hmmsearch_out):
-        print("HMM search failed. Check e-value is an appropriate number.")
-        sys.exit()
+        raise HMMSearchError("HMM search failed. Check e-value is an appropriate number.")
 
 def set_names(
     hmm: str,
@@ -72,7 +92,7 @@ def set_names(
     """
     set names for output files
     """
-    hmm_name = re.sub(r'^.*/', '', hmm)
+    hmm_name = Path(hmm).name
     singlecopy_name = f'{output_dir}/scog/{hmm_name}.orthofisher'
     all_name = f'{output_dir}/all_sequences/{hmm_name}.orthofisher'
     long_summary_name = f'{output_dir}/long_summary.txt'
@@ -89,40 +109,41 @@ def handle_single_copy_writing(
     fasta_name: str,
     hmm_name: str,
     hits,
-    record_dict
+    record_dict,
+    write_all_sequences=True
 ):
     """
     writes single copy entry to two output fasta files
     and to a long-form log file
     """
-
-    
     entry_name = ''.join([fasta + hits[0]._id + '|' + str(hits[0].evalue) + '|' + str(hits[0].bitscore)])
     record_entry = record_dict[hits[0].id]
+    sequence = _format_sequence_lines(record_entry.seq)
 
     # write single copy orthologous gene file
     with open(singlecopy_name, 'a') as f:
-        f.write(">" + entry_name + '\n')
-        sequence = [record_entry.seq[i:i+60] for i in range(0, len(record_entry.seq), 60)]
-        for seq in sequence:
-            if type(seq._data) is str:
-                f.write(seq._data + '\n')
-            else:
-                f.write(seq._data.decode("utf-8") + '\n')
+        f.write(">" + entry_name + '\n' + sequence + '\n')
 
     # write to all gene file
-    with open(all_name, 'a') as f:
-        f.write(">" + entry_name + '\n')
-        sequence = [record_entry.seq[i:i+60] for i in range(0, len(record_entry.seq), 60)]
-        for seq in sequence:
-            if type(seq._data) is str:
-                f.write(seq._data + '\n')
-            else:
-                f.write(seq._data.decode("utf-8") + '\n')
+    if write_all_sequences:
+        with open(all_name, 'a') as f:
+            f.write(">" + entry_name + '\n' + sequence + '\n')
 
     # write to long log file
     with open(long_summary_name, 'a') as f:
-        f.write('\t'.join([fasta_name, hmm_name, 'single-copy', str(1), hits[0]._id]) + '\n')
+        f.write(
+            '\t'.join(
+                [
+                    fasta_name,
+                    hmm_name,
+                    'single-copy',
+                    str(1),
+                    hits[0]._id,
+                    str(hits[0].evalue),
+                    str(hits[0].bitscore),
+                ]
+            ) + '\n'
+        )
 
 def handle_multi_copy_writing(
     fasta: str,
@@ -132,33 +153,53 @@ def handle_multi_copy_writing(
     hmm_name: str,
     hits,
     record_dict,
-    num_hits: int
+    num_hits: int,
+    write_all_sequences=True
 ):
     """
     writes single copy entry to two output fasta files
     and to a long-form log file
     """
+    with open(long_summary_name, 'a') as long_out:
+        if write_all_sequences:
+            with open(all_name, 'a') as all_out:
+                for idx in range(num_hits):
+                    entry_name = ''.join([fasta + hits[idx]._id + '|' + str(hits[idx].evalue) + '|' + str(hits[idx].bitscore)])
+                    record_entry = record_dict[hits[idx].id]
+                    sequence = _format_sequence_lines(record_entry.seq)
 
-    hit_ids = []
-    for idx in range(num_hits):
-        hit_ids.append(hits[0]._id)
+                    # write to all gene file
+                    all_out.write(">" + entry_name + '\n' + sequence + '\n')
 
-        entry_name = ''.join([fasta + hits[idx]._id + '|' + str(hits[idx].evalue) + '|' + str(hits[idx].bitscore)])
-        record_entry = record_dict[hits[idx].id]
-
-        # write to all gene file
-        with open(all_name, 'a') as f:
-            f.write(">" + entry_name + '\n')
-            sequence = [record_entry.seq[i:i+60] for i in range(0, len(record_entry.seq), 60)]
-            for seq in sequence:
-                if type(seq._data) is str:
-                    f.write(seq._data + '\n')
-                else:
-                    f.write(seq._data.decode("utf-8") + '\n')
-
-        # write to long log file
-        with open(long_summary_name, 'a') as f:
-            f.write('\t'.join([fasta_name, hmm_name, 'multi-copy', str(num_hits), hits[idx]._id]) + '\n')
+                    # write to long log file
+                    long_out.write(
+                        '\t'.join(
+                            [
+                                fasta_name,
+                                hmm_name,
+                                'multi-copy',
+                                str(num_hits),
+                                hits[idx]._id,
+                                str(hits[idx].evalue),
+                                str(hits[idx].bitscore),
+                            ]
+                        ) + '\n'
+                    )
+        else:
+            for idx in range(num_hits):
+                long_out.write(
+                    '\t'.join(
+                        [
+                            fasta_name,
+                            hmm_name,
+                            'multi-copy',
+                            str(num_hits),
+                            hits[idx]._id,
+                            str(hits[idx].evalue),
+                            str(hits[idx].bitscore),
+                        ]
+                    ) + '\n'
+                )
 
 def handle_absent_writing(
     long_summary_name: str,
@@ -170,7 +211,7 @@ def handle_absent_writing(
     """
     # write to long log file
     with open(long_summary_name, 'a') as f:
-        f.write('\t'.join([fasta_name, hmm_name, 'absent', str(0), 'NA']) + '\n')
+        f.write('\t'.join([fasta_name, hmm_name, 'absent', str(0), 'NA', 'NA', 'NA']) + '\n')
 
 def handle_percent_present_summary(
     ortholog_presence_absence_stats: list,
@@ -185,10 +226,8 @@ def handle_percent_present_summary(
         'file_name', 'single-copy', 'multi-copy', 'absent',
         'per_single-copy', 'per_multi-copy', 'per_absent'
     ]
-    ortholog_presence_absence_per = []
-
-    for val in ortholog_presence_absence_stats:
-        ortholog_presence_absence_per.append(round(val/sum(ortholog_presence_absence_stats), 2))
+    total = sum(ortholog_presence_absence_stats)
+    ortholog_presence_absence_per = [round(val/total, 2) for val in ortholog_presence_absence_stats]
 
     ortholog_presence_absence_stats = [str(i) for i in ortholog_presence_absence_stats]
     ortholog_presence_absence_per = [str(i) for i in ortholog_presence_absence_per] 
@@ -215,3 +254,7 @@ def handle_percent_present_summary(
                     ]
                 ) + '\n'
             )
+
+def _format_sequence_lines(seq, width=60):
+    seq_str = str(seq)
+    return '\n'.join(seq_str[i:i+width] for i in range(0, len(seq_str), width))

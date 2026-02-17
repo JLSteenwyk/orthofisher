@@ -127,6 +127,39 @@ deactivate
 
 <br />
 
+### 3) Run orthofisher
+
+```shell
+orthofisher -m hmms.txt -f fasta_arg.txt
+```
+
+By default, orthofisher now writes a **slim output**:
+
+- `scog/`
+- `long_summary.txt`
+- `short_summary.txt`
+
+To additionally write larger raw outputs (`all_sequences/` and `hmmsearch_output/`), use:
+
+```shell
+orthofisher -m hmms.txt -f fasta_arg.txt --verbose-output
+```
+
+If your output directory already exists, orthofisher will stop with an error.
+To overwrite the existing output directory, add:
+
+```shell
+orthofisher -m hmms.txt -f fasta_arg.txt --force
+```
+
+You can combine both flags:
+
+```shell
+orthofisher -m hmms.txt -f fasta_arg.txt --verbose-output --force
+```
+
+<br />
+
 ---
 
 <br />
@@ -155,4 +188,3 @@ Please install orthofisher using a virtual environment as described in the insta
 <br />
 
 ### orthofisher is developed and maintained by [Jacob Steenwyk](https://jlsteenwyk.github.io/)
-

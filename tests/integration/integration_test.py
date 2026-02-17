@@ -1,8 +1,8 @@
 import os
-import pytest
 from pathlib import Path
 
-from mock import patch, call
+import pytest
+from mock import patch
 
 from orthofisher.orthofisher import execute
 
@@ -11,514 +11,239 @@ here = Path(__file__)
 
 @pytest.mark.integration
 class TestIntegration(object):
-    @patch("builtins.print")
-    def test_integration(self, mocked_print):
-        """
-        test integration
-        """
-
-        fasta_file_list = f"{here.parent.parent}/samples/input.txt"
-        hmms_file_list = f"{here.parent.parent}/samples/hmms.txt"
-        kwargs = dict(
-            fasta_file_list=fasta_file_list,
-            hmms_file_list=hmms_file_list,
-            evalue=0.001,
-            percent_bitscore=0.85,
-            output_dir="orthofisher_output",
-            cpu=2
-        )
-        execute(**kwargs)
-        
-        # read in expected files
-        long_summary_expected = f"{here.parent}/expected/default_params/long_summary.txt"
-        short_summary_expected = f"{here.parent}/expected/default_params/short_summary.txt"
-        orthofisher_1001705at2759_expected = f"{here.parent}/expected/default_params/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_expected = f"{here.parent}/expected/default_params/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_expected = f"{here.parent}/expected/default_params/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_expected = f"{here.parent}/expected/default_params/scog/718307-1.fa.mafft.hmm.orthofisher"
-
-        with open(long_summary_expected, "r") as expected:
-            expected_long_summary_content = expected.read()
-        with open(short_summary_expected, "r") as expected:
-            expected_short_summary_content = expected.read()
-        with open(orthofisher_1001705at2759_expected, "r") as expected:
-            orthofisher_1001705at2759_expected_content = expected.read()
-        with open(orthofisher_718307_expected, "r") as expected:
-            orthofisher_718307_expected_content = expected.read()
-        with open(scog_1001705at2759_expected, "r") as expected:
-            scog_1001705at2759_expected_content = expected.read()
-        with open(scog_718307_expected, "r") as expected:
-            scog_718307_expected_content = expected.read()
-
-
-        long_summary_created = f"orthofisher_output/long_summary.txt"
-        short_summary_created = f"orthofisher_output/short_summary.txt"
-        orthofisher_1001705at2759_created = f"orthofisher_output/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_created = f"orthofisher_output/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_created = f"orthofisher_output/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_created = f"orthofisher_output/scog/718307-1.fa.mafft.hmm.orthofisher"
-
-        with open(long_summary_created, "r") as out_file:
-            output_long_summary_content = out_file.read()
-        with open(short_summary_created, "r") as out_file:
-            output_short_summary_content = out_file.read()
-        with open(orthofisher_1001705at2759_created, "r") as out_file:
-            orthofisher_1001705at2759_created_content = out_file.read()
-        with open(orthofisher_718307_created, "r") as out_file:
-            orthofisher_718307_created_content = out_file.read()
-        with open(scog_1001705at2759_created, "r") as expected:
-            scog_1001705at2759_created_content = expected.read()
-        with open(scog_718307_created, "r") as expected:
-            scog_718307_created_content = expected.read()
-
-
-        assert os.path.isdir('orthofisher_output')
-        assert os.path.isdir('orthofisher_output/all_sequences')
-        assert os.path.isdir('orthofisher_output/hmmsearch_output')
-        assert os.path.isdir('orthofisher_output/scog')
-        assert expected_long_summary_content == output_long_summary_content
-        assert expected_short_summary_content == output_short_summary_content
-        assert orthofisher_1001705at2759_expected_content == orthofisher_1001705at2759_created_content
-        assert orthofisher_718307_expected_content == orthofisher_718307_created_content
-        assert scog_1001705at2759_expected_content == scog_1001705at2759_created_content
-        assert scog_718307_expected_content == scog_718307_created_content
-
-    @patch("builtins.print")
-    def test_integration_str_decode(self, mocked_print):
-        """
-        test integration
-        """
-
-        fasta_file_list = f"{here.parent.parent}/samples/str_decode_fastas.txt"
-        hmms_file_list = f"{here.parent.parent}/samples/str_decode_hmms.txt"
-        kwargs = dict(
-            fasta_file_list=fasta_file_list,
-            hmms_file_list=hmms_file_list,
-            evalue=0.001,
-            percent_bitscore=0.85,
-            output_dir="orthofisher_output",
-            cpu=2
-        )
-        execute(**kwargs)
-        
-        # read in expected files
-        long_summary_expected = f"{here.parent}/expected/default_str_decode_testing/long_summary.txt"
-        short_summary_expected = f"{here.parent}/expected/default_str_decode_testing/short_summary.txt"
-        orthofisher_42at3041_expected = f"{here.parent}/expected/default_str_decode_testing/all_sequences/42at3041.hmm.orthofisher"
-        orthofisher_45at3041_expected = f"{here.parent}/expected/default_str_decode_testing/all_sequences/45at3041.hmm.orthofisher"
-        orthofisher_52at3041_expected = f"{here.parent}/expected/default_str_decode_testing/all_sequences/52at3041.hmm.orthofisher"
-        scog_42at3041_expected = f"{here.parent}/expected/default_str_decode_testing/scog/42at3041.hmm.orthofisher"
-        scog_45at3041_expected = f"{here.parent}/expected/default_str_decode_testing/scog/45at3041.hmm.orthofisher"
-        scog_52at3041_expected = f"{here.parent}/expected/default_str_decode_testing/scog/52at3041.hmm.orthofisher"
-
-        with open(long_summary_expected, "r") as expected:
-            expected_long_summary_content = expected.read()
-        with open(short_summary_expected, "r") as expected:
-            expected_short_summary_content = expected.read()
-        with open(orthofisher_42at3041_expected, "r") as expected:
-            orthofisher_42at3041_expected_content = expected.read()
-        with open(orthofisher_45at3041_expected, "r") as expected:
-            orthofisher_45at3041_expected_content = expected.read()
-        with open(orthofisher_52at3041_expected, "r") as expected:
-            orthofisher_52at3041_expected_content = expected.read()
-        with open(scog_42at3041_expected, "r") as expected:
-            scog_42at3041_expected_content = expected.read()
-        with open(scog_45at3041_expected, "r") as expected:
-            scog_45at3041_expected_content = expected.read()
-        with open(scog_52at3041_expected, "r") as expected:
-            scog_52at3041_expected_content = expected.read()
-
-
-        long_summary_created = f"orthofisher_output/long_summary.txt"
-        short_summary_created = f"orthofisher_output/short_summary.txt"
-        orthofisher_42at3041_created = f"orthofisher_output/all_sequences/42at3041.hmm.orthofisher"
-        orthofisher_45at3041_created = f"orthofisher_output/all_sequences/45at3041.hmm.orthofisher"
-        orthofisher_52at3041_created = f"orthofisher_output/all_sequences/52at3041.hmm.orthofisher"
-        scog_42at3041_created = f"orthofisher_output/scog/42at3041.hmm.orthofisher"
-        scog_45at3041_created = f"orthofisher_output/scog/45at3041.hmm.orthofisher"
-        scog_52at3041_created = f"orthofisher_output/scog/52at3041.hmm.orthofisher"
-
-        with open(long_summary_created, "r") as out_file:
-            output_long_summary_content = out_file.read()
-        with open(short_summary_created, "r") as out_file:
-            output_short_summary_content = out_file.read()
-        with open(orthofisher_42at3041_created, "r") as out_file:
-            orthofisher_42at3041_created_content = out_file.read()
-        with open(orthofisher_45at3041_created, "r") as out_file:
-            orthofisher_45at3041_created_content = out_file.read()
-        with open(orthofisher_52at3041_created, "r") as expected:
-            orthofisher_52at3041_created_content = expected.read()
-        with open(scog_42at3041_created, "r") as expected:
-            scog_42at3041_created_content = expected.read()
-        with open(scog_45at3041_created, "r") as expected:
-            scog_45at3041_created_content = expected.read()
-        with open(scog_52at3041_created, "r") as expected:
-            scog_52at3041_created_content = expected.read()
-
-        assert os.path.isdir('orthofisher_output')
-        assert os.path.isdir('orthofisher_output/all_sequences')
-        assert os.path.isdir('orthofisher_output/hmmsearch_output')
-        assert os.path.isdir('orthofisher_output/scog')
-        assert expected_long_summary_content == output_long_summary_content
-        assert expected_short_summary_content == output_short_summary_content
-        assert orthofisher_42at3041_expected_content == orthofisher_42at3041_created_content
-        assert orthofisher_45at3041_expected_content == orthofisher_45at3041_created_content
-        assert orthofisher_52at3041_expected_content == orthofisher_52at3041_created_content
-        assert scog_42at3041_expected_content == scog_42at3041_created_content
-        assert scog_45at3041_expected_content == scog_45at3041_created_content
-        assert scog_52at3041_expected_content == scog_52at3041_created_content
-
-    def test_integration_custom_evalue(self):
-        """
-        test integration
-        """
-
-        fasta_file_list = f"{here.parent.parent}/samples/input.txt"
-        hmms_file_list = f"{here.parent.parent}/samples/hmms.txt"
-        evalue = '1e-25'
-        kwargs = dict(
+    def _run_execute(
+        self,
+        fasta_file_list,
+        hmms_file_list,
+        evalue=0.001,
+        percent_bitscore=0.85,
+        output_dir="orthofisher_output",
+        cpu=2,
+        force=True,
+        write_all_sequences=True,
+        keep_hmmsearch_output=True,
+    ):
+        execute(
             fasta_file_list=fasta_file_list,
             hmms_file_list=hmms_file_list,
             evalue=evalue,
-            percent_bitscore=0.85,
-            output_dir="orthofisher_output",
-            cpu=2
+            percent_bitscore=percent_bitscore,
+            output_dir=output_dir,
+            cpu=cpu,
+            force=force,
+            write_all_sequences=write_all_sequences,
+            keep_hmmsearch_output=keep_hmmsearch_output,
         )
-        execute(**kwargs)
-        
-        # read in expected files
-        long_summary_expected = f"{here.parent}/expected/custom_evalue_param/long_summary.txt"
-        short_summary_expected = f"{here.parent}/expected/custom_evalue_param/short_summary.txt"
-        orthofisher_1001705at2759_expected = f"{here.parent}/expected/custom_evalue_param/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_expected = f"{here.parent}/expected/custom_evalue_param/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_expected = f"{here.parent}/expected/custom_evalue_param/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_expected = f"{here.parent}/expected/custom_evalue_param/scog/718307-1.fa.mafft.hmm.orthofisher"
 
-        with open(long_summary_expected, "r") as expected:
-            expected_long_summary_content = expected.read()
-        with open(short_summary_expected, "r") as expected:
-            expected_short_summary_content = expected.read()
-        with open(orthofisher_1001705at2759_expected, "r") as expected:
-            orthofisher_1001705at2759_expected_content = expected.read()
-        with open(orthofisher_718307_expected, "r") as expected:
-            orthofisher_718307_expected_content = expected.read()
-        with open(scog_1001705at2759_expected, "r") as expected:
-            scog_1001705at2759_expected_content = expected.read()
-        with open(scog_718307_expected, "r") as expected:
-            scog_718307_expected_content = expected.read()
+    def _read_text(self, path):
+        with open(path, "r") as handle:
+            return handle.read()
 
+    def _assert_common_outputs(
+        self,
+        output_dir,
+        expected_dir,
+        all_sequence_files,
+        scog_files,
+        expect_all_sequences=True,
+        expect_hmmsearch_output=True,
+    ):
+        assert os.path.isdir(output_dir)
+        assert os.path.isdir(f"{output_dir}/scog")
+        assert os.path.isdir(f"{output_dir}/all_sequences") is expect_all_sequences
+        assert os.path.isdir(f"{output_dir}/hmmsearch_output") is expect_hmmsearch_output
 
-        long_summary_created = f"orthofisher_output/long_summary.txt"
-        short_summary_created = f"orthofisher_output/short_summary.txt"
-        orthofisher_1001705at2759_created = f"orthofisher_output/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_created = f"orthofisher_output/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_created = f"orthofisher_output/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_created = f"orthofisher_output/scog/718307-1.fa.mafft.hmm.orthofisher"
+        assert self._read_text(f"{expected_dir}/long_summary.txt") == self._read_text(
+            f"{output_dir}/long_summary.txt"
+        )
+        assert self._read_text(f"{expected_dir}/short_summary.txt") == self._read_text(
+            f"{output_dir}/short_summary.txt"
+        )
 
-        with open(long_summary_created, "r") as out_file:
-            output_long_summary_content = out_file.read()
-        with open(short_summary_created, "r") as out_file:
-            output_short_summary_content = out_file.read()
-        with open(orthofisher_1001705at2759_created, "r") as out_file:
-            orthofisher_1001705at2759_created_content = out_file.read()
-        with open(orthofisher_718307_created, "r") as out_file:
-            orthofisher_718307_created_content = out_file.read()
-        with open(scog_1001705at2759_created, "r") as expected:
-            scog_1001705at2759_created_content = expected.read()
-        with open(scog_718307_created, "r") as expected:
-            scog_718307_created_content = expected.read()
+        for name in all_sequence_files:
+            assert self._read_text(f"{expected_dir}/all_sequences/{name}") == self._read_text(
+                f"{output_dir}/all_sequences/{name}"
+            )
 
+        for name in scog_files:
+            assert self._read_text(f"{expected_dir}/scog/{name}") == self._read_text(
+                f"{output_dir}/scog/{name}"
+            )
 
-        assert os.path.isdir('orthofisher_output')
-        assert os.path.isdir('orthofisher_output/all_sequences')
-        assert os.path.isdir('orthofisher_output/hmmsearch_output')
-        assert os.path.isdir('orthofisher_output/scog')
-        assert expected_long_summary_content == output_long_summary_content
-        assert expected_short_summary_content == output_short_summary_content
-        assert orthofisher_1001705at2759_expected_content == orthofisher_1001705at2759_created_content
-        assert orthofisher_718307_expected_content == orthofisher_718307_created_content
-        assert scog_1001705at2759_expected_content == scog_1001705at2759_created_content
-        assert scog_718307_expected_content == scog_718307_created_content
+    @patch("builtins.print")
+    def test_integration(self, mocked_print):
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmms.txt",
+            output_dir="orthofisher_output",
+            cpu=2,
+            force=True,
+            write_all_sequences=True,
+            keep_hmmsearch_output=True,
+        )
+
+        self._assert_common_outputs(
+            output_dir="orthofisher_output",
+            expected_dir=f"{here.parent}/expected/default_params",
+            all_sequence_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            scog_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            expect_all_sequences=True,
+            expect_hmmsearch_output=True,
+        )
+
+    @patch("builtins.print")
+    def test_integration_str_decode(self, mocked_print):
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/str_decode_fastas.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/str_decode_hmms.txt",
+            output_dir="orthofisher_output",
+            cpu=2,
+            force=True,
+            write_all_sequences=True,
+            keep_hmmsearch_output=True,
+        )
+
+        self._assert_common_outputs(
+            output_dir="orthofisher_output",
+            expected_dir=f"{here.parent}/expected/default_str_decode_testing",
+            all_sequence_files=[
+                "42at3041.hmm.orthofisher",
+                "45at3041.hmm.orthofisher",
+                "52at3041.hmm.orthofisher",
+            ],
+            scog_files=[
+                "42at3041.hmm.orthofisher",
+                "45at3041.hmm.orthofisher",
+                "52at3041.hmm.orthofisher",
+            ],
+            expect_all_sequences=True,
+            expect_hmmsearch_output=True,
+        )
+
+    def test_integration_custom_evalue(self):
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmms.txt",
+            evalue=1e-25,
+            output_dir="orthofisher_output",
+            cpu=2,
+            force=True,
+            write_all_sequences=True,
+            keep_hmmsearch_output=True,
+        )
+
+        self._assert_common_outputs(
+            output_dir="orthofisher_output",
+            expected_dir=f"{here.parent}/expected/custom_evalue_param",
+            all_sequence_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            scog_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            expect_all_sequences=True,
+            expect_hmmsearch_output=True,
+        )
 
     def test_integration_custom_bitscore(self):
-        """
-        test integration
-        """
-
-        fasta_file_list = f"{here.parent.parent}/samples/input.txt"
-        hmms_file_list = f"{here.parent.parent}/samples/hmms.txt"
-        bitscore = .2
-        kwargs = dict(
-            fasta_file_list=fasta_file_list,
-            hmms_file_list=hmms_file_list,
-            evalue=0.001,
-            percent_bitscore=bitscore,
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmms.txt",
+            percent_bitscore=0.2,
             output_dir="orthofisher_output",
-            cpu=2
+            cpu=2,
+            force=True,
+            write_all_sequences=True,
+            keep_hmmsearch_output=True,
         )
-        execute(**kwargs)
-        
-        # read in expected files
-        long_summary_expected = f"{here.parent}/expected/custom_bitscore_param/long_summary.txt"
-        short_summary_expected = f"{here.parent}/expected/custom_bitscore_param/short_summary.txt"
-        orthofisher_1001705at2759_expected = f"{here.parent}/expected/custom_bitscore_param/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_expected = f"{here.parent}/expected/custom_bitscore_param/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_718307_expected = f"{here.parent}/expected/custom_bitscore_param/scog/718307-1.fa.mafft.hmm.orthofisher"
 
-        with open(long_summary_expected, "r") as expected:
-            expected_long_summary_content = expected.read()
-        with open(short_summary_expected, "r") as expected:
-            expected_short_summary_content = expected.read()
-        with open(orthofisher_1001705at2759_expected, "r") as expected:
-            orthofisher_1001705at2759_expected_content = expected.read()
-        with open(orthofisher_718307_expected, "r") as expected:
-            orthofisher_718307_expected_content = expected.read()
-        with open(scog_718307_expected, "r") as expected:
-            scog_718307_expected_content = expected.read()
-
-
-        long_summary_created = f"orthofisher_output/long_summary.txt"
-        short_summary_created = f"orthofisher_output/short_summary.txt"
-        orthofisher_1001705at2759_created = f"orthofisher_output/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_created = f"orthofisher_output/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_718307_created = f"orthofisher_output/scog/718307-1.fa.mafft.hmm.orthofisher"
-
-        with open(long_summary_created, "r") as out_file:
-            output_long_summary_content = out_file.read()
-        with open(short_summary_created, "r") as out_file:
-            output_short_summary_content = out_file.read()
-        with open(orthofisher_1001705at2759_created, "r") as out_file:
-            orthofisher_1001705at2759_created_content = out_file.read()
-        with open(orthofisher_718307_created, "r") as out_file:
-            orthofisher_718307_created_content = out_file.read()
-        with open(scog_718307_created, "r") as expected:
-            scog_718307_created_content = expected.read()
-
-
-        assert os.path.isdir('orthofisher_output')
-        assert os.path.isdir('orthofisher_output/all_sequences')
-        assert os.path.isdir('orthofisher_output/hmmsearch_output')
-        assert os.path.isdir('orthofisher_output/scog')
-        assert expected_long_summary_content == output_long_summary_content
-        assert expected_short_summary_content == output_short_summary_content
-        assert orthofisher_1001705at2759_expected_content == orthofisher_1001705at2759_created_content
-        assert orthofisher_718307_expected_content == orthofisher_718307_created_content
-        assert scog_718307_expected_content == scog_718307_created_content
+        self._assert_common_outputs(
+            output_dir="orthofisher_output",
+            expected_dir=f"{here.parent}/expected/custom_bitscore_param",
+            all_sequence_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            scog_files=["718307-1.fa.mafft.hmm.orthofisher"],
+            expect_all_sequences=True,
+            expect_hmmsearch_output=True,
+        )
 
     @patch("builtins.print")
     def test_integration_custom_output_name(self, mocked_print):
-        """
-        test integration
-        """
-
-        fasta_file_list = f"{here.parent.parent}/samples/input.txt"
-        hmms_file_list = f"{here.parent.parent}/samples/hmms.txt"
-        output_dir="orthofisher_custom_output"
-        kwargs = dict(
-            fasta_file_list=fasta_file_list,
-            hmms_file_list=hmms_file_list,
-            evalue=0.001,
-            percent_bitscore=0.85,
+        output_dir = "orthofisher_custom_output"
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmms.txt",
             output_dir=output_dir,
-            cpu=2
+            cpu=2,
+            force=True,
+            write_all_sequences=True,
+            keep_hmmsearch_output=True,
         )
-        execute(**kwargs)
-        
-        # read in expected files
-        long_summary_expected = f"{here.parent}/expected/default_params/long_summary.txt"
-        short_summary_expected = f"{here.parent}/expected/default_params/short_summary.txt"
-        orthofisher_1001705at2759_expected = f"{here.parent}/expected/default_params/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_expected = f"{here.parent}/expected/default_params/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_expected = f"{here.parent}/expected/default_params/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_expected = f"{here.parent}/expected/default_params/scog/718307-1.fa.mafft.hmm.orthofisher"
 
-        with open(long_summary_expected, "r") as expected:
-            expected_long_summary_content = expected.read()
-        with open(short_summary_expected, "r") as expected:
-            expected_short_summary_content = expected.read()
-        with open(orthofisher_1001705at2759_expected, "r") as expected:
-            orthofisher_1001705at2759_expected_content = expected.read()
-        with open(orthofisher_718307_expected, "r") as expected:
-            orthofisher_718307_expected_content = expected.read()
-        with open(scog_1001705at2759_expected, "r") as expected:
-            scog_1001705at2759_expected_content = expected.read()
-        with open(scog_718307_expected, "r") as expected:
-            scog_718307_expected_content = expected.read()
-
-
-        long_summary_created = f"{output_dir}/long_summary.txt"
-        short_summary_created = f"{output_dir}/short_summary.txt"
-        orthofisher_1001705at2759_created = f"{output_dir}/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_created = f"{output_dir}/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_created = f"{output_dir}/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_created = f"{output_dir}/scog/718307-1.fa.mafft.hmm.orthofisher"
-
-        with open(long_summary_created, "r") as out_file:
-            output_long_summary_content = out_file.read()
-        with open(short_summary_created, "r") as out_file:
-            output_short_summary_content = out_file.read()
-        with open(orthofisher_1001705at2759_created, "r") as out_file:
-            orthofisher_1001705at2759_created_content = out_file.read()
-        with open(orthofisher_718307_created, "r") as out_file:
-            orthofisher_718307_created_content = out_file.read()
-        with open(scog_1001705at2759_created, "r") as expected:
-            scog_1001705at2759_created_content = expected.read()
-        with open(scog_718307_created, "r") as expected:
-            scog_718307_created_content = expected.read()
-
-
-        assert os.path.isdir(f'{output_dir}')
-        assert os.path.isdir(f'{output_dir}/all_sequences')
-        assert os.path.isdir(f'{output_dir}/hmmsearch_output')
-        assert os.path.isdir(f'{output_dir}/scog')
-        assert expected_long_summary_content == output_long_summary_content
-        assert expected_short_summary_content == output_short_summary_content
-        assert orthofisher_1001705at2759_expected_content == orthofisher_1001705at2759_created_content
-        assert orthofisher_718307_expected_content == orthofisher_718307_created_content
-        assert scog_1001705at2759_expected_content == scog_1001705at2759_created_content
-        assert scog_718307_expected_content == scog_718307_created_content
+        self._assert_common_outputs(
+            output_dir=output_dir,
+            expected_dir=f"{here.parent}/expected/default_params",
+            all_sequence_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            scog_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            expect_all_sequences=True,
+            expect_hmmsearch_output=True,
+        )
 
     @patch("builtins.print")
     def test_integration_custom_cpu(self, mocked_print):
-        """
-        test integration
-        """
-
-        fasta_file_list = f"{here.parent.parent}/samples/input.txt"
-        hmms_file_list = f"{here.parent.parent}/samples/hmms.txt"
-        cpu=4
-        kwargs = dict(
-            fasta_file_list=fasta_file_list,
-            hmms_file_list=hmms_file_list,
-            evalue=0.001,
-            percent_bitscore=0.85,
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmms.txt",
             output_dir="orthofisher_output",
-            cpu=cpu
+            cpu=4,
+            force=True,
+            write_all_sequences=True,
+            keep_hmmsearch_output=True,
         )
-        execute(**kwargs)
-        
-        # read in expected files
-        long_summary_expected = f"{here.parent}/expected/default_params/long_summary.txt"
-        short_summary_expected = f"{here.parent}/expected/default_params/short_summary.txt"
-        orthofisher_1001705at2759_expected = f"{here.parent}/expected/default_params/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_expected = f"{here.parent}/expected/default_params/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_expected = f"{here.parent}/expected/default_params/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_expected = f"{here.parent}/expected/default_params/scog/718307-1.fa.mafft.hmm.orthofisher"
 
-        with open(long_summary_expected, "r") as expected:
-            expected_long_summary_content = expected.read()
-        with open(short_summary_expected, "r") as expected:
-            expected_short_summary_content = expected.read()
-        with open(orthofisher_1001705at2759_expected, "r") as expected:
-            orthofisher_1001705at2759_expected_content = expected.read()
-        with open(orthofisher_718307_expected, "r") as expected:
-            orthofisher_718307_expected_content = expected.read()
-        with open(scog_1001705at2759_expected, "r") as expected:
-            scog_1001705at2759_expected_content = expected.read()
-        with open(scog_718307_expected, "r") as expected:
-            scog_718307_expected_content = expected.read()
-
-
-        long_summary_created = f"orthofisher_output/long_summary.txt"
-        short_summary_created = f"orthofisher_output/short_summary.txt"
-        orthofisher_1001705at2759_created = f"orthofisher_output/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_created = f"orthofisher_output/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_created = f"orthofisher_output/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_created = f"orthofisher_output/scog/718307-1.fa.mafft.hmm.orthofisher"
-
-        with open(long_summary_created, "r") as out_file:
-            output_long_summary_content = out_file.read()
-        with open(short_summary_created, "r") as out_file:
-            output_short_summary_content = out_file.read()
-        with open(orthofisher_1001705at2759_created, "r") as out_file:
-            orthofisher_1001705at2759_created_content = out_file.read()
-        with open(orthofisher_718307_created, "r") as out_file:
-            orthofisher_718307_created_content = out_file.read()
-        with open(scog_1001705at2759_created, "r") as expected:
-            scog_1001705at2759_created_content = expected.read()
-        with open(scog_718307_created, "r") as expected:
-            scog_718307_created_content = expected.read()
-
-
-        assert os.path.isdir('orthofisher_output')
-        assert os.path.isdir('orthofisher_output/all_sequences')
-        assert os.path.isdir('orthofisher_output/hmmsearch_output')
-        assert os.path.isdir('orthofisher_output/scog')
-        assert expected_long_summary_content == output_long_summary_content
-        assert expected_short_summary_content == output_short_summary_content
-        assert orthofisher_1001705at2759_expected_content == orthofisher_1001705at2759_created_content
-        assert orthofisher_718307_expected_content == orthofisher_718307_created_content
-        assert scog_1001705at2759_expected_content == scog_1001705at2759_created_content
-        assert scog_718307_expected_content == scog_718307_created_content
+        self._assert_common_outputs(
+            output_dir="orthofisher_output",
+            expected_dir=f"{here.parent}/expected/default_params",
+            all_sequence_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            scog_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            expect_all_sequences=True,
+            expect_hmmsearch_output=True,
+        )
 
     @patch("builtins.print")
     def test_integration_no_second_column_in_input(self, mocked_print):
-        """
-        test integration
-        """
-
-        fasta_file_list = f"{here.parent.parent}/samples/input_no_second_column.txt"
-        hmms_file_list = f"{here.parent.parent}/samples/hmms.txt"
-        kwargs = dict(
-            fasta_file_list=fasta_file_list,
-            hmms_file_list=hmms_file_list,
-            evalue=0.001,
-            percent_bitscore=0.85,
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input_no_second_column.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmms.txt",
             output_dir="orthofisher_output",
-            cpu=2
+            cpu=2,
+            force=True,
+            write_all_sequences=True,
+            keep_hmmsearch_output=True,
         )
-        execute(**kwargs)
-        
-        # read in expected files
-        long_summary_expected = f"{here.parent}/expected/default_params_no_second_column_in_fasta_file_paths_file/long_summary.txt"
-        short_summary_expected = f"{here.parent}/expected/default_params_no_second_column_in_fasta_file_paths_file/short_summary.txt"
-        orthofisher_1001705at2759_expected = f"{here.parent}/expected/default_params_no_second_column_in_fasta_file_paths_file/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_expected = f"{here.parent}/expected/default_params_no_second_column_in_fasta_file_paths_file/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_expected = f"{here.parent}/expected/default_params_no_second_column_in_fasta_file_paths_file/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_expected = f"{here.parent}/expected/default_params_no_second_column_in_fasta_file_paths_file/scog/718307-1.fa.mafft.hmm.orthofisher"
 
-        with open(long_summary_expected, "r") as expected:
-            expected_long_summary_content = expected.read()
-        with open(short_summary_expected, "r") as expected:
-            expected_short_summary_content = expected.read()
-        with open(orthofisher_1001705at2759_expected, "r") as expected:
-            orthofisher_1001705at2759_expected_content = expected.read()
-        with open(orthofisher_718307_expected, "r") as expected:
-            orthofisher_718307_expected_content = expected.read()
-        with open(scog_1001705at2759_expected, "r") as expected:
-            scog_1001705at2759_expected_content = expected.read()
-        with open(scog_718307_expected, "r") as expected:
-            scog_718307_expected_content = expected.read()
+        self._assert_common_outputs(
+            output_dir="orthofisher_output",
+            expected_dir=f"{here.parent}/expected/default_params_no_second_column_in_fasta_file_paths_file",
+            all_sequence_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            scog_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            expect_all_sequences=True,
+            expect_hmmsearch_output=True,
+        )
 
+    @patch("builtins.print")
+    def test_integration_slim_output(self, mocked_print):
+        output_dir = "orthofisher_output_slim"
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmms.txt",
+            output_dir=output_dir,
+            cpu=2,
+            force=True,
+            write_all_sequences=False,
+            keep_hmmsearch_output=False,
+        )
 
-        long_summary_created = f"orthofisher_output/long_summary.txt"
-        short_summary_created = f"orthofisher_output/short_summary.txt"
-        orthofisher_1001705at2759_created = f"orthofisher_output/all_sequences/1001705at2759.hmm.orthofisher"
-        orthofisher_718307_created = f"orthofisher_output/all_sequences/718307-1.fa.mafft.hmm.orthofisher"
-        scog_1001705at2759_created = f"orthofisher_output/scog/1001705at2759.hmm.orthofisher"
-        scog_718307_created = f"orthofisher_output/scog/718307-1.fa.mafft.hmm.orthofisher"
-
-        with open(long_summary_created, "r") as out_file:
-            output_long_summary_content = out_file.read()
-        with open(short_summary_created, "r") as out_file:
-            output_short_summary_content = out_file.read()
-        with open(orthofisher_1001705at2759_created, "r") as out_file:
-            orthofisher_1001705at2759_created_content = out_file.read()
-        with open(orthofisher_718307_created, "r") as out_file:
-            orthofisher_718307_created_content = out_file.read()
-        with open(scog_1001705at2759_created, "r") as expected:
-            scog_1001705at2759_created_content = expected.read()
-        with open(scog_718307_created, "r") as expected:
-            scog_718307_created_content = expected.read()
-
-
-        assert os.path.isdir('orthofisher_output')
-        assert os.path.isdir('orthofisher_output/all_sequences')
-        assert os.path.isdir('orthofisher_output/hmmsearch_output')
-        assert os.path.isdir('orthofisher_output/scog')
-        assert expected_long_summary_content == output_long_summary_content
-        assert expected_short_summary_content == output_short_summary_content
-        assert orthofisher_1001705at2759_expected_content == orthofisher_1001705at2759_created_content
-        assert orthofisher_718307_expected_content == orthofisher_718307_created_content
-        assert scog_1001705at2759_expected_content == scog_1001705at2759_created_content
-        assert scog_718307_expected_content == scog_718307_created_content
+        self._assert_common_outputs(
+            output_dir=output_dir,
+            expected_dir=f"{here.parent}/expected/default_params",
+            all_sequence_files=[],
+            scog_files=["1001705at2759.hmm.orthofisher", "718307-1.fa.mafft.hmm.orthofisher"],
+            expect_all_sequences=False,
+            expect_hmmsearch_output=False,
+        )
