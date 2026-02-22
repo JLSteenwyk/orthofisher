@@ -81,6 +81,9 @@ def create_parser():
         -o, --output_dir <output directory name>
             name of the outputted directory
 
+        --seq-type <protein|nucleotide|auto>
+            choose search mode explicitly or infer from HMM alphabet
+
         --force
             overwrite an existing output directory
 
@@ -112,6 +115,10 @@ def create_parser():
 
         -o, --output_dir
             Name of the outputted directory with all results from the orthofisher run (default: orthofisher_output).
+
+        --seq-type
+            Search mode. Use protein to force hmmsearch, nucleotide to force nhmmer,
+            or auto to infer from the HMM ALPH header per model (default: auto).
 
         --force
             Overwrite an existing output directory. If omitted and the directory exists, orthofisher exits with an error.
@@ -157,6 +164,15 @@ def create_parser():
         required=False,
         help=SUPPRESS,
         metavar="output dir",
+    )
+
+    optional.add_argument(
+        "--seq-type",
+        type=str,
+        choices=["protein", "nucleotide", "auto"],
+        required=False,
+        help=SUPPRESS,
+        metavar="sequence type",
     )
 
     optional.add_argument(

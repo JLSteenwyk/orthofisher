@@ -13,7 +13,7 @@ from .exceptions import OrthoFisherError
 from .parser import create_parser
 from .helper import (
     create_directories, read_input_files, 
-    conduct_hmm_search, set_names,
+    conduct_hmm_search, set_names, determine_search_tool, parse_nhmmer_tblout,
     handle_single_copy_writing, handle_multi_copy_writing,
     handle_absent_writing, handle_percent_present_summary,
     check_hmmsearch_output
@@ -26,6 +26,7 @@ def execute(
     percent_bitscore: float,
     output_dir: str,
     cpu: int,
+    seq_type: str = "auto",
     force: bool = False,
     write_all_sequences: bool = False,
     keep_hmmsearch_output: bool = False
@@ -69,16 +70,23 @@ def execute(
                     hmmsearch_out = temp_hmmsearch_out
                     created_temp_hmmsearch = True
                 try:
+                    search_tool = determine_search_tool(seq_type, hmm[0])
                     # execute hmmsearch
-                    conduct_hmm_search(hmmsearch_out, hmm[0], fasta[0], evalue, cpu)
+                    conduct_hmm_search(hmmsearch_out, hmm[0], fasta[0], evalue, cpu, search_tool=search_tool)
 
                     # identify single copy orthologs and write them to separate scog files
                     check_hmmsearch_output(hmmsearch_out)
 
                     with open(hmmsearch_out, 'r') as hmmsearch_handle:
                         have_written = 0
-                        for qresult in SearchIO.parse(hmmsearch_handle, 'hmmer3-tab'):
-                            matches = qresult.hits
+                        if search_tool == "nhmmer":
+                            qresults = [parse_nhmmer_tblout(hmmsearch_out)]
+                        else:
+                            qresults = [qresult.hits for qresult in SearchIO.parse(hmmsearch_handle, 'hmmer3-tab')]
+
+                        for matches in qresults:
+                            if not matches:
+                                continue
                             top_score = matches[0].bitscore
 
                             # remove genes with bitscores less than specified value (-b arg)

@@ -2,6 +2,7 @@ import os
 import os.path
 import shutil
 import subprocess
+from dataclasses import dataclass
 from pathlib import Path
 
 from .exceptions import HMMSearchError, OutputDirectoryExistsError
@@ -53,7 +54,8 @@ def conduct_hmm_search(
     hmm: str,
     fasta: str,
     evalue: float,
-    cpu: int
+    cpu: int,
+    search_tool: str = "hmmsearch"
 ):
     """
     execute hmm search using subprocess
@@ -62,7 +64,7 @@ def conduct_hmm_search(
     try:
         subprocess.run(
             [
-                'hmmsearch', '--noali',
+                search_tool, '--noali',
                 '--notextw', '-E', str(evalue),
                 '--cpu', str(cpu),
                 '--tblout', hmmsearch_out,
@@ -75,7 +77,84 @@ def conduct_hmm_search(
         )
     except subprocess.CalledProcessError as exc:
         err = exc.stderr.strip() if exc.stderr else "hmmsearch failed without stderr output."
-        raise HMMSearchError(f"HMM search failed: {err}")
+        raise HMMSearchError(f"{search_tool} failed: {err}")
+
+
+def determine_search_tool(
+    seq_type: str,
+    hmm_path: str
+) -> str:
+    """
+    Resolve which HMMER search binary to use for this model.
+    """
+    if seq_type == "protein":
+        return "hmmsearch"
+    if seq_type == "nucleotide":
+        return "nhmmer"
+
+    hmm_alphabet = get_hmm_alphabet(hmm_path)
+    if hmm_alphabet in {"DNA", "RNA"}:
+        return "nhmmer"
+    return "hmmsearch"
+
+
+def get_hmm_alphabet(
+    hmm_path: str
+):
+    """
+    Read HMM header and return alphabet if present (e.g., AMINO, DNA, RNA).
+    """
+    with open(hmm_path, "r") as handle:
+        for line in handle:
+            if line.startswith("ALPH"):
+                parts = line.strip().split()
+                if len(parts) >= 2:
+                    return parts[1].upper()
+                return None
+            if line.startswith("HMM "):
+                break
+    return None
+
+
+@dataclass
+class ParsedHit:
+    """
+    Minimal hit object used to unify parsing across hmmsearch and nhmmer tbl outputs.
+    """
+    id: str
+    bitscore: float
+    evalue: float
+
+    @property
+    def _id(self):
+        return self.id
+
+
+def parse_nhmmer_tblout(
+    tblout_path: str
+):
+    """
+    Parse nhmmer --tblout lines into ParsedHit records.
+    """
+    hits = []
+    with open(tblout_path, "r") as handle:
+        for line in handle:
+            if not line.strip() or line.startswith("#"):
+                continue
+            cols = line.strip().split(None, 15)
+            if len(cols) < 15:
+                continue
+
+            target_name = cols[0]
+            try:
+                evalue = float(cols[12])
+                bitscore = float(cols[13])
+            except ValueError:
+                continue
+
+            hits.append(ParsedHit(id=target_name, bitscore=bitscore, evalue=evalue))
+
+    return hits
 
 def check_hmmsearch_output(
     hmmsearch_out: str

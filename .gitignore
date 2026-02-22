@@ -107,8 +107,11 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.venv*/
 env/
+env*/
 venv/
+venv*/
 ENV/
 env.bak/
 venv.bak/
@@ -147,6 +150,7 @@ orthofisher/orthofisher_output/
 orthofisher_output
 orthofisher/orthofisher_custom_output/
 orthofisher_custom_output
+orthofisher_output*/
 /data
 
 # remove directions for how to submit to conda

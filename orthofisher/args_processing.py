@@ -24,6 +24,7 @@ def process_args(args) -> dict:
     output_dir = args.output_dir or "orthofisher_output"
 
     cpu = args.cpu if args.cpu is not None else 2
+    seq_type = args.seq_type if args.seq_type is not None else "auto"
     force = args.force or False
     verbose_output = args.verbose_output or False
 
@@ -46,6 +47,7 @@ def process_args(args) -> dict:
         percent_bitscore=percent_bitscore,
         output_dir=output_dir,
         cpu=cpu,
+        seq_type=seq_type,
         force=force,
         write_all_sequences=write_all_sequences,
         keep_hmmsearch_output=keep_hmmsearch_output

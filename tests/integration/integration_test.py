@@ -19,6 +19,7 @@ class TestIntegration(object):
         percent_bitscore=0.85,
         output_dir="orthofisher_output",
         cpu=2,
+        seq_type="auto",
         force=True,
         write_all_sequences=True,
         keep_hmmsearch_output=True,
@@ -30,6 +31,7 @@ class TestIntegration(object):
             percent_bitscore=percent_bitscore,
             output_dir=output_dir,
             cpu=cpu,
+            seq_type=seq_type,
             force=force,
             write_all_sequences=write_all_sequences,
             keep_hmmsearch_output=keep_hmmsearch_output,
@@ -247,3 +249,29 @@ class TestIntegration(object):
             expect_all_sequences=False,
             expect_hmmsearch_output=False,
         )
+
+    def test_integration_auto_mode_uses_nhmmer_for_nucleotide_hmms(self):
+        output_dir = "orthofisher_output_nucl_auto"
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input_nucl.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmm_nucl.txt",
+            output_dir=output_dir,
+            seq_type="auto",
+            cpu=2,
+            force=True,
+            write_all_sequences=False,
+            keep_hmmsearch_output=True,
+        )
+
+        hmm_out_dir = f"{output_dir}/hmmsearch_output"
+        assert os.path.isdir(hmm_out_dir)
+
+        out_files = [
+            name for name in os.listdir(hmm_out_dir)
+            if os.path.isfile(os.path.join(hmm_out_dir, name))
+        ]
+        assert len(out_files) > 0
+
+        for out_file in out_files:
+            out_path = os.path.join(hmm_out_dir, out_file)
+            assert "# Program:         nhmmer" in self._read_text(out_path)

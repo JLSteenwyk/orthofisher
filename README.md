@@ -135,6 +135,16 @@ deactivate
 orthofisher -m hmms.txt -f fasta_arg.txt
 ```
 
+To query nucleotide sequences with nucleotide HMMs, use:
+
+```shell
+orthofisher -m hmm_nucl.txt -f fasta_nucl.txt --seq-type nucleotide
+```
+
+The default `--seq-type auto` mode infers the tool per HMM from the `ALPH` header:
+- `ALPH DNA` / `ALPH RNA` -> `nhmmer`
+- other alphabets (for example amino-acid models) -> `hmmsearch`
+
 By default, orthofisher now writes a **slim output**:
 
 - `scog/`

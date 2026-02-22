@@ -14,6 +14,7 @@ def args():
         bitscore=0.85,
         output_dir="orthofisher_output",
         cpu=2,
+        seq_type="auto",
         force=False,
         verbose_output=False
     )
@@ -79,11 +80,22 @@ class TestArgsProcessing(object):
             "percent_bitscore",
             "output_dir",
             "cpu",
+            "seq_type",
             "force",
             "write_all_sequences",
             "keep_hmmsearch_output"
         ]
         assert sorted(res.keys()) == sorted(expected_keys)
+
+    def test_process_args_default_seq_type(self, args):
+        args.seq_type = None
+        res = process_args(args)
+        assert res["seq_type"] == "auto"
+
+    def test_process_args_custom_seq_type(self, args):
+        args.seq_type = "nucleotide"
+        res = process_args(args)
+        assert res["seq_type"] == "nucleotide"
 
     def test_process_args_verbose_output(self, args):
         args.verbose_output = True
