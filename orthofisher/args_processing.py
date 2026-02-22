@@ -25,6 +25,7 @@ def process_args(args) -> dict:
 
     cpu = args.cpu if args.cpu is not None else 2
     seq_type = args.seq_type if args.seq_type is not None else "auto"
+    resume = args.resume or False
     force = args.force or False
     verbose_output = args.verbose_output or False
 
@@ -36,6 +37,8 @@ def process_args(args) -> dict:
 
     if cpu < 1:
         raise InputValidationError("cpu must be an integer greater than 0")
+    if resume and force:
+        raise InputValidationError("--resume and --force cannot be used together")
 
     write_all_sequences = verbose_output
     keep_hmmsearch_output = verbose_output
@@ -48,6 +51,7 @@ def process_args(args) -> dict:
         output_dir=output_dir,
         cpu=cpu,
         seq_type=seq_type,
+        resume=resume,
         force=force,
         write_all_sequences=write_all_sequences,
         keep_hmmsearch_output=keep_hmmsearch_output

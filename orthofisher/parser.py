@@ -84,6 +84,9 @@ def create_parser():
         --seq-type <protein|nucleotide|auto>
             choose search mode explicitly or infer from HMM alphabet
 
+        --resume
+            resume a previous run in the output directory using checkpoint state
+
         --force
             overwrite an existing output directory
 
@@ -119,6 +122,10 @@ def create_parser():
         --seq-type
             Search mode. Use protein to force hmmsearch, nucleotide to force nhmmer,
             or auto to infer from the HMM ALPH header per model (default: auto).
+
+        --resume
+            Resume an existing run in the specified output directory. Completed FASTA/HMM
+            pairs from the checkpoint are skipped and remaining pairs are processed.
 
         --force
             Overwrite an existing output directory. If omitted and the directory exists, orthofisher exits with an error.
@@ -173,6 +180,13 @@ def create_parser():
         required=False,
         help=SUPPRESS,
         metavar="sequence type",
+    )
+
+    optional.add_argument(
+        "--resume",
+        action="store_true",
+        required=False,
+        help=SUPPRESS,
     )
 
     optional.add_argument(

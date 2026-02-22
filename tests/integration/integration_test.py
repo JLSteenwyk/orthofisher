@@ -20,6 +20,7 @@ class TestIntegration(object):
         output_dir="orthofisher_output",
         cpu=2,
         seq_type="auto",
+        resume=False,
         force=True,
         write_all_sequences=True,
         keep_hmmsearch_output=True,
@@ -32,6 +33,7 @@ class TestIntegration(object):
             output_dir=output_dir,
             cpu=cpu,
             seq_type=seq_type,
+            resume=resume,
             force=force,
             write_all_sequences=write_all_sequences,
             keep_hmmsearch_output=keep_hmmsearch_output,
@@ -275,3 +277,53 @@ class TestIntegration(object):
         for out_file in out_files:
             out_path = os.path.join(hmm_out_dir, out_file)
             assert "# Program:         nhmmer" in self._read_text(out_path)
+
+    def test_integration_resume_mode(self, tmp_path):
+        output_resume = tmp_path / "resume_run"
+        output_fresh = tmp_path / "fresh_run"
+        hmms_subset = tmp_path / "hmms_subset.txt"
+        hmms_subset.write_text(f"{here.parent.parent}/samples/bena.fa.mafft.hmm\n")
+
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input_nucl.txt",
+            hmms_file_list=str(hmms_subset),
+            output_dir=str(output_resume),
+            seq_type="auto",
+            cpu=2,
+            force=True,
+            resume=False,
+            write_all_sequences=False,
+            keep_hmmsearch_output=False,
+        )
+
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input_nucl.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmm_nucl.txt",
+            output_dir=str(output_resume),
+            seq_type="auto",
+            cpu=2,
+            force=False,
+            resume=True,
+            write_all_sequences=False,
+            keep_hmmsearch_output=False,
+        )
+
+        self._run_execute(
+            fasta_file_list=f"{here.parent.parent}/samples/input_nucl.txt",
+            hmms_file_list=f"{here.parent.parent}/samples/hmm_nucl.txt",
+            output_dir=str(output_fresh),
+            seq_type="auto",
+            cpu=2,
+            force=True,
+            resume=False,
+            write_all_sequences=False,
+            keep_hmmsearch_output=False,
+        )
+
+        resume_short = self._read_text(f"{output_resume}/short_summary.txt")
+        fresh_short = self._read_text(f"{output_fresh}/short_summary.txt")
+        assert resume_short == fresh_short
+
+        resume_long = self._read_text(f"{output_resume}/long_summary.txt").strip().splitlines()
+        fresh_long = self._read_text(f"{output_fresh}/long_summary.txt").strip().splitlines()
+        assert sorted(resume_long) == sorted(fresh_long)

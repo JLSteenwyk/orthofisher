@@ -15,6 +15,7 @@ def args():
         output_dir="orthofisher_output",
         cpu=2,
         seq_type="auto",
+        resume=False,
         force=False,
         verbose_output=False
     )
@@ -81,6 +82,7 @@ class TestArgsProcessing(object):
             "output_dir",
             "cpu",
             "seq_type",
+            "resume",
             "force",
             "write_all_sequences",
             "keep_hmmsearch_output"
@@ -96,6 +98,17 @@ class TestArgsProcessing(object):
         args.seq_type = "nucleotide"
         res = process_args(args)
         assert res["seq_type"] == "nucleotide"
+
+    def test_process_args_resume(self, args):
+        args.resume = True
+        res = process_args(args)
+        assert res["resume"] is True
+
+    def test_process_args_resume_force_conflict(self, args):
+        args.resume = True
+        args.force = True
+        with pytest.raises(InputValidationError):
+            process_args(args)
 
     def test_process_args_verbose_output(self, args):
         args.verbose_output = True

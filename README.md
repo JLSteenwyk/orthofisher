@@ -170,6 +170,15 @@ You can combine both flags:
 orthofisher -m hmms.txt -f fasta_arg.txt --verbose-output --force
 ```
 
+To continue an interrupted run in an existing output directory, use:
+
+```shell
+orthofisher -m hmms.txt -f fasta_arg.txt -o orthofisher_output --resume
+```
+
+`--resume` reuses checkpoint state, skips completed FASTA/HMM pairs, and rewrites
+`short_summary.txt` from the resumed totals.
+
 <br />
 
 ---

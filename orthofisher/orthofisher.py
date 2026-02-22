@@ -12,8 +12,9 @@ from .args_processing import process_args
 from .exceptions import OrthoFisherError
 from .parser import create_parser
 from .helper import (
-    create_directories, read_input_files, 
+    create_directories, ensure_resume_directories, read_input_files,
     conduct_hmm_search, set_names, determine_search_tool, parse_nhmmer_tblout,
+    get_checkpoint_path, append_checkpoint_row, load_checkpoint,
     handle_single_copy_writing, handle_multi_copy_writing,
     handle_absent_writing, handle_percent_present_summary,
     check_hmmsearch_output
@@ -27,6 +28,7 @@ def execute(
     output_dir: str,
     cpu: int,
     seq_type: str = "auto",
+    resume: bool = False,
     force: bool = False,
     write_all_sequences: bool = False,
     keep_hmmsearch_output: bool = False
@@ -35,9 +37,18 @@ def execute(
     # read input files
     fasta_file_list, hmms_file_list = read_input_files(fasta_file_list, hmms_file_list)
 
-    # create directories that will be
-    # populated with output files
-    create_directories(output_dir, write_all_sequences, keep_hmmsearch_output, force)
+    # initialize output directory state
+    checkpoint_path = get_checkpoint_path(output_dir)
+    completed_pairs = set()
+    stats_from_checkpoint = {}
+    if resume:
+        ensure_resume_directories(output_dir, write_all_sequences, keep_hmmsearch_output)
+        completed_pairs, stats_from_checkpoint = load_checkpoint(checkpoint_path)
+        short_summary_name = f"{output_dir}/short_summary.txt"
+        if os.path.isfile(short_summary_name):
+            os.remove(short_summary_name)
+    else:
+        create_directories(output_dir, write_all_sequences, keep_hmmsearch_output, force)
 
     ## loop through fasta files
     for fasta in tqdm(fasta_file_list):
@@ -45,9 +56,9 @@ def execute(
         # idx0: # single-copy orthologs
         # idx1: # multi-copy orthologs
         # idx2: # absent orthologs
-        ortholog_presence_absence_stats = [0, 0, 0]
-        record_dict = SeqIO.index(fasta[0], "fasta")
         fasta_name = Path(fasta[0]).name
+        ortholog_presence_absence_stats = list(stats_from_checkpoint.get(fasta_name, [0, 0, 0]))
+        record_dict = SeqIO.index(fasta[0], "fasta")
         name = f"{fasta[1]} " if len(fasta) > 1 else ""
 
         try:
@@ -59,6 +70,9 @@ def execute(
                 short_summary_name, \
                 long_summary_name, \
                 hmmsearch_out = set_names(hmm[0], fasta_name, output_dir)
+                pair_key = (fasta_name, hmm_name)
+                if resume and pair_key in completed_pairs:
+                    continue
                 created_temp_hmmsearch = False
                 if not keep_hmmsearch_output:
                     fd, temp_hmmsearch_out = tempfile.mkstemp(
@@ -114,6 +128,8 @@ def execute(
                                 # add to counter
                                 ortholog_presence_absence_stats[0]+=1
                                 have_written+=1
+                                append_checkpoint_row(checkpoint_path, fasta_name, hmm_name, "single-copy")
+                                completed_pairs.add(pair_key)
 
                             # if multi-copy
                             elif num_hits > 1:
@@ -132,6 +148,8 @@ def execute(
                                 # add to counter
                                 ortholog_presence_absence_stats[1]+=1
                                 have_written+=1
+                                append_checkpoint_row(checkpoint_path, fasta_name, hmm_name, "multi-copy")
+                                completed_pairs.add(pair_key)
                             
                         # if absent
                         if have_written == 0:
@@ -143,6 +161,8 @@ def execute(
 
                             # add to counter
                             ortholog_presence_absence_stats[2]+=1
+                            append_checkpoint_row(checkpoint_path, fasta_name, hmm_name, "absent")
+                            completed_pairs.add(pair_key)
                 finally:
                     if created_temp_hmmsearch and os.path.exists(hmmsearch_out):
                         os.remove(hmmsearch_out)

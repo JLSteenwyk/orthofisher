@@ -1,3 +1,10 @@
+1.1.3
+  - added sequence-type mode selection via --seq-type (protein, nucleotide, auto)
+  - auto mode now infers HMM alphabet and dispatches hmmsearch vs nhmmer
+  - added resume/checkpoint support via --resume to continue interrupted runs
+  - added integration and unit coverage for nucleotide auto mode and resume behavior
+  - updated docs for nucleotide usage and resume workflow
+
 1.1.2
   - default output is slim; use --verbose-output to write large raw outputs
   - updated Python support to 3.10-3.13 and dropped 3.9

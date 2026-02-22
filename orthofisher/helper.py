@@ -2,10 +2,11 @@ import os
 import os.path
 import shutil
 import subprocess
+import csv
 from dataclasses import dataclass
 from pathlib import Path
 
-from .exceptions import HMMSearchError, OutputDirectoryExistsError
+from .exceptions import HMMSearchError, OutputDirectoryExistsError, InputValidationError
 
 def read_input_files(
     fasta_file_list: str,
@@ -48,6 +49,26 @@ def create_directories(
         os.mkdir(f'{output_dir}/hmmsearch_output')
     if write_all_sequences:
         os.mkdir(f'{output_dir}/all_sequences')
+
+
+def ensure_resume_directories(
+    output_dir: str,
+    write_all_sequences: bool,
+    keep_hmmsearch_output: bool
+):
+    """
+    Ensure output directories exist when resuming and create optional dirs as needed.
+    """
+    if not os.path.isdir(output_dir):
+        raise InputValidationError(
+            f"{output_dir} does not exist. Cannot use --resume without an existing output directory."
+        )
+
+    os.makedirs(f"{output_dir}/scog", exist_ok=True)
+    if keep_hmmsearch_output:
+        os.makedirs(f"{output_dir}/hmmsearch_output", exist_ok=True)
+    if write_all_sequences:
+        os.makedirs(f"{output_dir}/all_sequences", exist_ok=True)
 
 def conduct_hmm_search(
     hmmsearch_out: str,
@@ -337,3 +358,61 @@ def handle_percent_present_summary(
 def _format_sequence_lines(seq, width=60):
     seq_str = str(seq)
     return '\n'.join(seq_str[i:i+width] for i in range(0, len(seq_str), width))
+
+
+def get_checkpoint_path(
+    output_dir: str
+):
+    return f"{output_dir}/.orthofisher_checkpoint.tsv"
+
+
+def append_checkpoint_row(
+    checkpoint_path: str,
+    fasta_name: str,
+    hmm_name: str,
+    status: str
+):
+    write_header = not os.path.isfile(checkpoint_path)
+    with open(checkpoint_path, "a", newline="") as handle:
+        writer = csv.writer(handle, delimiter="\t")
+        if write_header:
+            writer.writerow(["fasta_name", "hmm_name", "status"])
+        writer.writerow([fasta_name, hmm_name, status])
+
+
+def load_checkpoint(
+    checkpoint_path: str
+):
+    """
+    Load completed FASTA/HMM pairs and per-fasta summary counters from checkpoint.
+    """
+    completed_pairs = set()
+    stats_by_fasta = {}
+    if not os.path.isfile(checkpoint_path):
+        return completed_pairs, stats_by_fasta
+
+    with open(checkpoint_path, "r", newline="") as handle:
+        reader = csv.DictReader(handle, delimiter="\t")
+        for row in reader:
+            fasta_name = row.get("fasta_name")
+            hmm_name = row.get("hmm_name")
+            status = row.get("status")
+            if not fasta_name or not hmm_name or not status:
+                continue
+
+            pair_key = (fasta_name, hmm_name)
+            if pair_key in completed_pairs:
+                continue
+            completed_pairs.add(pair_key)
+
+            if fasta_name not in stats_by_fasta:
+                stats_by_fasta[fasta_name] = [0, 0, 0]
+
+            if status == "single-copy":
+                stats_by_fasta[fasta_name][0] += 1
+            elif status == "multi-copy":
+                stats_by_fasta[fasta_name][1] += 1
+            elif status == "absent":
+                stats_by_fasta[fasta_name][2] += 1
+
+    return completed_pairs, stats_by_fasta
