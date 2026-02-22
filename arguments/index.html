@@ -120,6 +120,9 @@ Name of the outputted directory with all results from the orthofisher run (defau
 Search mode. Accepted values are <code class="docutils literal notranslate"><span class="pre">protein</span></code>, <code class="docutils literal notranslate"><span class="pre">nucleotide</span></code>, or <code class="docutils literal notranslate"><span class="pre">auto</span></code> (default: <code class="docutils literal notranslate"><span class="pre">auto</span></code>).
 <code class="docutils literal notranslate"><span class="pre">protein</span></code> forces <code class="docutils literal notranslate"><span class="pre">hmmsearch</span></code>, <code class="docutils literal notranslate"><span class="pre">nucleotide</span></code> forces <code class="docutils literal notranslate"><span class="pre">nhmmer</span></code>, and <code class="docutils literal notranslate"><span class="pre">auto</span></code> infers the mode from
 the HMM <code class="docutils literal notranslate"><span class="pre">ALPH</span></code> header for each model.</p>
+<p><strong>--resume</strong>:
+Resume a previous run in an existing output directory. Completed FASTA/HMM pairs in the checkpoint
+are skipped and only missing pairs are processed.</p>
 <p><strong>--force</strong>:
 Overwrite an existing output directory. If omitted and the output directory already exists, orthofisher exits with an error.</p>
 <p><strong>--verbose-output</strong>:

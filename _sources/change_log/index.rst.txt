@@ -8,6 +8,14 @@ Change log
 
 Major changes to orthofisher are summarized here.
 
+**1.1.3**:
+
+- Added ``--seq-type`` with ``protein``, ``nucleotide``, and ``auto`` modes.
+- ``--seq-type auto`` now infers HMM alphabet and dispatches ``hmmsearch`` or ``nhmmer``.
+- Added ``--resume`` checkpoint mode to continue interrupted runs in an existing output directory.
+- Added tests covering nucleotide auto-dispatch and resume/checkpoint behavior.
+- Updated usage/docs for nucleotide-query workflows and resumed execution.
+
 **1.1.2**:
 
 - Default output is now slim (``scog/``, ``long_summary.txt``, ``short_summary.txt``).

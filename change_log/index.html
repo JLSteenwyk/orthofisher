@@ -82,6 +82,14 @@
 <span id="id1"></span><h1>Change log<a class="headerlink" href="#change-log" title="Link to this heading"></a></h1>
 <hr class="docutils" />
 <p>Major changes to orthofisher are summarized here.</p>
+<p><strong>1.1.3</strong>:</p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--seq-type</span></code> with <code class="docutils literal notranslate"><span class="pre">protein</span></code>, <code class="docutils literal notranslate"><span class="pre">nucleotide</span></code>, and <code class="docutils literal notranslate"><span class="pre">auto</span></code> modes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--seq-type</span> <span class="pre">auto</span></code> now infers HMM alphabet and dispatches <code class="docutils literal notranslate"><span class="pre">hmmsearch</span></code> or <code class="docutils literal notranslate"><span class="pre">nhmmer</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">--resume</span></code> checkpoint mode to continue interrupted runs in an existing output directory.</p></li>
+<li><p>Added tests covering nucleotide auto-dispatch and resume/checkpoint behavior.</p></li>
+<li><p>Updated usage/docs for nucleotide-query workflows and resumed execution.</p></li>
+</ul>
 <p><strong>1.1.2</strong>:</p>
 <ul class="simple">
 <li><p>Default output is now slim (<code class="docutils literal notranslate"><span class="pre">scog/</span></code>, <code class="docutils literal notranslate"><span class="pre">long_summary.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">short_summary.txt</span></code>).</p></li>

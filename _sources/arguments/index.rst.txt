@@ -44,6 +44,10 @@ Search mode. Accepted values are ``protein``, ``nucleotide``, or ``auto`` (defau
 ``protein`` forces ``hmmsearch``, ``nucleotide`` forces ``nhmmer``, and ``auto`` infers the mode from
 the HMM ``ALPH`` header for each model.
 
+**\-\-resume**:
+Resume a previous run in an existing output directory. Completed FASTA/HMM pairs in the checkpoint
+are skipped and only missing pairs are processed.
+
 **\-\-force**:
 Overwrite an existing output directory. If omitted and the output directory already exists, orthofisher exits with an error.
 
