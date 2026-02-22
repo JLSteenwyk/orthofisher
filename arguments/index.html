@@ -116,6 +116,10 @@ sufficiently similar to be considered putatively orthologous. Value must range f
 Specify the number of parallel CPU workers to use for multithreading (default: 2). This argument is passed to HMMER.</p>
 <p><strong>-o, --output_dir</strong>:
 Name of the outputted directory with all results from the orthofisher run (default: orthofisher_output).</p>
+<p><strong>--seq-type</strong>:
+Search mode. Accepted values are <code class="docutils literal notranslate"><span class="pre">protein</span></code>, <code class="docutils literal notranslate"><span class="pre">nucleotide</span></code>, or <code class="docutils literal notranslate"><span class="pre">auto</span></code> (default: <code class="docutils literal notranslate"><span class="pre">auto</span></code>).
+<code class="docutils literal notranslate"><span class="pre">protein</span></code> forces <code class="docutils literal notranslate"><span class="pre">hmmsearch</span></code>, <code class="docutils literal notranslate"><span class="pre">nucleotide</span></code> forces <code class="docutils literal notranslate"><span class="pre">nhmmer</span></code>, and <code class="docutils literal notranslate"><span class="pre">auto</span></code> infers the mode from
+the HMM <code class="docutils literal notranslate"><span class="pre">ALPH</span></code> header for each model.</p>
 <p><strong>--force</strong>:
 Overwrite an existing output directory. If omitted and the output directory already exists, orthofisher exits with an error.</p>
 <p><strong>--verbose-output</strong>:

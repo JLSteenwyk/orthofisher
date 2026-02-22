@@ -39,6 +39,11 @@ Specify the number of parallel CPU workers to use for multithreading (default: 2
 **-o, \-\-output_dir**:
 Name of the outputted directory with all results from the orthofisher run (default: orthofisher_output).
 
+**\-\-seq-type**:
+Search mode. Accepted values are ``protein``, ``nucleotide``, or ``auto`` (default: ``auto``).
+``protein`` forces ``hmmsearch``, ``nucleotide`` forces ``nhmmer``, and ``auto`` infers the mode from
+the HMM ``ALPH`` header for each model.
+
 **\-\-force**:
 Overwrite an existing output directory. If omitted and the output directory already exists, orthofisher exits with an error.
 
